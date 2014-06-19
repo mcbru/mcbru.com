@@ -1,0 +1,74 @@
+/*!
+Theme Name: WordPress Starter Theme
+Theme URI: http://www.THEME.com
+Description: WordPress Starter Theme for use as a starting template for building custom themes.
+Author: Matt Banks
+Author URI: http://www.kernelcreativemedia.com
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+*/
+
+// Compass imports
+@import "compass";
+
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/normalize";
+
+// Globals
+/*@import "partials/global";*/
+
+// The grid
+/*@import "partials/grid";*/
+
+// Page and Site Styles
+/*@import "partials/page";
+@import "partials/posts";
+@import "partials/widgets";
+@import "partials/search";
+@import "partials/comments";
+@import "partials/forms";*/
+
+// Helper Classes, Media Queries, Print, Etc
+@import "partials/helpers";
+@import "partials/print";
+
+// Bring me... GUMBY
+/**@import "../gumby/gumby";/
+
+/*@import "modular-scale";*/
+@import "../gumby/var/settings";/**/
+/*@import "../gumby/var/lists";*/
+@import "../gumby/var/icons/entypo";/**/
+@import "compass";/**/
+@import "compass/reset";
+@import "../gumby/functions/all";/**/
+@import "../gumby/base";/**/
+@import "../gumby/grid";/**/
+/*@import "../gumby/ui/all";*/
+@import "../gumby/shame";/**/
+/*@import "../gumby/custom";*/
+
+/*
+MOBILE & BASE STYLES
+*/
+@import "slideshow";
+@import "base";
+
+@media only screen and (min-width: 481px) {
+  @import "481up";
+}
+
+@media only screen and (min-width: 767px) {
+  @import "768up";
+}
+
+/*
+DESKTOP
+*/
+@media only screen and (min-width: 1040px) {
+  @import "1040up";
+}
