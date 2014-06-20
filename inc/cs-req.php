@@ -16,11 +16,19 @@
 	$hero = get_field('hero_image',$d);
 	$blox = get_field('blocks',$d);
 	$bux = get_field('bottom_buckets',$d);
+	$subt = get_field('subtitle',$d);
 
 ?>
 
 	<div class="row">
 		<div class="columns twenty-four">
+
+			<div class="content float">
+
+					<h2><?php echo $it->post_title; ?></h2>
+						<p><?php echo $subt; ?></p>
+			</div>
+
 			<img src="http://placehold.it/1000x494" class="hero" alt="" />
 
 			<div class="content">

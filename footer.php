@@ -11,7 +11,7 @@
 	<div class="cloak">
 		<div class="container">
 			<div class="form-pop">
-				<h3 class="head-it no-base">Connect Todays</h3>
+				<h3 class="head-it no-base">Connect Today</h3>
 				
 				<?php echo do_shortcode('[contact-form-7 id="4"]'); ?>
 
