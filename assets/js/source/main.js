@@ -104,11 +104,17 @@
 			rollMe($('.form-pop'));
 		});
 	});
+
 	$('.cloak .close').on('click', function(e) {
 		e.preventDefault();
-		$('.cloak').fadeOut();
+		$('.cloak').fadeOut(function() {
+			$('.form-pop').show();
+			$('.form-confirmation').hide();
+		});
 	});
-
+	function mail_sent() {
+		console.log('mail_sent seen');
+	}
 	//var mnav_open = false;
 
 	$('.header .toggle').on('click',function(e) {

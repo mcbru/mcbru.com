@@ -18,6 +18,12 @@
 
 				<a href="#" class="close">X</a>
 			</div>
+			<div class="form-confirmation">
+				
+				<img src="<?php echo THEME; ?>/assets/img/mcb-thank-you.png" alt="" />
+				<p>Glad you dropped us a line!<br>Hang tight, we will be in touch shortly.</p>
+				<a href="#" class="close">X</a>
+			</div>
 		</div>
 	</div>
 	<?php endif; ?>

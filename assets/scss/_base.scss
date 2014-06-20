@@ -310,7 +310,7 @@ ul.horz-subnav, .horz-subnav ul
 
 .full-wrap 			{	position:relative;	}
 .cloak 				{	display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);	}
-.form-pop 			{	background:#fff;padding:12px 18px;margin-top:62px;box-shadow:0 0 12px #000;	position:relative;
+.form-pop 			{	display:block;background:#fff;padding:12px 18px;margin-top:62px;box-shadow:0 0 12px #000;	position:relative;
 	.head-it 		{	margin-bottom:0;padding-bottom:0;	}
 	p 				{	margin-bottom:8px;	}
 	input[type=text], input[type=email], textarea 		
@@ -319,6 +319,12 @@ ul.horz-subnav, .horz-subnav ul
 	label 			{	font-size:12px;	}
 	.close 			{	position:absolute;top:8px;right:18px;	}
 	input.cta 		{	margin:28px auto 28px;display:block;	}
+}
+.form-confirmation 	{	display:none;background:$mcb-purp;color:#fff;
+						text-align:center;	margin-top:62px;position:relative;	
+	& > img 		{	padding:24px 0;max-width:100%;	}
+	p 				{	font-size:115%;padding-bottom:32px;	}
+	.close 			{	position:absolute;top:8px;right:18px;color:#fff;	}
 }
 
 
