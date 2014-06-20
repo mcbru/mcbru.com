@@ -1,3 +1,4 @@
+
 (function($) {
 	//
 	// all Javascript code goes here
@@ -29,6 +30,8 @@
 
 	function load_jax($val,$temp) 	{
 
+		$('.load-cloak').show();
+
 		$.ajax({
 
 			url: $loca + $rout + $temp,
@@ -39,10 +42,11 @@
 			complete: function(xhr, textStatus) { 	},
 
 			success: function(data, textStatus, xhr) {
+				$('.load-cloak').hide();
 				$('.float-wrap').html('').html(data);
 				$('.tucker').slideUp();
 				$('.float-wrap').hide().slideDown(function() {
-					rollMe($('.float-wrap'));
+					rollMe($('.head-it'));
 					work_tiles();
 					arm_close();
 				});
@@ -112,6 +116,22 @@
 		$('.header .mobile ul').slideToggle();
 	});
 
+	if($('.page-services').length>0) {
+		$check = $(window).width();
+		if($check<768) {
+			$('.page-services .row.stacs .content > div:not(:first-child)').hide();
+			$('.mobile.service-menu li:first-child').addClass('open');
+			$('.mobile.service-menu li').on('click', function() {
+				$('.mobile.service-menu li.open').removeClass('open');
+				$(this).addClass('open');
+				$('.page-services .row.stacs .content > div').hide();
+				$('.page-services .row.stacs .content > div').eq($(this).index()).slideDown(function() {
+					rollMe($('.tiles.mobile li'));
+				});
+			});
+		}
+	}
+
 	var userFeed = new Instafeed({
 		get: 'user',
 		userId: 276323042,
@@ -125,4 +145,62 @@
 		template: '<a href="{{link}}"><img src="{{image}}" /></a>'
 	});
 	userFeed.run();
+
+
+
+            // var init = true, 
+            //     state = window.history.pushState !== undefined;
+            
+            // // Handles response
+            // var handler = function(XMLHttpRequest, textStatus) {
+            //     var data = $.parseJSON(XMLHttpRequest.responseText);
+            //     $.address.title(data.title);
+            //     $('.content').html(data.content);
+            //     $('.page').show();
+            // };
+            
+            // $.address.state('/').init(function(event) {
+
+            //     // Initializes the plugin
+            //     $('.tile .cta0').address();
+                
+            // }).change(function(event) {
+
+            //     var value = $.address.state().replace(/^\/$/, '') + event.value;
+                
+            //     // Selects the proper navigation link
+            //     $('.tile .cta0').each(function() {
+            //         if ($(this).attr('href') == value) {
+            //             $(this).addClass('selected').focus();
+            //         } else {
+            //             $(this).removeClass('selected');
+            //         }
+            //     });
+                
+            //     if (state && init) {
+                
+            //         init = false;
+                
+            //     } else {
+                
+            //         // Loads and populates the page data
+            //         $.ajax({
+            //             cache: false,
+            //             complete: handler,
+            //             url: value
+            //         });
+            //     }
+                
+            // });
+
+            // if (!state) {
+            
+            //     // Hides the page during initialization
+            //     document.write('<style type="text/css"> .page { display: none; } </style>');
+            // }
+            
+
+
+
+
 })(jQuery);

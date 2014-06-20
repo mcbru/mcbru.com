@@ -25,5 +25,5 @@
 </div> <!-- /.full-wrap -->
   <?php wp_footer(); ?>
 
-</body>
+<div class="load-cloak"><div class="icon"><i class="fa fa-gear fa-spin"></i></div></div></body>
 </html>

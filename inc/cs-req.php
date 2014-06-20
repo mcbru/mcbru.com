@@ -23,10 +23,11 @@
 	<div class="row">
 		<div class="columns twenty-four">
 
-			<div class="content float">
+			<div class="content float non">
 
 					<h2><?php echo $it->post_title; ?></h2>
 						<p><?php echo $subt; ?></p>
+						<a href="#" id="close" class="close">X</a>
 			</div>
 
 			<img src="http://placehold.it/1000x494" class="hero" alt="" />
@@ -86,4 +87,3 @@
 
 		</div>
 	</div>
-						<a href="#" id="close" class="close">X</a>

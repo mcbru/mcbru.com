@@ -12,7 +12,11 @@
 
 	<center><img src="<?php echo THEME; ?>/assets/img/services.png" alt="" /></center>
 
-
+	<ul class="tiles three_up mobile service-menu">
+		<li>What?</li>
+		<li>For Whom?</li>
+		<li>How?</li>
+	</ul>
 
 	<div class="row stacs"><div class="content">
 		<?php 
