@@ -2,3 +2,9 @@
 node_modules
 .sass-cache
 .idea
+
+.revision
+.ruby-version
+Gemfile
+Gemfile.lock
+dandelion.yml
