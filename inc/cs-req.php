@@ -30,7 +30,15 @@
 						<a href="#" id="close" class="close">X</a>
 			</div>
 
-			<img src="http://placehold.it/1000x494" class="hero" alt="" />
+      <?php if($hero)
+      {
+        echo "<img src='$hero' class='hero' alt='' />";
+      }
+      else
+      {
+        echo '<img src="http://placehold.it/1000x494" class="hero" alt="" />';
+      }
+      ?>
 
 			<div class="content">
 
@@ -69,18 +77,26 @@
 				<hr class="dotter" />
 
 				<div class="row buckets">
+
 					<div class="columns twelve">
 						<div class="bucket search">
 							<h3><?php echo $bux[0]['title'] ?></h3>
 							<p><?php echo $bux[0]['content'] ?></p>
 						</div>
 					</div>
-					<div class="columns twelve">
-						<div class="bucket cycle">
-							<h3><?php echo $bux[1]['title'] ?></h3>
-							<p><?php echo $bux[1]['content'] ?></p>
-						</div>
-					</div>
+
+          <?php if(count($bux) > 1)
+          // There may not be a second bottom bucket - let's check for it
+          {
+            echo
+            "<div class='columns twelve'>
+              <div class='bucket cycle'>
+                <h3>" . $bux[1]['title'] . "</h3>
+                <p>" . $bux[1]['content'] . "</p>
+              </div>
+            </div>";
+          }
+          ?>
 
 				</div>
 			</div>

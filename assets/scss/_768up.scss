@@ -103,9 +103,12 @@ ul.horz-subnav, .horz-subnav ul
 	}
 }
 
-.rac 		{ 	margin-top:22px;
-	.tile 	{	margin-bottom:0;border:1px solid transparent;	}
-
+.rac 		{
+  margin-top:22px;
+	.tile 	{
+    /* margin-bottom:0; */
+    border:1px solid transparent;
+  }
 }
 
 
