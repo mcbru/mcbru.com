@@ -2,28 +2,30 @@
   @return 100%/$colnum;
 }
 
-
 @mixin fancytiles($desktop-columns, $tablet-columns: $desktop-columns, $mobile-columns: 1, $small-break: 0px, $medium-break: $tablet-device-width, $large-break: $row-max-width) {
 
   // These styles apply to all shift-columns
   display: inline-block;
   float: left;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+
+  // Let's use margins instead of padding so children nest properly
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
 
   // IE8 fallback
-  width: divide-cols($mobile-columns);
+  width: divide-cols($mobile-columns) - ($gutter);
 
   @include respond("min-width: #{$small-break}") {
-    width: divide-cols($mobile-columns);
+    // Subtract the value of the margins we added above
+    width: divide-cols($mobile-columns) - ($gutter);
   }
 
   @include respond("min-width: #{$medium-break}") {
-    width: divide-cols($tablet-columns);
+    width: divide-cols($tablet-columns) - ($gutter);
   }
 
   @include respond("min-width: #{$large-break}") {
-    width: divide-cols($desktop-columns);
+    width: divide-cols($desktop-columns) - ($gutter);
   }
 
 }
