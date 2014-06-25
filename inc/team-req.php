@@ -14,6 +14,15 @@
 	$z = $it->ID;
 
 	$auth = get_field('author_link',$z);
+	$socs = get_field('social',$z);
+	$soc_c = count($socs);
+	if($soc_c==4) :
+		$seto = 'four_up';
+	elseif($soc_c==3) :
+		$seto = 'three_up';
+	elseif($soc_c==2) :
+		$seto = 'two_up';
+	endif;
 
 ?>
 <!-- 
@@ -40,10 +49,35 @@
 							<div class="scrollo">
 								<?php echo apply_filters('the_content',$it->post_content); ?>
 							</div>
-							<ul class="social-rack tiles three_up">
-								<li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
+							<ul class="social-rack team tiles <?php echo $seto; ?>">
+							<?php foreach($socs as $coun => $soc) : 
+								if($soc['type']=='em') : 
+									$ico = 'fa-envelope'; 	
+									$labl = 'Email';
+									$dest = 'mailto:'.get_field('email',$z); 
+								endif;
+								if($soc['type']=='ps') : 
+									$ico = 'fa-globe'; 	
+									$labl = 'Website';
+									$dest = $soc['url']; 
+								endif;
+								if($soc['type']=='tw') : 
+									$ico = 'fa-twitter'; 	
+									$labl = 'Twitter';
+									$dest = $soc['url']; 
+								endif;
+								if($soc['type']=='li') : 
+									$ico = 'fa-linkedin'; 	
+									$labl = 'LinkedIn';
+									$dest = $soc['url']; 
+								endif;
+
+								?>
+								<li><a href="<?php echo $dest; ?>"><i class="fa <?php echo $ico; ?>"></i> <span class="labbz"><?php echo $labl; ?></a></li>
+								<!-- <li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="javascript:alert('social links')"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li> -->
+							<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>
