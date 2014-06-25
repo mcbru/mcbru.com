@@ -59,21 +59,25 @@
 								if($soc['type']=='ps') : 
 									$ico = 'fa-globe'; 	
 									$labl = 'Website';
-									$dest = $soc['url']; 
 								endif;
 								if($soc['type']=='tw') : 
 									$ico = 'fa-twitter'; 	
 									$labl = 'Twitter';
-									$dest = $soc['url']; 
 								endif;
 								if($soc['type']=='li') : 
 									$ico = 'fa-linkedin'; 	
-									$labl = 'LinkedIn';
-									$dest = $soc['url']; 
+									$labl = 'LinkedIn'; 
 								endif;
+								if($soc['type']!='email') :
+									$frama = ' target="_blank"';
+									$dest = $soc['url'];
+									if(strpos($dest, 'http') === false) :
+										$dest = 'http://'.$dest;
+										endif;
+									endif;
 
 								?>
-								<li><a href="<?php echo $dest; ?>"><i class="fa <?php echo $ico; ?>"></i> <span class="labbz"><?php echo $labl; ?></a></li>
+								<li><a href="<?php echo $dest; ?>"<?php if($frama) : echo $frama; endif; ?>><i class="fa <?php echo $ico; ?>"></i> <span class="labbz"><?php echo $labl; ?></a></li>
 								<!-- <li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="javascript:alert('social links')"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li> -->
