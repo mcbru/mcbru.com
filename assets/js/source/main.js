@@ -15,7 +15,8 @@
 		$("html, body").stop(true).animate({ scrollTop: ($go)+"px" });
 	}
 
-	var mem_set;
+	// var mem_set;
+  var change_flag = true;
 
 	function arm_close() {
 		$('a#close').on('click', function(e) {
@@ -30,6 +31,7 @@
 
 	function load_jax($val,$temp) 	{
 
+    console.log("ajax load fired");
 		$('.load-cloak').show();
 
 		$.ajax({
@@ -42,6 +44,7 @@
 			complete: function(xhr, textStatus) { 	},
 
 			success: function(data, textStatus, xhr) {
+        change_flag = true;
 				$('.load-cloak').hide();
 				$('.float-wrap').html('').html(data);
 				$('.tucker').slideUp();
@@ -57,39 +60,77 @@
 		}); 
 	}
 
-	function work_tiles() {
-		$('.rels .tile .cta.work').on('click', function(e) {
-			var $d = $(this).attr('data-id');
-			load_jax($d,'proj-req.php');
-			mem_set = $(this).parent().parent();
+
+
+  $.address.strict(false);
+
+  $.address.change(function(event) {
+    // console.log($.address.baseURL());
+    // var $d = $(this).attr('data-id');
+    if((change_flag == true) && (event.value)) {
+      var url = $.address.baseURL();
+      var url_param_n = url.lastIndexOf('/');
+      var url_param = url.substring(url_param_n + 1);
+      console.log(url_param);
+      switch(url_param) {
+        case "work":
+          load_jax(event.value,'proj-req.php');
+          break;
+        case "about":
+          load_jax(event.value,'team-req.php');
+          break;
+      }
+      // load_jax(event.value,'proj-req.php');
+      change_flag = false;
+    } else if(change_flag == true) {
+			$('.tucker').slideDown(function() {
+				//rollMe(mem_set);
+			});
+			$('.float-wrap').slideUp();
+
+    }
+    // mem_set = $(this).parent().parent();
+    // e.preventDefault();
+  });
+
+
+
+  function work_tiles() {
+		$('.rels .tile .cta').on('click', function(e) {
+      var $d = $(this).attr('data-id');
+      change_flag = false;
+      $.address.value($d);
+      if($(this).hasClass('work')) {
+        load_jax($d,'proj-req.php');
+      } else if ($(this).hasClass('cs')) {
+        load_jax($d,'cs-req.php');
+      }
 			e.preventDefault();
-		});
-		$('.rels .tile .cta.cs').on('click', function(e) {
-			var $d = $(this).attr('data-id');
-			load_jax($d,'cs-req.php');
-			mem_set = $(this).parent().parent();
-			e.preventDefault();
-		});
-	}
+    });
+  }
 	work_tiles();
 
-		$('.work .tile .cta.work').on('click', function(e) {
-			var $d = $(this).attr('data-id');
-			load_jax($d,'proj-req.php');
-			mem_set = $(this).parent().parent();
-			e.preventDefault();
-		});
-		$('.work .tile .cta.cs').on('click', function(e) {
-			var $d = $(this).attr('data-id');
-			load_jax($d,'cs-req.php');
-			mem_set = $(this).parent().parent();
-			e.preventDefault();
-		});
+
+  $('.work .tile .cta').on('click', function(e) {
+    // console.log($(this));
+    var $d = $(this).attr('data-id');
+    change_flag = false;
+    $.address.value($d);
+    if($(this).hasClass('work')) {
+      load_jax($d,'proj-req.php');
+    } else if ($(this).hasClass('cs')) {
+      load_jax($d,'cs-req.php');
+    }
+    // mem_set = $(this).parent().parent();
+    e.preventDefault();
+  });
 
 	$('.about .tile .cta').on('click', function(e) {
 		var $d = $(this).parent().parent().attr('data-id');
+    change_flag = false;
+    $.address.value($d);
 		load_jax($d,'team-req.php');
-		mem_set = $(this).parent().parent();
+		// mem_set = $(this).parent().parent();
 		e.preventDefault();
 		// $('.tucker').slideUp();
 		// $('.float-wrap').slideDown(function() {
