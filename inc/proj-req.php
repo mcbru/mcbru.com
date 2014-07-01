@@ -51,7 +51,7 @@
 
 
 							<?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
-								<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
+                <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
 							<?php else : ?>
 
 								<img src="http://placehold.it/488x540" alt="" class="work-logo" />
@@ -74,10 +74,11 @@
 							</a> -->
 							<a class="tile">
 								<?php if(has_post_thumbnail($d)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($d), 'full' ); $subt = get_field('subtitle',$d);//print_r($img[0]);$img[0] ?>
-									<img src="<?php echo TIM . get_field('bw_alt',$d) . BL_PORT; ?>" alt="" />
-									<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" class="sub" alt="" />
+                <?php $alt = get_post_meta(get_post_thumbnail_id($d), '_wp_attachment_image_alt', true); ?>
+                  <img src="<?php echo TIM . get_field('bw_alt',$d) . BL_PORT; ?>" alt="<?php echo $alt; ?>" />
+                    <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" class="sub" alt="<?php echo $alt; ?>" />
 								<?php else : ?>
-									<img src="http://placehold.it/488x540" alt="" />
+									<img src="http://placehold.it/488x540" alt="placeholder" />
 								<?php endif; ?>
 								<div class="screen">
 								<h3><?php echo get_the_title($d); ?></h3>
