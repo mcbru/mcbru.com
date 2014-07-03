@@ -16,7 +16,7 @@
 	}
 
 	// var mem_set;
-  var change_flag = true;
+ 	var change_flag = true;
 
 	function arm_close() {
 		$('a#close').on('click', function(e) {
@@ -26,12 +26,13 @@
 			});
 			$('.float-wrap').slideUp();
 			
+			$.address.value('');
 		});
 	}
 
 	function load_jax($val,$temp) 	{
 
-    console.log("ajax load fired");
+		console.log("ajax load fired");
 		$('.load-cloak').show();
 
 		$.ajax({
@@ -44,7 +45,7 @@
 			complete: function(xhr, textStatus) { 	},
 
 			success: function(data, textStatus, xhr) {
-        change_flag = true;
+				change_flag = true;
 				$('.load-cloak').hide();
 				$('.float-wrap').html('').html(data);
 				$('.tucker').slideUp();
@@ -62,73 +63,93 @@
 
 
 
-  $.address.strict(false);
+	$.address.strict(false);
 
-  $.address.change(function(event) {
-    // console.log($.address.baseURL());
-    // var $d = $(this).attr('data-id');
-    if((change_flag == true) && (event.value)) {
-      var url = $.address.baseURL();
-      var url_param_n = url.lastIndexOf('/');
-      var url_param = url.substring(url_param_n + 1);
-      console.log(url_param);
-      switch(url_param) {
-        case "work":
-          load_jax(event.value,'proj-req.php');
-          break;
-        case "about":
-          load_jax(event.value,'team-req.php');
-          break;
-      }
-      // load_jax(event.value,'proj-req.php');
-      change_flag = false;
-    } else if(change_flag == true) {
+	$.address.change(function(event) {
+		// console.log($.address.baseURL());
+		// var $d = $(this).attr('data-id');
+		if((change_flag == true) && (event.value)) {
+			//alert('whut');
+			var url = $.address.baseURL();
+			var url_param_n = url.lastIndexOf('/');
+			var url_param = url.substring(url_param_n + 1);
+
+			//
+			//
+
+			//alert(goTo);
+			
+			console.log(url_param);
+			switch(url_param) {
+				case "work":
+					var tmpl;
+					var targg = $('.cta[data-slug="'+event.value+'"]');
+					if(targg.hasClass('cs')) {
+						tmpl = 'cs-req.php';
+					}
+					if(targg.hasClass('work')) {
+						tmpl = 'proj-req.php';
+					}
+					var goToW = targg.attr('data-id');
+
+					load_jax(goToW,tmpl);
+				break;
+				case "about":
+					var goToA = $('.tile[data-slug="'+event.value+'"]').attr('data-id');
+					load_jax(goToA,'team-req.php');
+				break;
+			}
+			// load_jax(event.value,'proj-req.php');
+			change_flag = false;
+		} else if(change_flag == true) {
 			$('.tucker').slideDown(function() {
 				//rollMe(mem_set);
 			});
 			$('.float-wrap').slideUp();
 
-    }
-    // mem_set = $(this).parent().parent();
-    // e.preventDefault();
-  });
+		}
+		// mem_set = $(this).parent().parent();
+		// e.preventDefault();
+	});
 
 
 
-  function work_tiles() {
+	function work_tiles() {
 		$('.rels .tile .cta').on('click', function(e) {
-      var $d = $(this).attr('data-id');
-      change_flag = false;
-      $.address.value($d);
-      if($(this).hasClass('work')) {
-        load_jax($d,'proj-req.php');
-      } else if ($(this).hasClass('cs')) {
-        load_jax($d,'cs-req.php');
-      }
+			var $d = $(this).attr('data-id');
+			change_flag = false;
+			$.address.value($d);
+			if($(this).hasClass('work')) {
+				load_jax($d,'proj-req.php');
+			} else if ($(this).hasClass('cs')) {
+				load_jax($d,'cs-req.php');
+			}
 			e.preventDefault();
-    });
-  }
+		});
+	}
 	work_tiles();
 
 
-  $('.work .tile .cta').on('click', function(e) {
-    // console.log($(this));
-    var $d = $(this).attr('data-id');
-    change_flag = false;
-    $.address.value($d);
-    if($(this).hasClass('work')) {
-      load_jax($d,'proj-req.php');
-    } else if ($(this).hasClass('cs')) {
-      load_jax($d,'cs-req.php');
-    }
-    // mem_set = $(this).parent().parent();
-    e.preventDefault();
-  });
+	$('.work .tile .cta').on('click', function(e) {
+		// console.log($(this));
+		var $d = $(this).attr('data-id');
+		var $n = $(this).attr('data-slug');
+		change_flag = false;
+		$.address.value($n);
+		if($(this).hasClass('work')) {
+			load_jax($d,'proj-req.php');
+		} else if ($(this).hasClass('cs')) {
+			load_jax($d,'cs-req.php');
+		}
+		// mem_set = $(this).parent().parent();
+		e.preventDefault();
+	});
 
 	$('.about .tile .cta').on('click', function(e) {
 		var $d = $(this).parent().parent().attr('data-id');
-    change_flag = false;
-    $.address.value($d);
+		var $n = $(this).parent().parent().attr('data-slug');
+		change_flag = false;
+		$.address.value($n);
 		load_jax($d,'team-req.php');
 		// mem_set = $(this).parent().parent();
 		e.preventDefault();
@@ -179,6 +200,22 @@
 		}
 	}
 
+	if($('.job-trig').length>0) {
+		$('.tucc').hide();
+		$('.job-trig').on('click',function() {
+			$targ = $(this).find('.go');
+			//alert($targ);
+			if(!$(this).next().is(':visible')) {
+				$('.tucc:visible').slideUp();
+				$(this).next().slideDown(function() {
+					rollMe($targ);
+				});
+			} else {
+				$(this).next().slideUp();
+			}
+		});
+	}
+
 	var userFeed = new Instafeed({
 		get: 'user',
 		userId: 276323042,
@@ -195,57 +232,57 @@
 
 
 
-            // var init = true, 
-            //     state = window.history.pushState !== undefined;
-            
-            // // Handles response
-            // var handler = function(XMLHttpRequest, textStatus) {
-            //     var data = $.parseJSON(XMLHttpRequest.responseText);
-            //     $.address.title(data.title);
-            //     $('.content').html(data.content);
-            //     $('.page').show();
-            // };
-            
-            // $.address.state('/').init(function(event) {
+			// var init = true, 
+			//     state = window.history.pushState !== undefined;
+			
+			// // Handles response
+			// var handler = function(XMLHttpRequest, textStatus) {
+			//     var data = $.parseJSON(XMLHttpRequest.responseText);
+			//     $.address.title(data.title);
+			//     $('.content').html(data.content);
+			//     $('.page').show();
+			// };
+			
+			// $.address.state('/').init(function(event) {
 
-            //     // Initializes the plugin
-            //     $('.tile .cta0').address();
-                
-            // }).change(function(event) {
+			//     // Initializes the plugin
+			//     $('.tile .cta0').address();
+				
+			// }).change(function(event) {
 
-            //     var value = $.address.state().replace(/^\/$/, '') + event.value;
-                
-            //     // Selects the proper navigation link
-            //     $('.tile .cta0').each(function() {
-            //         if ($(this).attr('href') == value) {
-            //             $(this).addClass('selected').focus();
-            //         } else {
-            //             $(this).removeClass('selected');
-            //         }
-            //     });
-                
-            //     if (state && init) {
-                
-            //         init = false;
-                
-            //     } else {
-                
-            //         // Loads and populates the page data
-            //         $.ajax({
-            //             cache: false,
-            //             complete: handler,
-            //             url: value
-            //         });
-            //     }
-                
-            // });
+			//     var value = $.address.state().replace(/^\/$/, '') + event.value;
+				
+			//     // Selects the proper navigation link
+			//     $('.tile .cta0').each(function() {
+			//         if ($(this).attr('href') == value) {
+			//             $(this).addClass('selected').focus();
+			//         } else {
+			//             $(this).removeClass('selected');
+			//         }
+			//     });
+				
+			//     if (state && init) {
+				
+			//         init = false;
+				
+			//     } else {
+				
+			//         // Loads and populates the page data
+			//         $.ajax({
+			//             cache: false,
+			//             complete: handler,
+			//             url: value
+			//         });
+			//     }
+				
+			// });
 
-            // if (!state) {
-            
-            //     // Hides the page during initialization
-            //     document.write('<style type="text/css"> .page { display: none; } </style>');
-            // }
-            
+			// if (!state) {
+			
+			//     // Hides the page during initialization
+			//     document.write('<style type="text/css"> .page { display: none; } </style>');
+			// }
+			
 
 
 

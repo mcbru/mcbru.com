@@ -82,8 +82,9 @@
 							foreach($team as $coun => $tmate) :
 								$d = $tmate->ID;
 								$role = get_field('role',$d);
+								//print_r($tmate);
 							 ?>
-							<a class="tile" data-id="<?php echo $d; ?>">
+							<a class="tile" data-id="<?php echo $d; ?>" data-slug="<?php echo $tmate->post_name; ?>">
 								<?php if(has_post_thumbnail($d)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($d), 'full' ); ?>
 									<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" />
 								<?php else : ?>
@@ -105,8 +106,10 @@
 				<h2 class="head-it clearfix">Job Openings<i class="fa fa-briefcase"></i></h3>
 
 				<?php foreach($jobs as $coun => $job) : ?>
-					<h3><?php echo $job['title']; ?></h3>
-					<p><?php echo $job['description']; ?></p>
+					<h3 class="job-trig"><?php echo $job['title']; ?><em class="go"></em></h3>
+					<div class="tucc">
+						<?php echo apply_filters('the_content',$job['description']); ?>
+					</div>
 				<?php endforeach; ?>
 				
 			</div>

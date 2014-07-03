@@ -58,8 +58,8 @@
 							<?php endif; ?>
 
 						<?php echo apply_filters('the_content',$it->post_content); ?>
-
-						<h3 class="head-it clearfix">Other Clients to Check Out<i class="fa fa-folder"></i></h3>
+						<div class="clearfix">
+						<h3 class="head-it">Other Clients to Check Out<i class="fa fa-folder"></i></h3>
 						<div class="rac row rels">
 
 						<?php //for($i=0;$i<4;$i++) :
@@ -94,7 +94,7 @@
 							</a>
 						<?php endforeach; ?>
 
-						</div>
+						</div></div>
 
 						<a href="#" id="close" class="close">X</a>
 					</div>

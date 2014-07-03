@@ -32,7 +32,7 @@ function codex_() {
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'work' ),
 		'capability_type'    => 'post',
-		'has_archive'        => 'work',
+		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => 2,
 		'supports'           => array( 'title', 'thumbnail', 'editor'  ) /*'author', 'excerpt', 'comments'*/
@@ -114,7 +114,7 @@ function codex_() {
 		'hierarchical' => true,
 		'label' => 'Categories',
 		'query_var' => true,
-		'rewrite' => array('slug' => 'work/categories')
+		'rewrite' => array('slug' => 'work-category','with_front' => false,'hierarchical'=>true)
 		)
 	);
 
@@ -122,10 +122,10 @@ function codex_() {
 		'topics',
 		'work',
 		array(
-		'hierarchical' => false,
+		//'hierarchical' => false,
 		'label' => 'Topics',
 		'query_var' => true,
-		'rewrite' => array('slug' => 'work/topics')
+		'rewrite' => array('slug' => 'work-topic','with_front' => false)
 		)
 	);
 
