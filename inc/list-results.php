@@ -22,7 +22,7 @@
 			<div class="columns twelve">
 				<h2><a href="<?php echo $dest; ?>"><?php echo $post->post_title; ?></a></h2>
 				<div class="meta-strip">
-					<span class="name">Posted by <?php echo get_the_author_link(); ?></span>
+					<span class="name">Posted by <?php the_author_posts_link(); ?></span>
 					<span class="file">Filed Under <a href="javascript:alert('show tags action')">Public Relations</a></span>
 				</div>
 			</div>

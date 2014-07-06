@@ -27,8 +27,16 @@
 				<h1><?php echo $post->post_title; ?></h1>
 
 				<div class="meta-strip">
-					<span class="name">Posted by <a href="javascript:alert('show author action')">James</a></span>
-					<span class="file">Filed Under <a href="javascript:alert('show tags action')">Public Relations</a></span>
+					<span class="name">Posted by <?php the_author_posts_link(); ?></span>
+					<span class="file">Filed Under 
+					<?php $post_categories = wp_get_post_categories( $post->ID );
+$cats = array();
+	
+foreach($post_categories as $c){
+	$cat = get_category( $c );
+	$cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+} ?>
+					</span>
 				</div>
 
 				<div class="row rac content">
@@ -58,12 +66,18 @@
 					<div class="tag-list">
 						<p><a href="javascript:alert('show listing by tag')">boxing, infographics, slideshare, social media, social media today</a></p>
 					</div>
-					<ul class="social-rack tiles five_up">
-						<li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="javascript:alert('social links')"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="javascript:alert('social links')"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="javascript:alert('social links')"><i class="fa fa-share-alt"></i></a></li>
+					<ul class="social-rack tiles four_up">
+						<?php 
+							$nam = $post->post_title;
+							$erl = get_permalink($post->ID);
+
+							?>
+						<li><a href="http://twitter.com/share?text=<?php echo $nam . ' [from the McBru blog]'; ?>&url=<?php echo $erl; ?>" target="_blank" title='Share "<?php echo $nam; ?>" on Twitter'><i class="fa fa-twitter"></i></a></li>
+						<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $erl; ?>&title=<?php echo $nam . ' [from the McBru blog]'; ?>" target="_blank" title='Share "<?php echo $nam; ?>" on LinkedIn'><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $erl; ?>" target="_blank"><i class="fa fa-facebook" title='Share "<?php echo $nam; ?>" on Facebook'></i></a></li>
+						<li><a href="https://plus.google.com/share?url=<?php echo $erl; ?>" target="_blank"><i class="fa fa-google-plus" title='Share "<?php echo $nam; ?>" on Google Plus'></i></a>
+						<?php /*<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="javascript:alert('social links')"><i class="fa fa-share-alt"></i></a></li>*/ ?>
 					</ul>
 				</div>
 				<hr class="dotter" />
