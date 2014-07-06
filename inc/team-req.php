@@ -55,26 +55,27 @@
 									$ico = 'fa-envelope'; 	
 									$labl = 'Email';
 									$dest = 'mailto:'.get_field('email',$z); 
-								endif;
-								if($soc['type']=='ps') : 
-									$ico = 'fa-globe'; 	
-									$labl = 'Website';
-								endif;
-								if($soc['type']=='tw') : 
-									$ico = 'fa-twitter'; 	
-									$labl = 'Twitter';
-								endif;
-								if($soc['type']=='li') : 
-									$ico = 'fa-linkedin'; 	
-									$labl = 'LinkedIn'; 
-								endif;
-								if($soc['type']!='email') :
-									$frama = ' target="_blank"';
-									$dest = $soc['url'];
-									if(strpos($dest, 'http') === false) :
-										$dest = 'http://'.$dest;
-										endif;
+								else :
+									if($soc['type']=='ps') : 
+										$ico = 'fa-globe'; 	
+										$labl = 'Website';
 									endif;
+									if($soc['type']=='tw') : 
+										$ico = 'fa-twitter'; 	
+										$labl = 'Twitter';
+									endif;
+									if($soc['type']=='li') : 
+										$ico = 'fa-linkedin'; 	
+										$labl = 'LinkedIn'; 
+									endif;
+									//if($soc['type']!='email') :
+										$frama = ' target="_blank"';
+										$dest = $soc['url'];
+										if(strpos($dest, 'http') === false) :
+											$dest = 'http://'.$dest;
+											endif;
+										//endif;
+								endif;
 
 								?>
 								<li><a href="<?php echo $dest; ?>"<?php if($frama) : echo $frama; endif; ?>><i class="fa <?php echo $ico; ?>"></i> <span class="labbz"><?php echo $labl; ?></a></li>

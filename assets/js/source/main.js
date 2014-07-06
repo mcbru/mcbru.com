@@ -117,8 +117,9 @@
 	function work_tiles() {
 		$('.rels .tile .cta').on('click', function(e) {
 			var $d = $(this).attr('data-id');
+			var $n = $(this).attr('data-slug');
 			change_flag = false;
-			$.address.value($d);
+			$.address.value($n);
 			if($(this).hasClass('work')) {
 				load_jax($d,'proj-req.php');
 			} else if ($(this).hasClass('cs')) {

@@ -12,7 +12,8 @@
 	//$p = $_POST['i'];
 	$it = get_post($_POST['i']);
 
-	$pagos = array($it->ID);
+	$pagos 		= array($it->ID);
+	$slogas 	= array($it->post_name);
 
 	$rel_proj 	= get_field('related_projects',$it->ID);
 	$subt 		= get_field('subtitle',$it->ID);
@@ -23,16 +24,18 @@
 
 	foreach($rel_proj as $coun => $proj) :
 		array_push($pagos,$proj->ID);
+		array_push($slogas,$proj->post_name);
 		endforeach;
 
 	function get_ref() {
-		global $pagos;
+		global $pagos, $slogas;
 		$p = get_posts(array(	'posts_per_page' => 1, 'post_type' => 'work', 'orderby' => 'rand'	));
 		//print_r($p);
 		if( in_array($p[0]->ID,$pagos) ) :
 			get_ref();
 		else :
 			array_push($pagos,$p[0]->ID);
+			array_push($slogas,$p[0]->post_name);
 		endif;
 	}
 
@@ -42,20 +45,21 @@
 		endfor;
 
 
-	$me = array_shift($pagos);
-//	print_r($pagos);
+	$me 	= array_shift($pagos);
+	$me2 	= array_shift($slogas);
+	
 ?>
 					<div class="float content">
 					<h2><?php echo $it->post_title; ?></h2>
 						<p><?php echo $subt; ?></p>
 
 
-							<?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
-                <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
-							<?php else : ?>
+						<?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
+							<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
+						<?php else : ?>
 
-								<img src="http://placehold.it/488x540" alt="" class="work-logo" />
-							<?php endif; ?>
+							<img src="http://placehold.it/488x540" alt="" class="work-logo" />
+						<?php endif; ?>
 
 						<?php echo apply_filters('the_content',$it->post_content); ?>
 						<div class="clearfix">
@@ -63,7 +67,7 @@
 						<div class="rac row rels">
 
 						<?php //for($i=0;$i<4;$i++) :
-							foreach($pagos as $coun => $posa) : $d = $posa; $cs = get_field('rel_cs',$d); ?>
+							foreach($pagos as $coun => $posa) : $d = $posa; $n = $slogas[$coun]; $cs = get_field('rel_cs',$d);  ?>
 							<!-- <a class="tile">
 								<img src="http://placehold.it/350x350" alt="" />
 								<div class="screen">
@@ -85,9 +89,9 @@
 								<p><?php echo $subt; ?></p>
 								<ul class="cta-rac">
 
-									<li><span class="cta work" data-id="<?php echo $d; ?>">View Work</span></li>
+									<li><span class="cta work" data-id="<?php echo $d; ?>" data-slug="<?php echo $n; ?>">View Work</span></li>
 									<?php if($cs) : ?>
-									<li><span class="cta cs" data-id="<?php echo $cs[0]->ID; ?>">View Case Study</span></li>
+									<li><span class="cta cs" data-id="<?php echo $cs[0]->ID; ?>" data-slug="<?php echo $cs[0]->post_name; ?>">View Case Study</span></li>
 									<?php endif; ?>
 								</ul>
 								</div>

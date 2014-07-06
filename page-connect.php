@@ -4,7 +4,13 @@
 	$o_address = get_field('address', 'Options');
 	$o_email = get_field('email', 'Options');
 	$o_phone = get_field('phone', 'Options');
-		$call = preg_replace('/(\W*)/', '', $o_phone);
+	
+	$call = preg_replace('/(\W*)/', '', $o_phone);
+
+	$url_twitter = get_field('twitter_url','Options');
+	$url_linkedin = get_field('linkedin_url','Options');
+	$url_gplus = get_field('gplus_url','Options');
+	$url_sshare = get_field('slideshare_url','Options');
 ?>
 
 <!-- 	<div class="row">
@@ -32,12 +38,12 @@
 
 			<div><a class="cta trans" href="tel:<?php echo $call; ?>"><i class="fa fa-phone"></i> <?php echo $o_phone; ?></a></div>
 
-			<ul class="social-rack tiles five_up">
-				<li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="javascript:alert('social links')"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li>
-				<li><a href="javascript:alert('social links')"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="javascript:alert('social links')"><i class="fa fa-youtube-play"></i></a></li>
+			<ul class="social-rack tiles four_up">
+				<li><a href="<?php echo $url_twitter; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="<?php echo $url_linkedin; ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="<?php echo $url_gplus; ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="<?php echo $url_sshare; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+				<?php /*<li><a href="javascript:alert('social links')"><i class="fa fa-youtube-play"></i></a></li>*/ ?>
 			</ul>
 			</div>
 		</div>
