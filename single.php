@@ -29,13 +29,17 @@
 				<div class="meta-strip">
 					<span class="name">Posted by <?php the_author_posts_link(); ?></span>
 					<span class="file">Filed Under 
-					<?php $post_categories = wp_get_post_categories( $post->ID );
-$cats = array();
-	
-foreach($post_categories as $c){
-	$cat = get_category( $c );
-	$cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
-} ?>
+					<?php 
+$categories = get_the_category();
+$separator = ', ';
+$output = '';
+if($categories){
+	foreach($categories as $category) {
+		$output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+	}
+echo trim($output, $separator);
+}
+ ?>
 					</span>
 				</div>
 
@@ -64,7 +68,7 @@ foreach($post_categories as $c){
 				<hr class="dotter" />
 				<div class="clearfix">
 					<div class="tag-list">
-						<p><a href="javascript:alert('show listing by tag')">boxing, infographics, slideshare, social media, social media today</a></p>
+						<p><?php the_tags('',', ',''); ?></p>
 					</div>
 					<ul class="social-rack tiles four_up">
 						<?php 
