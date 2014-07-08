@@ -7993,8 +7993,8 @@ ul.horz-subnav, .horz-subnav ul {
     display: block;
     width: 100%;
     position: relative;
-    margin-bottom: 20px;
-    /*height:240px;*/ }
+    margin-bottom: 2.4%;
+    /* margin-bottom:20px; height:240px;*/ }
     @media only screen and (min-width: 0px) {
       /* line 189, assets/scss/_base.scss */
       .rac > a {
@@ -8011,7 +8011,8 @@ ul.horz-subnav, .horz-subnav ul {
     .rac > a img {
       /*width:100%;height:100%;*/
       position: relative;
-      z-index: 1; }
+      z-index: 1;
+      vertical-align: middle; }
       /* line 192, assets/scss/_base.scss */
       .rac > a img.sub {
         display: none; }
@@ -8740,7 +8741,7 @@ ul.horz-subnav, .horz-subnav ul {
     margin-top: 22px; }
     /* line 108, assets/scss/_768up.scss */
     .rac .tile {
-      border: 1px solid transparent; }
+      /* border:1px solid transparent; */ }
 
   /* line 115, assets/scss/_768up.scss */
   .team .scrollo {
