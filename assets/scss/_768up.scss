@@ -3,7 +3,7 @@ a.cta, .cta 	{	font-size:14px;	}
 
 h3, h2, h1
 		{	font-size:18px;	}
-p, ul.re-list 		{	font-size:14px; 
+p, ul.re-list, ul 		{	font-size:14px; 
 	&.gran 	{	font-size:13px;	}
 }
 
@@ -154,9 +154,22 @@ ul.horz-subnav, .horz-subnav ul
 	}
 }
 
+.page-about 		{
+	.social-rack 	{ 	font-size:24px;
+		li  { 		text-align:left;
+			& > a > span
+					{	display:inline;font-size:14px;	}
+		}
+	}
+}
+
 .listed, .blog-entry 	{
 	.meta-strip {	font-size: 16px;	}
 	h2, h1 		{ 	font-size:32px; 	}
 }
 
 .mobile.service-menu 	{	display:none;	}
+
+#comments 		{
+	width:72%;
+}
