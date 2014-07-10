@@ -50,19 +50,21 @@
 	
 ?>
 					<div class="float content">
-					<h2><?php echo $it->post_title; ?></h2>
-						<p><?php echo $subt; ?></p>
+            <div class="clearfix">
+              <h2><?php echo $it->post_title; ?></h2>
+              <p><?php echo $subt; ?></p>
 
 
-						<?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
-							<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
-						<?php else : ?>
+              <?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
+                <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
+              <?php else : ?>
 
-							<img src="http://placehold.it/488x540" alt="" class="work-logo" />
-						<?php endif; ?>
+                <img src="http://placehold.it/488x540" alt="" class="work-logo" />
+              <?php endif; ?>
 
-						<?php echo apply_filters('the_content',$it->post_content); ?>
-						<div class="clearfix">
+              <?php echo apply_filters('the_content',$it->post_content); ?>
+            </div>
+						<div>
 						<h3 class="head-it">Other Clients to Check Out<i class="fa fa-folder"></i></h3>
 						<div class="rac row rels">
 
