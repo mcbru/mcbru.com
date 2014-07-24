@@ -7666,17 +7666,17 @@ h3, h2, h1 {
   font-size: 14px; }
 
 /* line 47, assets/scss/_base.scss */
-p, ul.re-list {
+p, ul.re-list, ul {
   font-size: 12px;
   line-height: 1.4; }
   /* line 48, assets/scss/_base.scss */
-  p.gran, ul.re-list.gran {
+  p.gran, ul.re-list.gran, ul.gran {
     font-size: 13px; }
   /* line 49, assets/scss/_base.scss */
-  p.purp, ul.re-list.purp {
+  p.purp, ul.re-list.purp, ul.purp {
     color: #8e108e; }
   /* line 50, assets/scss/_base.scss */
-  p em, ul.re-list em {
+  p em, ul.re-list em, ul em {
     font-style: oblique; }
 
 /* line 52, assets/scss/_base.scss */
@@ -7725,7 +7725,7 @@ a {
     color: #ef8e2d; }
 
 /* line 75, assets/scss/_base.scss */
-.cta, a.cta {
+.cta, a.cta, #comments input#submit {
   display: inline-block;
   width: auto;
   line-height: 1.2;
@@ -7743,10 +7743,10 @@ a {
   /* For Safari 3.1 to 6.0 */
   transition: background-color 0.2s; }
   /* line 77, assets/scss/_base.scss */
-  .cta:hover, a.cta:hover {
+  .cta:hover, a.cta:hover, #comments input#submit:hover {
     background-color: #ef8e2d; }
   /* line 78, assets/scss/_base.scss */
-  .cta.trans, a.cta.trans {
+  .cta.trans, a.cta.trans, #comments input#submit.trans {
     display: inline-block;
     background: transparent;
     color: #8e108e;
@@ -7760,17 +7760,17 @@ a {
     width: auto;
     text-align: left; }
     /* line 79, assets/scss/_base.scss */
-    .cta.trans .fa, a.cta.trans .fa {
+    .cta.trans .fa, a.cta.trans .fa, #comments input#submit.trans .fa {
       font-size: 28px;
       float: left;
       width: 28px;
       margin-right: 6px; }
     /* line 80, assets/scss/_base.scss */
-    .cta.trans:hover, a.cta.trans:hover {
+    .cta.trans:hover, a.cta.trans:hover, #comments input#submit.trans:hover {
       color: #ef8e2d; }
 
 /* line 83, assets/scss/_base.scss */
-input[type=submit].cta {
+input[type=submit].cta, #comments input#submit {
   border: none;
   outline: none; }
 
@@ -8302,11 +8302,23 @@ ul.horz-subnav, .horz-subnav ul {
   .instagram a:hover img {
     opacity: 1; }
 
-/* line 321, assets/scss/_base.scss */
+/* 			about and team single 	*/
+/* line 323, assets/scss/_base.scss */
+.page-about .social-rack {
+  font-size: 20px; }
+  /* line 324, assets/scss/_base.scss */
+  .page-about .social-rack li {
+    text-align: center; }
+    /* line 326, assets/scss/_base.scss */
+    .page-about .social-rack li > a > span {
+      display: block;
+      font-size: 12px; }
+
+/* line 331, assets/scss/_base.scss */
 .full-wrap {
   position: relative; }
 
-/* line 322, assets/scss/_base.scss */
+/* line 332, assets/scss/_base.scss */
 .cloak {
   display: none;
   position: absolute;
@@ -8316,7 +8328,7 @@ ul.horz-subnav, .horz-subnav ul {
   bottom: 0;
   background: rgba(0, 0, 0, 0.7); }
 
-/* line 323, assets/scss/_base.scss */
+/* line 333, assets/scss/_base.scss */
 .form-pop {
   display: block;
   background: #fff;
@@ -8324,14 +8336,14 @@ ul.horz-subnav, .horz-subnav ul {
   margin-top: 62px;
   box-shadow: 0 0 12px #000;
   position: relative; }
-  /* line 324, assets/scss/_base.scss */
+  /* line 334, assets/scss/_base.scss */
   .form-pop .head-it {
     margin-bottom: 0;
     padding-bottom: 0; }
-  /* line 325, assets/scss/_base.scss */
+  /* line 335, assets/scss/_base.scss */
   .form-pop p {
     margin-bottom: 8px; }
-  /* line 327, assets/scss/_base.scss */
+  /* line 337, assets/scss/_base.scss */
   .form-pop input[type=text], .form-pop input[type=email], .form-pop textarea {
     margin-top: 12px;
     display: block;
@@ -8341,23 +8353,23 @@ ul.horz-subnav, .horz-subnav ul {
     padding: 12px 14px;
     line-height: 1.2;
     font-size: 14px; }
-  /* line 328, assets/scss/_base.scss */
+  /* line 338, assets/scss/_base.scss */
   .form-pop textarea {
     height: 180px; }
-  /* line 329, assets/scss/_base.scss */
+  /* line 339, assets/scss/_base.scss */
   .form-pop label {
     font-size: 12px; }
-  /* line 330, assets/scss/_base.scss */
+  /* line 340, assets/scss/_base.scss */
   .form-pop .close {
     position: absolute;
     top: 8px;
     right: 18px; }
-  /* line 331, assets/scss/_base.scss */
+  /* line 341, assets/scss/_base.scss */
   .form-pop input.cta {
     margin: 28px auto 28px;
     display: block; }
 
-/* line 333, assets/scss/_base.scss */
+/* line 343, assets/scss/_base.scss */
 .form-confirmation {
   display: none;
   background: #8e108e;
@@ -8365,15 +8377,15 @@ ul.horz-subnav, .horz-subnav ul {
   text-align: center;
   margin-top: 62px;
   position: relative; }
-  /* line 335, assets/scss/_base.scss */
+  /* line 345, assets/scss/_base.scss */
   .form-confirmation > img {
     padding: 24px 0;
     max-width: 100%; }
-  /* line 336, assets/scss/_base.scss */
+  /* line 346, assets/scss/_base.scss */
   .form-confirmation p {
     font-size: 115%;
     padding-bottom: 32px; }
-  /* line 337, assets/scss/_base.scss */
+  /* line 347, assets/scss/_base.scss */
   .form-confirmation .close {
     position: absolute;
     top: 8px;
@@ -8381,15 +8393,15 @@ ul.horz-subnav, .horz-subnav ul {
     color: #fff; }
 
 /* 			blog 				*/
-/* line 343, assets/scss/_base.scss */
+/* line 353, assets/scss/_base.scss */
 .blog-hero {
   display: block;
   position: relative; }
-  /* line 344, assets/scss/_base.scss */
+  /* line 354, assets/scss/_base.scss */
   .blog-hero img {
     position: relative;
     z-index: 1; }
-  /* line 345, assets/scss/_base.scss */
+  /* line 355, assets/scss/_base.scss */
   .blog-hero .meta-rib {
     display: block;
     width: 53px;
@@ -8400,31 +8412,31 @@ ul.horz-subnav, .horz-subnav ul {
     left: -4px;
     top: -2px;
     z-index: 2; }
-    /* line 347, assets/scss/_base.scss */
+    /* line 357, assets/scss/_base.scss */
     .blog-hero .meta-rib strong {
       display: block;
       text-align: center;
       color: #fff;
       text-transform: uppercase;
       line-height: 1; }
-      /* line 348, assets/scss/_base.scss */
+      /* line 358, assets/scss/_base.scss */
       .blog-hero .meta-rib strong.month {
         font-size: 8px;
         padding-top: 8px; }
-      /* line 349, assets/scss/_base.scss */
+      /* line 359, assets/scss/_base.scss */
       .blog-hero .meta-rib strong.date {
         font-size: 14px;
         padding-top: 0px; }
 
-/* line 353, assets/scss/_base.scss */
+/* line 363, assets/scss/_base.scss */
 .search-hold {
   border: 1px solid #ada398;
   position: relative;
   height: 38px; }
-  /* line 354, assets/scss/_base.scss */
+  /* line 364, assets/scss/_base.scss */
   .search-hold input {
     position: absolute; }
-  /* line 356, assets/scss/_base.scss */
+  /* line 366, assets/scss/_base.scss */
   .search-hold input[type=text] {
     border: none;
     outline: none;
@@ -8433,7 +8445,7 @@ ul.horz-subnav, .horz-subnav ul {
     left: 18px;
     display: block;
     width: 80%; }
-  /* line 358, assets/scss/_base.scss */
+  /* line 368, assets/scss/_base.scss */
   .search-hold input[type=submit] {
     border: 0px solid red;
     background: transparent;
@@ -8444,7 +8456,7 @@ ul.horz-subnav, .horz-subnav ul {
     left: auto;
     width: 38px;
     z-index: 2; }
-  /* line 359, assets/scss/_base.scss */
+  /* line 369, assets/scss/_base.scss */
   .search-hold .fa {
     float: right;
     position: relative;
@@ -8454,47 +8466,47 @@ ul.horz-subnav, .horz-subnav ul {
     text-align: center;
     color: #ada398; }
 
-/* line 362, assets/scss/_base.scss */
+/* line 372, assets/scss/_base.scss */
 .listed h2, .listed h1, .blog-entry h2, .blog-entry h1 {
   font-size: 24px;
   color: #8e108e;
   line-height: 1.2; }
-/* line 364, assets/scss/_base.scss */
+/* line 374, assets/scss/_base.scss */
 .listed .meta-strip, .blog-entry .meta-strip {
   color: #ada398;
   line-height: 1;
   margin-top: 22px;
   font-size: 10px; }
-  /* line 365, assets/scss/_base.scss */
+  /* line 375, assets/scss/_base.scss */
   .listed .meta-strip .name, .blog-entry .meta-strip .name {
     padding-right: 16px;
     border-right: 1px solid #b3aba1; }
-  /* line 366, assets/scss/_base.scss */
+  /* line 376, assets/scss/_base.scss */
   .listed .meta-strip .file, .blog-entry .meta-strip .file {
     padding-left: 16px; }
 
-/* line 370, assets/scss/_base.scss */
+/* line 380, assets/scss/_base.scss */
 .blog-entry h1 {
   color: #ef8e2d; }
-/* line 371, assets/scss/_base.scss */
+/* line 381, assets/scss/_base.scss */
 .blog-entry .meta-strip {
   margin-top: 10px;
   margin-bottom: 40px; }
-/* line 372, assets/scss/_base.scss */
+/* line 382, assets/scss/_base.scss */
 .blog-entry .tag-list {
   line-height: 28px;
   text-align: center;
   margin-bottom: 28px; }
-/* line 375, assets/scss/_base.scss */
+/* line 385, assets/scss/_base.scss */
 .blog-entry .social-rack {
   text-align: center; }
-/* line 376, assets/scss/_base.scss */
+/* line 386, assets/scss/_base.scss */
 .blog-entry .pagi {
   margin-bottom: 28px; }
-  /* line 377, assets/scss/_base.scss */
+  /* line 387, assets/scss/_base.scss */
   .blog-entry .pagi .tile {
     text-align: center; }
-    /* line 378, assets/scss/_base.scss */
+    /* line 388, assets/scss/_base.scss */
     .blog-entry .pagi .tile span {
       display: block;
       width: 15px;
@@ -8502,31 +8514,96 @@ ul.horz-subnav, .horz-subnav ul {
       background: url(assets/img/aros-60-100.png) no-repeat;
       background-size: 30px 50px;
       margin: 0 auto 8px; }
-    /* line 380, assets/scss/_base.scss */
+    /* line 390, assets/scss/_base.scss */
     .blog-entry .pagi .tile.next {
       float: right; }
-    /* line 382, assets/scss/_base.scss */
+    /* line 392, assets/scss/_base.scss */
     .blog-entry .pagi .tile.prev span {
       background-position: 0 0; }
-    /* line 383, assets/scss/_base.scss */
+    /* line 393, assets/scss/_base.scss */
     .blog-entry .pagi .tile.next span {
       background-position: 100% 0; }
-    /* line 385, assets/scss/_base.scss */
+    /* line 395, assets/scss/_base.scss */
     .blog-entry .pagi .tile.prev:hover span {
       background-position: 0 100%; }
-    /* line 386, assets/scss/_base.scss */
+    /* line 396, assets/scss/_base.scss */
     .blog-entry .pagi .tile.next:hover span {
       background-position: 100% 100%; }
 
+/* line 402, assets/scss/_base.scss */
+#comments .comments-title {
+  font-size: 18px;
+  color: #aaa;
+  padding-bottom: 24px; }
+  /* line 403, assets/scss/_base.scss */
+  #comments .comments-title span {
+    color: #8e108e; }
+/* line 407, assets/scss/_base.scss */
+#comments form.comment-form p {
+  padding-bottom: 20px;
+  clear: both;
+  min-height: 32px; }
+/* line 408, assets/scss/_base.scss */
+#comments form.comment-form label {
+  display: inline-block;
+  float: left;
+  width: 20%; }
+/* line 409, assets/scss/_base.scss */
+#comments form.comment-form input[type=text], #comments form.comment-form textarea {
+  display: inline-block;
+  float: left;
+  width: 80%;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  outline: none;
+  padding: 4px; }
+  /* line 410, assets/scss/_base.scss */
+  #comments form.comment-form input[type=text]:focus, #comments form.comment-form textarea:focus {
+    border-color: #8e108e;
+    color: #8e108e;
+    background: #fff; }
+/* line 413, assets/scss/_base.scss */
+#comments form.comment-form .form-allowed-tags {
+  padding-top: 32px; }
+/* line 416, assets/scss/_base.scss */
+#comments .comment + .children {
+  padding-left: 2.5%;
+  padding-top: 16px; }
+/* line 417, assets/scss/_base.scss */
+#comments #reply-title {
+  padding-top: 20px; }
+/* line 419, assets/scss/_base.scss */
+#comments .comment-author.vcard, #comments .comment-meta.commentmetadata, #comments .comment-reply-link {
+  font-size: 12px; }
+
+/* line 422, assets/scss/_base.scss */
+.job-trig {
+  margin-top: 12px;
+  cursor: pointer; }
+
+/* line 425, assets/scss/_base.scss */
+.head-it + .job-trig {
+  margin-top: 0; }
+
+/* line 428, assets/scss/_base.scss */
+.tucc {
+  padding: 12px 0; }
+  /* line 429, assets/scss/_base.scss */
+  .tucc p, .tucc ul, .tucc ol {
+    padding-top: 12px; }
+    /* line 430, assets/scss/_base.scss */
+    .tucc p:first-child, .tucc ul:first-child, .tucc ol:first-child {
+      padding-top: 0; }
+
 /* 			search & results		*/
-/* line 394, assets/scss/_base.scss */
+/* line 437, assets/scss/_base.scss */
 .search-title {
   color: #ada398; }
-  /* line 395, assets/scss/_base.scss */
+  /* line 438, assets/scss/_base.scss */
   .search-title span {
     color: #8e108e; }
 
-/* line 399, assets/scss/_base.scss */
+/* line 442, assets/scss/_base.scss */
 .load-cloak {
   display: none;
   position: fixed;
@@ -8536,7 +8613,7 @@ ul.horz-subnav, .horz-subnav ul {
   bottom: 0;
   background: rgba(255, 255, 255, 0.8);
   z-index: 9999; }
-  /* line 401, assets/scss/_base.scss */
+  /* line 444, assets/scss/_base.scss */
   .load-cloak .icon {
     display: block;
     width: 50px;
@@ -8566,10 +8643,10 @@ ul.horz-subnav, .horz-subnav ul {
     font-size: 18px; }
 
   /* line 6, assets/scss/_768up.scss */
-  p, ul.re-list {
+  p, ul.re-list, ul {
     font-size: 14px; }
     /* line 7, assets/scss/_768up.scss */
-    p.gran, ul.re-list.gran {
+    p.gran, ul.re-list.gran, ul.gran {
       font-size: 13px; }
 
   /* line 11, assets/scss/_768up.scss */
@@ -8829,15 +8906,30 @@ ul.horz-subnav, .horz-subnav ul {
       padding-top: 2px; }
 
   /* line 158, assets/scss/_768up.scss */
+  .page-about .social-rack {
+    font-size: 24px; }
+    /* line 159, assets/scss/_768up.scss */
+    .page-about .social-rack li {
+      text-align: left; }
+      /* line 161, assets/scss/_768up.scss */
+      .page-about .social-rack li > a > span {
+        display: inline;
+        font-size: 14px; }
+
+  /* line 167, assets/scss/_768up.scss */
   .listed .meta-strip, .blog-entry .meta-strip {
     font-size: 16px; }
-  /* line 159, assets/scss/_768up.scss */
+  /* line 168, assets/scss/_768up.scss */
   .listed h2, .listed h1, .blog-entry h2, .blog-entry h1 {
     font-size: 32px; }
 
-  /* line 162, assets/scss/_768up.scss */
+  /* line 171, assets/scss/_768up.scss */
   .mobile.service-menu {
-    display: none; } }
+    display: none; }
+
+  /* line 173, assets/scss/_768up.scss */
+  #comments {
+    width: 72%; } }
 /*
 DESKTOP
 */
@@ -8877,21 +8969,21 @@ DESKTOP
     display: block;
     height: 490px; }
 
-  /* line 29, assets/scss/_1040up.scss */
+  /* line 28, assets/scss/_1040up.scss */
   .page-connect .map iframe {
     height: 488px; }
-  /* line 30, assets/scss/_1040up.scss */
+  /* line 29, assets/scss/_1040up.scss */
   .page-connect .content {
     height: 488px;
     position: relative; }
-    /* line 32, assets/scss/_1040up.scss */
+    /* line 31, assets/scss/_1040up.scss */
     .page-connect .content .social-rack {
       position: absolute;
       bottom: 18px;
       left: 0;
       right: 0; }
 
-  /* line 35, assets/scss/_1040up.scss */
+  /* line 34, assets/scss/_1040up.scss */
   .form-pop {
     margin-top: 114px;
     padding: 32px 44px; } }
