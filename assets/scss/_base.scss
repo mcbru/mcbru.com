@@ -231,7 +231,7 @@ ul.horz-subnav, .horz-subnav ul
 		.head-it 		{	margin-top:40px;	}
 		&.non 			{	min-height:0.001em;	}
 	}
-		.close 			{	position:absolute;top:18px;right:0px;	}
+		.close 			{	position:absolute;top:18px;right:0px;font-size:48px; }
 }
 
 
@@ -337,14 +337,14 @@ ul.horz-subnav, .horz-subnav ul
 					{	margin-top:12px;display:block;width:100%;border:1px solid $mcb-gray-sub2;outline:none;padding:12px 14px;line-height:1.2;font-size:14px;	}
 	textarea 		{	height:180px;	}
 	label 			{	font-size:12px;	}
-	.close 			{	position:absolute;top:8px;right:18px;	}
+	.close 			{	position:absolute;top:8px;right:18px;font-size:48px;	}
 	input.cta 		{	margin:28px auto 28px;display:block;	}
 }
 .form-confirmation 	{	display:none;background:$mcb-purp;color:#fff;
 						text-align:center;	margin-top:62px;position:relative;	
 	& > img 		{	padding:24px 0;max-width:100%;	}
 	p 				{	font-size:115%;padding-bottom:32px;	}
-	.close 			{	position:absolute;top:8px;right:18px;color:#fff;	}
+	.close 			{	position:absolute;top:8px;right:18px;color:#fff;font-size:48px;	}
 }
 
 

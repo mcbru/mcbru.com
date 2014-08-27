@@ -118,7 +118,7 @@
 
 						</div>
 
-						<a href="#" id="close" class="close">X</a>
+						<a href="#" id="close" class="close">×</a>
 					</div>
 					<script>
 

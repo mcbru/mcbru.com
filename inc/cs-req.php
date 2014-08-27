@@ -27,7 +27,7 @@
 
 					<h2><?php echo $it->post_title; ?></h2>
 						<p><?php echo $subt; ?></p>
-						<a href="#" id="close" class="close">X</a>
+						<a href="#" id="close" class="close">×</a>
 			</div>
 
       <?php if($hero) : ?><img src="<?php echo $hero; ?>" class="hero" alt="" /><?php endif; ?>

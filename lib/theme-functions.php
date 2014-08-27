@@ -166,6 +166,7 @@ function mb_scripts() {
 		wp_enqueue_script('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js', array('jquery') );
 		wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.6.2.min.js', false, NULL );
 
+		wp_enqueue_script('twitter', '//platform.twitter.com/widgets.js');
 		//wp_enqueue_script('gumby', get_template_directory_uri() . '/assets/js/vendor/gumby.min.js', false, NULL );
 
 

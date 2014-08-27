@@ -49,7 +49,7 @@
 							</div>
 						</div>
 
-						<a href="#" class="close">X</a>
+						<a href="#" class="close">×</a>
 					</div>
 				</div>
 			</div>*/ ?>

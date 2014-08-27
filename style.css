@@ -8107,7 +8107,8 @@ ul.horz-subnav, .horz-subnav ul {
   .float-wrap .close {
     position: absolute;
     top: 18px;
-    right: 0px; }
+    right: 0px;
+    font-size: 48px; }
 
 /* 			case study 			*/
 /* line 239, assets/scss/_base.scss */
@@ -8363,7 +8364,8 @@ ul.horz-subnav, .horz-subnav ul {
   .form-pop .close {
     position: absolute;
     top: 8px;
-    right: 18px; }
+    right: 18px;
+    font-size: 48px; }
   /* line 341, assets/scss/_base.scss */
   .form-pop input.cta {
     margin: 28px auto 28px;
@@ -8390,7 +8392,8 @@ ul.horz-subnav, .horz-subnav ul {
     position: absolute;
     top: 8px;
     right: 18px;
-    color: #fff; }
+    color: #fff;
+    font-size: 48px; }
 
 /* 			blog 				*/
 /* line 353, assets/scss/_base.scss */
