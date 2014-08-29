@@ -261,3 +261,16 @@ function no_post_limit( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'no_post_limit' );
+
+
+// most of our youtube embeds are gonna be short, let's get rid
+// of those unsightly player controls
+function remove_youtube_controls($code){
+    if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
+        $return = preg_replace("@src=(['\"])?([^'\">s]*)@", "src=$1$2&autoplay=0&showinfo=0&controls=0&rel=0", $code);
+        return $return;
+    }
+    return $code;
+}
+add_filter('embed_handler_html', 'remove_youtube_controls');
+add_filter('embed_oembed_html', 'remove_youtube_controls');
