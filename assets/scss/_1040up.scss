@@ -1,6 +1,6 @@
-.header 		{	height:126px;	
+.header 		{	/*height:384px;126px;*/	
 	.toggle 	{	display:none;	}
-	nav.desktop 		{	display:inline-block;position:absolute;width:auto;right:0;top:46px;	top:62px;	display:block;
+	nav.desktop 		{	display:inline-block;position:absolute;width:auto;right:0;top:46px;	top:78px;	display:block;
 		ul 		{		}
 	}
 	nav.mobile 	{ 	display:none;
@@ -8,7 +8,7 @@
 	}
 	.logo 			{	margin-top:40px;	}
 }
-.home .header 	{	height:106px;	}
+/*.home .header 	{	height:106px;	}*/
 
 
 .team 		{
@@ -18,7 +18,7 @@
 
 
 .home 		{
-	.hero 	{	display:block;height:490px;	}
+	/*.hero 	{	display:block;height:490px;	}*/
 }
 
 

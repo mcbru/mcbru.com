@@ -56,9 +56,20 @@
 			<div class="float-wrap"></div>
 
 			<div class="tucker">
-				<?php the_content(); ?>
-
-				<div class="about content">
+				<div class="row">
+					<div class="eight columns">
+						<?php the_content(); ?>
+					</div>
+					<div class="sixteen columns">
+					<?php if(has_post_thumbnail()) : 
+						the_post_thumbnail('bl-wide');
+					else : ?>
+						<img src="http://placehold.it/660x392" alt="" />
+					<?php endif; ?>
+					</div>
+				</div>
+				<h3 class="head-it clearfix bump42">The Crew<i class="fa fa-users"></i></h3>
+				<div class="about content bump18">
 						<div class="rac row">
 
 						<?php 
@@ -85,9 +96,9 @@
 								//print_r($tmate);
 							 ?>
 							<a class="tile" data-id="<?php echo $d; ?>" data-slug="<?php echo $tmate->post_name; ?>">
-								<?php if(has_post_thumbnail($d)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($d), 'full' ); ?>
-									<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" />
-								<?php else : ?>
+								<?php if(has_post_thumbnail($d)) : //$img = wp_get_attachment_image_src( get_post_thumbnail_id($d), 'full' );
+									echo get_the_post_thumbnail($d,'bl-port');
+								else : ?>
 									<img src="http://placehold.it/488x540" alt="" />
 								<?php endif; ?>
 								<div class="screen">

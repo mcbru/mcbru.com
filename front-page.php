@@ -1,5 +1,15 @@
-<?php get_header();
+<?php 
 
+	// give me my content
+	$ee 			= $post->ID;
+	// $hero_img 		= get_field('hero_image',$ee);
+	// $hero_cont 		= get_field('hero_content',$ee);
+	// $hero_link 		= get_field('hero_link',$ee);
+	// $hero_link_lbl 	= get_field('hero_link_label',$ee);
+	$sub_left 		= get_field('sub_hero_left',$ee);
+	$sub_right 		= get_field('sub_hero_right',$ee);
+
+get_header();
 require_once('TwitterAPIExchange.php');
 
 // Set access tokens here - https://dev.twitter.com/apps/
@@ -46,39 +56,16 @@ function parseTwitterText($text) {
 }
 ?>
 
-	<div class="hero">
-		<div class="rotator">
-			<ul>
-				<li>
-					<div class="bg" style="background-image:url(<?php echo THEME; ?>/assets/img/slide-standin.jpg);"></div>
-					<div class="content">
-						<h3>B2B Technology Is Our World.</h3>
-						<p>McBru is a full-service, integrated agency with expertise in content creation, influencer relations, and social media for high-tech companies.</p>
-					</div>
-					<a href="#" class="cta">Our Blog ></a>
-				</li>
-				<!-- <li style="background-image:url(<?php echo THEME; ?>/assets/img/slide-standin.jpg);">
-					<div class="content">
-						<h3>B2B Technology Is Our World.</h3>
-						<p>McBru is a full-service, integrated agency with expertise in content creation, influencer relations, and social media made for high-end clients.</p>
-					</div>
-					<a href="#" class="cta">Our Blog ></a>
-				</li>
-				<li style="background-image:url(<?php echo THEME; ?>/assets/img/slide-standin.jpg);">
-					<div class="content">
-						<h3>B2B Technology Is Our World.</h3>
-						<p>McBru is a full-service, integrated agency with expertise in content creation, influencer relations, and social media made for high-end clients.</p>
-					</div>
-					<a href="#" class="cta">Our Blog ></a>
-				</li> -->
-			</ul>
-		</div>
-		<div class="control">
-
-		</div>
-	</div>
 
 		<div class="row">
+			<div class="twelve columns bump18">
+				<?php echo apply_filters('the_content', $sub_left); ?>
+			</div>
+			<div class="twelve columns bump18">
+				<?php echo apply_filters('the_content', $sub_right); ?>
+			</div>
+		</div>
+		<div class="row bump42">
 			<div class="twelve columns">
 				<h3 class="head-it clearfix">Recent Posts<i class="fa fa-comments"></i></h3>
 				<ul class="link-list">

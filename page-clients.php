@@ -1,22 +1,23 @@
 <?php get_header(); 
 
-	$buckets = get_field('buckets');
+	$imag = get_field('clients_img');
 	?>
 
 	<div class="row">
 		<div class="twenty-four columns content">
 			<?php the_content(); ?>
+			<?php if($imag) : echo wp_get_attachment_image($imag,'full'); endif; ?>
 		</div>
 	</div>
 
 
-	<center><img src="<?php echo THEME; ?>/assets/img/services.png" alt="" /></center>
+	<?php /*<center><img src="<?php echo THEME; ?>/assets/img/services.png" alt="" /></center>
 
 	<ul class="tiles three_up mobile service-menu">
 		<li>What?</li>
 		<li>For Whom?</li>
 		<li>How?</li>
-	</ul>
+	</ul>*/ ?>
 
 	<div class="row stacs"><div class="content">
 		<?php /*
