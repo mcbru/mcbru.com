@@ -10,7 +10,7 @@
 	$sub_right 		= get_field('sub_hero_right',$ee);
 
 get_header();
-require_once('TwitterAPIExchange.php');
+require_once(THEME.'/TwitterAPIExchange.php');
 
 // Set access tokens here - https://dev.twitter.com/apps/
 $settings = array(
