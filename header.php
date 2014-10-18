@@ -1,5 +1,5 @@
 <?php 
-
+	global $post;
 	$ee 				= $post->ID;	
 	if(!is_page('home')) :
 		$strip_head 		= get_field('hed_img',$ee);
