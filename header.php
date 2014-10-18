@@ -1,7 +1,7 @@
 <?php 
 
 	$ee 				= $post->ID;	
-	if(!is_front_page()) :
+	if(!is_page('home')) :
 		$strip_head 		= get_field('hed_img',$ee);
 		if(!$strip_head) :
 			$strip_head 	= get_field('gh_img','Options');
@@ -64,7 +64,7 @@
 <div class="full-wrap">
 
 		<header class="header clearfix" style="background:url(<?php echo $bee_gee;  ?>) 50% 50% no-repeat;background-size:cover;">
-			<?php if(!is_front_page()) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
+			<?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
 			<div class="container">
 			<a class="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
 			<?php /*<div class="description">bloginfo( 'description' );</div>*/ ?>
@@ -77,7 +77,7 @@
 			</nav>
 			</div>
 
-<?php if(is_front_page()) : ?>
+<?php if(is_page('home')) : ?>
 	<div class="hero">
 		<div class="rotator">
 			<ul>
@@ -115,7 +115,7 @@
 
 	<div class="container">
 
-		<?php if((  is_page()  &&  !is_front_page()  && !is_page('blog-single-proof'))||is_archive()) : ?>
+		<?php if((  is_page()  &&  !is_page('home')  && !is_page('blog-single-proof'))||is_archive()) : ?>
 			<div class="row">
 				<div class="twenty-four columns">
 					<h1 class="head-it clearfix"><?php 
