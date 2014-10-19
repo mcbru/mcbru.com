@@ -24,7 +24,10 @@ p, ul.re-list, ul 		{	font-size:14px;
 }
 /*.home .header 	{	height:84px;	}*/
 
-
+.rac.serv>a {		
+				height:298px;@include trans();
+	&:hover {	background-color:#f8f7f7;	}
+}
 
 ul.horz-subnav, .horz-subnav ul 		
 			{	display:block;width:auto;text-align:center;margin:22px auto 0;padding:22px 0;background:#f6f4f3;/*margin:40px auto;*/

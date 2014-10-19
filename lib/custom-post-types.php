@@ -38,6 +38,39 @@ function codex_() {
 		'supports'           => array( 'title', 'thumbnail', 'editor'  ) /*'author', 'excerpt', 'comments'*/
 	);
 
+
+	$serv_labels = array(
+		'name'               => _x( 'All Services', 'post type general name', 'your-plugin-textdomain' ),
+		'singular_name'      => _x( 'Service', 'post type singular name', 'your-plugin-textdomain' ),
+		'menu_name'          => _x( 'Services', 'admin menu', 'your-plugin-textdomain' ),
+		'name_admin_bar'     => _x( 'Service', 'add new on admin bar', 'your-plugin-textdomain' ),
+		'add_new'            => _x( 'Add New', 'Project', 'your-plugin-textdomain' ),
+		'add_new_item'       => __( 'Add New Service', 'your-plugin-textdomain' ),
+		'new_item'           => __( 'New Service', 'your-plugin-textdomain' ),
+		'edit_item'          => __( 'Edit Service', 'your-plugin-textdomain' ),
+		'view_item'          => __( 'View Service', 'your-plugin-textdomain' ),
+		'all_items'          => __( 'All Services', 'your-plugin-textdomain' ),
+		'search_items'       => __( 'Search Services', 'your-plugin-textdomain' ),
+		'parent_item_colon'  => __( 'Parent Work:', 'your-plugin-textdomain' ),
+		'not_found'          => __( 'No Services found.', 'your-plugin-textdomain' ),
+		'not_found_in_trash' => __( 'No Services found in Trash.', 'your-plugin-textdomain' ),
+	);
+
+	$serv_args = array(
+		'labels'             => $serv_labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'services' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => 2,
+		'supports'           => array( 'title', 'thumbnail', 'excerpt', 'editor'  ) /*'author', 'comments'*/
+	);	
+
 	$cs_labels = array(
 		'name'               => _x( 'Case Studies', 'post type general name', 'your-plugin-textdomain' ),
 		'singular_name'      => _x( 'Case Study', 'post type singular name', 'your-plugin-textdomain' ),
@@ -102,10 +135,12 @@ function codex_() {
 		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ) /*'author', , 'comments'*/
 	);
 
+	register_post_type( 'services', $serv_args );
 	register_post_type( 'work', $work_args );
 	register_post_type( 'case-studies', $cs_args );
 	register_post_type( 'team', $team_args );
 
+	/*
 	register_taxonomy(
 		'type',
 		'work',
@@ -127,9 +162,9 @@ function codex_() {
 		'query_var' => true,
 		'rewrite' => array('slug' => 'work-topic','with_front' => false)
 		)
-	);
+	); */
 
-// remove columns that we don't need
+// 	remove columns that we don't need
 
 	function my_manage_columns( $columns ) {
 		unset(

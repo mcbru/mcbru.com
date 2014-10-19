@@ -1,6 +1,13 @@
 <?php get_header(); 
 
-	$buckets = get_field('buckets');
+	// $buckets = get_field('buckets');
+
+	$args = array(
+		'posts_per_page' 		=> -1,
+		'post_type' 			=> 'services'
+	);
+	$corr = get_posts($args);
+
 	?>
 
 	<div class="row">
@@ -10,15 +17,27 @@
 	</div>
 
 
-	<center><img src="<?php echo THEME; ?>/assets/img/services.png" alt="" /></center>
+	<div class="content"><div class="row rac serv stacs">
+	<?php 
+
+	foreach($corr as $coun => $tac) : 
+		$ico = get_field('icon',$tac->ID); $src = wp_get_attachment_image_src($ico,'full'); ?>
+
+		<a href="#" class="tile" style="background-image:url(<?php echo $src[0]; ?>);">
+		<h3><?php echo $tac->post_title; ?></h3>
+		<p><?php echo $tac->post_excerpt; ?></p>
+		</a>
+
+	<?php endforeach;
+
+	/*<center><img src="<?php echo THEME; ?>/assets/img/services.png" alt="" /></center>
 
 	<ul class="tiles three_up mobile service-menu">
 		<li>What?</li>
 		<li>For Whom?</li>
 		<li>How?</li>
-	</ul>
+	</ul>*/ ?>
 
-	<div class="row stacs"><div class="content">
 		<?php /*
 			foreach($buckets as $coun => $bkt) :
 				echo '<div>';
