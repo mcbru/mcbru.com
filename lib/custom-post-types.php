@@ -64,9 +64,9 @@ function codex_() {
 		'show_in_menu'       => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'services' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => true,
+		'capability_type'    => 'page',
+		'has_archive'        => false,
+		//'hierarchical'       => false,
 		'menu_position'      => 2,
 		'supports'           => array( 'title', 'thumbnail', 'excerpt', 'editor'  ) /*'author', 'comments'*/
 	);	
