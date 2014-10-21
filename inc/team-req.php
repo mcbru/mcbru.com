@@ -15,6 +15,7 @@
 
 	$auth = get_field('author_link',$z);
 	$socs = get_field('social',$z);
+  $alt_image = get_field('alternate_image',$z);
 	$soc_c = count($socs);
 	if($soc_c==4) :
 		$seto = 'four_up';
@@ -35,15 +36,14 @@
 						<div class="columns twelve">
 
 
-							<?php if(has_post_thumbnail($z)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($z), 'full' ); ?>
-								<img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" />
+              <?php if(!empty($alt_image)): ?>
+                <img src="<?php echo $alt_image['url']; ?>" alt="<?php echo $alt_image['alt']; ?>" />
+							<?php elseif(has_post_thumbnail($z)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($z), 'full' ); ?>
+                <img src="<?php echo TIM . $img[0] . BL_PORT;  ?>" alt="" />
 							<?php else : ?>
-
 								<img src="http://placehold.it/488x540" alt="" />
 							<?php endif; ?>
 
-									<!-- 
-							<img src="http://placehold.it/488x488" alt=""> -->
 						</div>
 						<div class="columns twelve">
 							<div class="scrollo">
