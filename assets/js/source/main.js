@@ -98,6 +98,11 @@
 					var goToA = $('.tile[data-slug="'+event.value+'"]').attr('data-id');
 					load_jax(goToA,'team-req.php');
 				break;
+				/*case "services":
+					var goToA = $('.tile.cs[data-slug="'+event.value+'"]').attr('data-id');
+					alert(goToA);
+					//load_jax(goToA,'serv-req.php');
+				break;*/
 			}
 			// load_jax(event.value,'proj-req.php');
 			change_flag = false;
@@ -127,6 +132,14 @@
 			}
 			e.preventDefault();
 		});
+		$('.rels .tile.cs').on('click', function(e) {
+			var $d = $(this).attr('data-id');
+			var $n = $(this).attr('data-slug');
+			change_flag = false;
+			$.address.value($n);
+			load_jax($d,'cs-req.php');
+			e.preventDefault();
+		});
 	}
 	work_tiles();
 
@@ -152,13 +165,22 @@
 		change_flag = false;
 		$.address.value($n);
 		load_jax($d,'team-req.php');
-		// mem_set = $(this).parent().parent();
 		e.preventDefault();
+	});
+		// mem_set = $(this).parent().parent();
 		// $('.tucker').slideUp();
 		// $('.float-wrap').slideDown(function() {
 		// 	rollMe($('.float-wrap'));
 		// });
 		// mem_set = $(this);
+
+	$('.serv .tile').on('click', function(e) {
+		$d = $(this).attr('data-id');
+		$n = $(this).attr('data-slug');
+		change_flag = false;
+		$.address.value($n);
+		load_jax($d,'serv-req.php');
+		e.preventDefault();
 	});
 
 	$('.cloaker').on('click', function(e) {
