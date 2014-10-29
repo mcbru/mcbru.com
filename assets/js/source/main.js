@@ -1,12 +1,5 @@
 
 (function($) {
-	//
-	// all Javascript code goes here
-	/*$('.hero .rotator ol').bxSlider({
-		pager: false,
-		ease: 'ease-in',
-		useCSS: false
-	});*/
 
 	var $rout 	= '/wp-content/themes/mcb-v1/inc/';
 
@@ -15,7 +8,6 @@
 		$("html, body").stop(true).animate({ scrollTop: ($go)+"px" });
 	}
 
-	// var mem_set;
  	var change_flag = true;
 
 	function arm_close() {
@@ -61,24 +53,16 @@
 		}); 
 	}
 
-
-
 	$.address.strict(false);
 
 	$.address.change(function(event) {
-		// console.log($.address.baseURL());
-		// var $d = $(this).attr('data-id');
+
 		if((change_flag == true) && (event.value)) {
-			//alert('whut');
+
 			var url = $.address.baseURL();
 			var url_param_n = url.lastIndexOf('/');
 			var url_param = url.substring(url_param_n + 1);
 
-			//
-			//
-
-			//alert(goTo);
-			
 			console.log(url_param);
 			switch(url_param) {
 				case "work":
@@ -98,13 +82,21 @@
 					var goToA = $('.tile[data-slug="'+event.value+'"]').attr('data-id');
 					load_jax(goToA,'team-req.php');
 				break;
-				/*case "services":
-					var goToA = $('.tile.cs[data-slug="'+event.value+'"]').attr('data-id');
-					alert(goToA);
-					//load_jax(goToA,'serv-req.php');
-				break;*/
+				case "services":
+					var tmpl,
+					targg = $('[data-slug="'+event.value+'"]'),
+					goToS = $('[data-slug="'+event.value+'"]').attr('data-id');
+					if(targg.hasClass('dta')) {
+						tmpl = 'cs-req.php';
+					} else {
+						tmpl = 'serv-req.php';
+					}
+
+					load_jax(goToS,tmpl);
+
+				break;
 			}
-			// load_jax(event.value,'proj-req.php');
+
 			change_flag = false;
 		} else if(change_flag == true) {
 			$('.tucker').slideDown(function() {
@@ -113,11 +105,8 @@
 			$('.float-wrap').slideUp();
 
 		}
-		// mem_set = $(this).parent().parent();
-		// e.preventDefault();
+
 	});
-
-
 
 	function work_tiles() {
 		$('.rels .tile .cta').on('click', function(e) {
@@ -145,7 +134,7 @@
 
 
 	$('.work .tile .cta').on('click', function(e) {
-		// console.log($(this));
+
 		var $d = $(this).attr('data-id');
 		var $n = $(this).attr('data-slug');
 		change_flag = false;
@@ -155,7 +144,6 @@
 		} else if ($(this).hasClass('cs')) {
 			load_jax($d,'cs-req.php');
 		}
-		// mem_set = $(this).parent().parent();
 		e.preventDefault();
 	});
 
@@ -167,12 +155,6 @@
 		load_jax($d,'team-req.php');
 		e.preventDefault();
 	});
-		// mem_set = $(this).parent().parent();
-		// $('.tucker').slideUp();
-		// $('.float-wrap').slideDown(function() {
-		// 	rollMe($('.float-wrap'));
-		// });
-		// mem_set = $(this);
 
 	$('.serv .tile').on('click', function(e) {
 		$d = $(this).attr('data-id');
@@ -200,7 +182,6 @@
 	function mail_sent() {
 		console.log('mail_sent seen');
 	}
-	//var mnav_open = false;
 
 	$('.header .toggle').on('click',function(e) {
 		e.preventDefault();
@@ -252,62 +233,5 @@
 		template: '<a href="{{link}}"><img src="{{image}}" /></a>'
 	});
 	userFeed.run();
-
-
-
-			// var init = true, 
-			//     state = window.history.pushState !== undefined;
-			
-			// // Handles response
-			// var handler = function(XMLHttpRequest, textStatus) {
-			//     var data = $.parseJSON(XMLHttpRequest.responseText);
-			//     $.address.title(data.title);
-			//     $('.content').html(data.content);
-			//     $('.page').show();
-			// };
-			
-			// $.address.state('/').init(function(event) {
-
-			//     // Initializes the plugin
-			//     $('.tile .cta0').address();
-				
-			// }).change(function(event) {
-
-			//     var value = $.address.state().replace(/^\/$/, '') + event.value;
-				
-			//     // Selects the proper navigation link
-			//     $('.tile .cta0').each(function() {
-			//         if ($(this).attr('href') == value) {
-			//             $(this).addClass('selected').focus();
-			//         } else {
-			//             $(this).removeClass('selected');
-			//         }
-			//     });
-				
-			//     if (state && init) {
-				
-			//         init = false;
-				
-			//     } else {
-				
-			//         // Loads and populates the page data
-			//         $.ajax({
-			//             cache: false,
-			//             complete: handler,
-			//             url: value
-			//         });
-			//     }
-				
-			// });
-
-			// if (!state) {
-			
-			//     // Hides the page during initialization
-			//     document.write('<style type="text/css"> .page { display: none; } </style>');
-			// }
-			
-
-
-
 
 })(jQuery);

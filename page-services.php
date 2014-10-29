@@ -22,12 +22,15 @@
 			<div class="content"><div class="rac serv stacs">
 			<?php 
 
-			foreach($corr as $coun => $tac) : $d = $tac->ID;
+			foreach($corr as $coun => $tac) : $d = $tac->ID; $cs = get_field('rel_cs',$d);
 				$ico = get_field('icon',$d); $src = wp_get_attachment_image_src($ico,'full'); ?>
 
 				<a href="#" class="tile" style="background-image:url(<?php echo $src[0]; ?>);" data-id="<?php echo $d; ?>" data-slug="<?php echo $tac->post_name; ?>">
 				<h3><?php echo $tac->post_title; ?></h3>
 				<p><?php echo $tac->post_excerpt; ?></p>
+				<?php if($cs) : foreach($cs as $coun => $casu) : ?>
+					<div class="dta" data-id="<?php echo $casu->ID; ?>" data-slug="<?php echo $casu->post_name; ?>"></div>
+				<?php endforeach; endif; ?>
 				</a>
 
 			<?php endforeach; ?>
