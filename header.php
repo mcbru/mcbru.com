@@ -1,39 +1,42 @@
-<?php 
-	global $post;
-	$ee 				= $post->ID;	
-	if(!is_page('home')) :
-		$strip_head 		= get_field('hed_img',$ee);
-		if(!$strip_head) :
-			$strip_head 	= get_field('gh_img','Options');
-			endif;
-		$strip = wp_get_attachment_image_src($strip_head, 'full-bleed-strip');
-	else :
-		$hero_img 		= get_field('hero_image',$ee);
-		//global $hero_img;
-		$strip = wp_get_attachment_image_src($hero_img, 'full-bleed');
-		$hero_cont 		= get_field('hero_content',$ee);
-		$hero_link 		= get_field('hero_link',$ee);
-		$hero_link_lbl 	= get_field('hero_link_label',$ee);
-		//$sub_left 		= get_field('sub_hero_left',$ee);
-		//$sub_right 		= get_field('sub_hero_right',$ee);
-		endif;
-		$bee_gee 			= $strip[0];
+<?php
+  global $post;
+  $ee 				= $post->ID;	
+  if(!is_page('home') && !is_page('about') && !is_page('services')) :
+    $strip_head 		= get_field('hed_img',$ee);
+    if(!$strip_head) :
+      $strip_head 	= get_field('gh_img','Options');
+    endif;
+    $strip = wp_get_attachment_image_src($strip_head, 'full-bleed-strip');
+  else :
+    $hero_img 		= get_field('hero_image',$ee);
+    // echo var_dump($hero_img);
+    //global $hero_img;
+    // $strip = wp_get_attachment_image_src($hero_img, 'full-bleed');
+    $strip = wp_get_attachment_image_src($hero_img, 'full');
+    $hero_cont 		= get_field('hero_content',$ee);
+    $hero_link 		= get_field('hero_link',$ee);
+    $hero_link_lbl 	= get_field('hero_link_label',$ee);
+    //$sub_left 		= get_field('sub_hero_left',$ee);
+    //$sub_right 		= get_field('sub_hero_right',$ee);
+  endif;
+    $bee_gee 			= $strip[0];
+    // echo var_dump($bee_gee);
 ?>
+
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]--> <!-- 
 
 
-	                                         
-	 _|_|_|_|                  _|_|_|  
-	 _|             _|       _|        
-	 _|_|_|       _|_|_|     _|        
-	 _|             _|       _|        
-	 _|_|_|_|                  _|_|_|  
-	
-	 designed by Christine Ellsworth
-	     developed by Dan Cruzat
-	            eencee.me
+   _|_|_|_|                  _|_|_|
+   _|             _|       _|
+   _|_|_|       _|_|_|     _|
+   _|             _|       _|
+   _|_|_|_|                  _|_|_|
+
+   designed by Christine Ellsworth
+       developed by Dan Cruzat
+              eencee.me
 
 
 
@@ -63,59 +66,65 @@
 		?>
 <div class="full-wrap">
 
-		<header class="header clearfix" style="background:url(<?php echo $bee_gee;  ?>) 50% 50% no-repeat;background-size:cover;">
-			<?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
-			<div class="container">
-			<a class="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-			<?php /*<div class="description">bloginfo( 'description' );</div>*/ ?>
-				<a class="toggle" href="#"><i class="fa fa-bars"></i></a>
-			<nav class="desktop">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav>
-			<nav class="mobile">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav>
-			</div>
+<header class="header clearfix" 
+  <?php if($bee_gee && is_page('home')) : ?>
+    style="
+      background: #000 url(<?php echo $bee_gee; ?>) 50% 0% no-repeat;
+      min-height:550px;
+    "
+  <?php elseif($bee_gee && is_page('services')) : ?>
+    style="
+      background: #000 url(<?php echo $bee_gee; ?>) 50% 150px repeat-x;
+      min-height:550px;
+    "
+  <?php elseif($bee_gee) : ?>
+    style="
+      background: #000 url(<?php echo $bee_gee; ?>) 50% 150px no-repeat;
+      min-height:550px;
+    "
+  <?php endif; ?>>
 
-<?php if(is_page('home')) : ?>
-	<div class="hero">
-		<div class="rotator">
-			<ul>
-				<li><div class="container">
-					<?php //<div class="bg" style="background-image:url(<?php echo THEME; ? >/assets/img/slide-standin.jpg);"></div> ?>
-					<div class="content">
-						<?php echo apply_filters('the_content', $hero_cont); ?>
-					
-						<a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?> ></a>
-					</div>
-				</div></li>
-				<!-- <li style="background-image:url(<?php echo THEME; ?>/assets/img/slide-standin.jpg);">
-					<div class="content">
-						<h3>B2B Technology Is Our World.</h3>
-						<p>McBru is a full-service, integrated agency with expertise in content creation, influencer relations, and social media made for high-end clients.</p>
-					</div>
-					<a href="#" class="cta">Our Blog ></a>
-				</li>
-				<li style="background-image:url(<?php echo THEME; ?>/assets/img/slide-standin.jpg);">
-					<div class="content">
-						<h3>B2B Technology Is Our World.</h3>
-						<p>McBru is a full-service, integrated agency with expertise in content creation, influencer relations, and social media made for high-end clients.</p>
-					</div>
-					<a href="#" class="cta">Our Blog ></a>
-				</li> -->
-			</ul>
-		</div>
-		<div class="control">
+    <?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
+    <div class="container">
+      <a class="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+      <?php /*<div class="description">bloginfo( 'description' );</div>*/ ?>
+        <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
+      <nav class="desktop">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+      </nav>
+      <nav class="mobile">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+      </nav>
+    </div>
 
-		</div>
-	</div>
-<?php endif; ?>
+    <?php if(is_page('home') || is_page('about') || is_page('services')) : ?>
+      <div class="hero">
+        <!-- <div class="rotator"> -->
+          <!-- <ul> -->
+            <!-- <li> -->
+              <div class="container">
+                <?php //<div class="bg" style="background-image:url(<?php echo THEME; ? >/assets/img/slide-standin.jpg);"></div> ?>
+                <div class="content">
+                  <?php echo apply_filters('the_content', $hero_cont); ?>
 
-		</header>
+                  <?php if(is_page('home')) : ?>
+                    <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?> ></a>
+                  <?php endif; ?>
+                </div>
+              </div>
+            <!-- </li> -->
+          <!-- </ul> -->
+        <!-- </div> -->
+        <!-- <div class="control"> -->
+
+        <!-- </div> -->
+      </div>
+    <?php endif; ?>
+  </header>
 
 	<div class="container">
 
-		<?php if((  is_page()  &&  !is_page('home')  && !is_page('blog-single-proof'))||is_archive()) : ?>
+		<?php if((  is_page()  &&  !is_page('home')  &&  !is_page('services')  &&  !is_page('about')  && !is_page('blog-single-proof'))||is_archive()) : ?>
 			<div class="row">
 				<div class="twenty-four columns">
 					<h1 class="head-it clearfix"><?php 

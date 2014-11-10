@@ -198,63 +198,78 @@ function mb_remove_more_jump_link($link) {
 }
 
 
-// Thanks Matt I'll take it from here
+/*** Thanks Matt I'll take it from here ***/
 
 
-	// single shortcode in custom field
-	function field_code($str) {
-		$str1 = explode('[', $str);
-		$str2 = explode(']', $str);
-		preg_match_all("^\[(.*?)\]^",$str,$fields, PREG_PATTERN_ORDER);		
-		if($fields[0]) {		
-			$str = $str1[0] . do_shortcode($fields[0][0]) . $str2[1]; 
-		}
-		return $str;
-	}
-
-	// phone cleaner
-	function phone_lnk($phone, $icon=false) 
-	{
-		$call = preg_replace('/(\W*)/', '', $phone);
-		$str = '<a href="tel:' . $call . '">'.$phone.'</a>';
-		return $str;
-	}
-
-	// superfresh weblink cleaner
-	function web_lnk($url,$label,$class)
-	{
-		//print_r($label);
-		if(!$label) {
-			$label = str_replace(array('http://','https://','www.'),'',$url);
-		}
-		if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
-		    $url = "http://" . $url;
-		}
-		$str = '<a href="'.$url.'" target="_blank"';
-		if($class) :
-			$str .= ' class="'.$class.'"';
-			endif;
-		$str .= '>'.$label.'</a>';
-		//print_r($str);
-		return $str;
-	}
-
-	// url in shortcode
-	function url_shortcode() {
-		return RL;
-	}
-	add_shortcode('url','url_shortcode');
+/**
+ * Single shortcode in custom field
+ */
+function field_code($str) {
+  $str1 = explode('[', $str);
+  $str2 = explode(']', $str);
+  preg_match_all("^\[(.*?)\]^",$str,$fields, PREG_PATTERN_ORDER);		
+  if($fields[0]) {		
+    $str = $str1[0] . do_shortcode($fields[0][0]) . $str2[1]; 
+  }
+  return $str;
+}
 
 
-	// word trimmer
-	function word_limit($string, $word_limit)
-	{
-	    $words = explode(" ",$string);
-	    return implode(" ",array_splice($words,0,$word_limit));
-	}
+/**
+ * Phone cleaner
+ */
+function phone_lnk($phone, $icon=false) 
+{
+  $call = preg_replace('/(\W*)/', '', $phone);
+  $str = '<a href="tel:' . $call . '">'.$phone.'</a>';
+  return $str;
+}
 
 
-// only limit posts on the main blog page
+/**
+ * Superfresh weblink cleaner
+ */
+function web_lnk($url,$label,$class)
+{
+  //print_r($label);
+  if(!$label) {
+    $label = str_replace(array('http://','https://','www.'),'',$url);
+  }
+  if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+      $url = "http://" . $url;
+  }
+  $str = '<a href="'.$url.'" target="_blank"';
+  if($class) :
+    $str .= ' class="'.$class.'"';
+    endif;
+  $str .= '>'.$label.'</a>';
+  //print_r($str);
+  return $str;
+}
+
+
+/**
+ * URL in shortcode
+ */
+function url_shortcode() {
+  return RL;
+}
+add_shortcode('url','url_shortcode');
+
+
+/**
+ * Word trimmer
+ */
+function word_limit($string, $word_limit)
+{
+  $words = explode(" ",$string);
+  return implode(" ",array_splice($words,0,$word_limit));
+}
+
+
+/**
+ * Only limit posts on the main blog page
+ */
 function no_post_limit( $query ) {
     if (!is_admin() && !is_home() && $query->is_main_query() ) {
         $query->set( 'posts_per_page', '-1' );
@@ -263,8 +278,10 @@ function no_post_limit( $query ) {
 add_action( 'pre_get_posts', 'no_post_limit' );
 
 
-// most of our youtube embeds are gonna be short, let's get rid
-// of those unsightly player controls
+/**
+ * Most of our youtube embeds are gonna be short, let's get rid
+ * of those unsightly player controls
+ */
 function remove_youtube_controls($code){
     if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
         $return = preg_replace("@src=(['\"])?([^'\">s]*)@", "src=$1$2&autoplay=0&showinfo=0&controls=0&rel=0", $code);
