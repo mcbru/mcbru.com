@@ -242,9 +242,13 @@ input[type=submit].cta, #comments input#submit 	{	border:none;outline:none;	}
   }
 }
 
+
 .post-type-archive-work #menu-item-49  {
-	a	{	color:$mcb-oran;	}
+  a {
+    color: $mcb-oran;
+  }
 }
+
 
 /* 			footer items 			*/
 $fut_colr: darken($mcb-gray-sub1,15%);
@@ -325,16 +329,44 @@ ul.horz-subnav, .horz-subnav ul
 		.tile 	{		}
 	}
 }
-.float-wrap				{ 	display:none;position:relative;
-	.float 		 		{	position: relative;/*top: 32px;left: 12px;right: 12px;bottom:0;*/background: #fff;min-height: 400px;height:auto;border: 0px solid red;z-index: 5;		
-		h2 				{	color:$mcb-oran;text-transform:uppercase;font-size:24px;	padding:18px 0 6px; line-height:1;
-			& + p 		{	font-size:13px;margin-bottom:28px;	}
-		}
-		.work-logo		{	width:48.8%;height:auto;float:left;margin: 0 2.4% 2.4% 0;	}
-		.head-it 		{	margin-top:40px;	}
-		&.non 			{	min-height:0.001em;	}
-	}
-		.close 			{	position:absolute;top:18px;right:0px;font-size:48px; }
+
+
+.float-wrap {
+  display: none;
+  position: relative;
+  .float {
+    position: relative;
+    /*top: 32px;left: 12px;right: 12px;bottom:0;*/background: #fff;min-height: 400px;height:auto;border: 0px solid red;z-index: 5;
+    h2 {
+      color: $mcb-oran;
+      text-transform: uppercase;
+      font-size: 24px;
+      padding: 18px 0 6px;
+      line-height:1;
+      & + p {
+        font-size: 13px;
+        margin-bottom: 28px;
+      }
+    }
+    .work-logo {
+      width: 48.8%;
+      height: auto;
+      float: left;
+      margin: 0 2.4% 2.4% 0;
+    }
+    .head-it {
+      margin-top: 40px;
+    }
+    &.non {
+      min-height: 0.001em;
+    }
+  }
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 0px;
+    font-size: 48px;
+  }
 }
 
 
@@ -542,9 +574,26 @@ ul.horz-subnav, .horz-subnav ul
 }	
 
 
-.load-cloak 	{
-	display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.8);z-index:9999;
-	.icon 		{ 	display:block;width:50px;height:50px;color:$mcb-purp;text-align:center;font-size:50px;line-height:1;position:fixed;left:50%;top:50%;margin:-25px 0 0 -22px;
-
-	}
+.load-cloak {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.8);
+  z-index:9999;
+  .icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: $mcb-purp;
+    text-align: center;
+    font-size: 50px;
+    line-height: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -25px 0 0 -22px;
+  }
 }

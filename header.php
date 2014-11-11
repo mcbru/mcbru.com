@@ -85,6 +85,7 @@
   <?php endif; ?>>
 
     <?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
+
     <div class="container">
       <a class="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
       <?php /*<div class="description">bloginfo( 'description' );</div>*/ ?>

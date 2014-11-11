@@ -16,7 +16,7 @@
     </div>
 
     <div class="tucker">
-    <?php the_content(); ?>
+      <?php the_content(); ?>
 
       <div class="content">
         <div class="rac serv stacs">

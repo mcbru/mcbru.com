@@ -57,7 +57,8 @@
 					</div>
 				</div>
 			</div>*/ ?>
-			<div class="float-wrap"></div>
+      <div class="float-wrap">
+      </div>
 
 			<div class="tucker">
         <div class="row">

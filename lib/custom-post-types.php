@@ -66,7 +66,7 @@ function codex_() {
 		'rewrite'            => array( 'slug' => 'services' ),
 		'capability_type'    => 'page',
 		'has_archive'        => false,
-		//'hierarchical'       => false,
+		'hierarchical'       => true,
 		'menu_position'      => 2,
 		'supports'           => array( 'title', 'thumbnail', 'excerpt', 'editor'  ) /*'author', 'comments'*/
 	);	

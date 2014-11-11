@@ -291,3 +291,6 @@ function remove_youtube_controls($code){
 }
 add_filter('embed_handler_html', 'remove_youtube_controls');
 add_filter('embed_oembed_html', 'remove_youtube_controls');
+
+
+add_filter( 'simple_page_ordering_limit', function($number) { return 5; } );
