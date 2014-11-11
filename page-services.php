@@ -3,6 +3,7 @@
   // $buckets = get_field('buckets');
 
   $args = array(
+    'orderby'         => 'menu_order',
     'posts_per_page'  => -1,
     'post_type'       => 'services'
   );
