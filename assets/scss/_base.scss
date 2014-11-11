@@ -330,6 +330,10 @@ ul.horz-subnav, .horz-subnav ul
 	}
 }
 
+// hide related projects for now
+.rac.row.rels {
+  display: none;
+}
 
 .float-wrap {
   display: none;
