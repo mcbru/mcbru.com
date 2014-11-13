@@ -21,19 +21,6 @@
 
   <div class="connect row">
     <div id="map-canvas" class="twelve columns map">
-      <!-- <iframe  -->
-      <!--   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2797.274687862598!2d&#45;122.675899!3d45.484412999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950ea375cccde5%3A0xc20ff8e951fff14e!2sMcClenahan+Bruer+Communications!5e0!3m2!1sen!2sus!4v1401940662053"  -->
-      <!--   width="488"  -->
-      <!--   height="488"  -->
-      <!--   frameborder="0"  -->
-      <!--   style="border:0"> -->
-      <!-- </iframe> -->
-      <!-- <iframe -->
-      <!--   width="488" -->
-      <!--   height="488" -->
-      <!--   frameborder="0" style="border:0" -->
-      <!--   src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCU7Q3reQdSCnZMvlhzmFI&#45;6Nuqz3WFd5M&#38;center=&#45;33.8569,151.2152&#38;zoom=18&#38;maptype=roadmap"> -->
-      <!-- </iframe> -->
     </div>
     <div class="twelve columns">
       <div class="content">

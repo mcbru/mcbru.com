@@ -88,7 +88,7 @@
   <![endif]-->
 
   <?php// echo $strip[0]; ?>
-  <?php //print_r($me); 
+  <?php //print_r($me);
     if(is_page('about')) : $head_ico = 'fa-info-circle'; endif;
     if(is_page('connect')) : $head_ico = 'fa-link'; endif;
     if(is_page('services')) : $head_ico = 'fa-gear'; endif;
@@ -96,7 +96,7 @@
     ?>
 <div class="full-wrap">
 
-<header class="header clearfix" 
+<header class="header clearfix"
   <?php if($bee_gee && is_page('home')) : ?>
     style="
       background: #000 url(<?php echo $bee_gee; ?>) 50% 0% no-repeat;
@@ -130,25 +130,16 @@
 
     <?php if(is_page('home') || is_page('about') || is_page('services')) : ?>
       <div class="hero">
-        <!-- <div class="rotator"> -->
-          <!-- <ul> -->
-            <!-- <li> -->
-              <div class="container">
-                <?php //<div class="bg" style="background-image:url(<?php echo THEME; ? >/assets/img/slide-standin.jpg);"></div> ?>
-                <div class="content">
-                  <?php echo apply_filters('the_content', $hero_cont); ?>
+        <div class="container">
+          <?php //<div class="bg" style="background-image:url(<?php echo THEME; ? >/assets/img/slide-standin.jpg);"></div> ?>
+          <div class="content">
+            <?php echo apply_filters('the_content', $hero_cont); ?>
 
-                  <?php if(is_page('home')) : ?>
-                    <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?> ></a>
-                  <?php endif; ?>
-                </div>
-              </div>
-            <!-- </li> -->
-          <!-- </ul> -->
-        <!-- </div> -->
-        <!-- <div class="control"> -->
-
-        <!-- </div> -->
+            <?php if(is_page('home')) : ?>
+              <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?> ></a>
+            <?php endif; ?>
+          </div>
+        </div>
       </div>
     <?php endif; ?>
   </header>
@@ -158,7 +149,7 @@
     <?php if((  is_page()  &&  !is_page('home')  &&  !is_page('services')  &&  !is_page('about')  && !is_page('blog-single-proof'))||is_archive()) : ?>
       <div class="row">
         <div class="twenty-four columns">
-          <h1 class="head-it clearfix"><?php 
+          <h1 class="head-it clearfix"><?php
             if(is_page()) :
               echo $post->post_title;
             elseif(is_post_type_archive('work')||is_post_type_archive('case-studies')) :
