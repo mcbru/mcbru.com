@@ -113,7 +113,6 @@
   });
 
 
-  /*
   function work_tiles() {
     $('.rels .tile .cta').on('click', function(e) {
       var $d = $(this).attr('data-id');
@@ -152,7 +151,6 @@
     }
     e.preventDefault();
   });
-  */
 
 
   $('.about .tile .cta').on('click', function(e) {

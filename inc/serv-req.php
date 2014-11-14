@@ -20,7 +20,7 @@
 <div class="float content">
   <div class="clearfix">
     <h2><?php echo $it->post_title; ?></h2>
-    <p><?php echo $subt; ?></p>
+    <!-- <h3> --><?php /* echo $it->post_excerpt; */ ?><!-- </h3> -->
 
     <?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
       <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
