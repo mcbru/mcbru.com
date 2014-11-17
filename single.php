@@ -53,15 +53,31 @@ echo trim($output, $separator);
             <img src="http://placehold.it/488x232" alt="" />
           <?php endif; ?>
 
+            <!-- <div class="meta&#45;rib&#45;container"> -->
+            <!--   <div id="ribbon"> -->
 
-            <div class="meta-rib">
-              <strong class="month">
-                <?php echo date('M', strtotime($post->post_date)); ?>
-              </strong>
-              <strong class="date">
-                <?php echo date('j', strtotime($post->post_date)); ?>
-              </strong>
+            <!--   <strong id="ribbon&#45;text"> -->
+            <!--     <?php /*echo date('M', strtotime($post&#45;>post_date)); */ ?> -->
+            <!--   </strong> -->
+            <!--   </div> -->
+            <!-- </div> -->
+            <div class="ribbon-container">
+              <div class="ribbon">
+                  <span class="month"><?php echo date('M', strtotime($post->post_date)); ?></span>
+                  <br />
+                  <span class="day"><?php echo date('j', strtotime($post->post_date)); ?></span>
+              </div>
             </div>
+
+
+            <!-- <div class="meta&#45;rib"> -->
+            <!--   <strong class="month"> -->
+            <!--     <?php /* echo date('M', strtotime($post&#45;>post_date)); */ ?> -->
+            <!--   </strong> -->
+            <!--   <strong class="date"> -->
+            <!--     <?php /* echo date('j', strtotime($post&#45;>post_date)); */ ?> -->
+            <!--   </strong> -->
+            <!-- </div> -->
           </div>
           <?php the_content(); ?>
 

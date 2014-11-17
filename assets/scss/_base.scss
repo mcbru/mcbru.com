@@ -25,6 +25,7 @@ $mcb-brand-gray : #a2968a;
 
 $mcb-text       : #373535;
 $mcb-purp       : #8e108e;
+$mcb-purp-dark  : #671b67;
 $mcb-oran       : #ef8e2d;
 
 $rayt           : 0.2s;
@@ -1063,4 +1064,68 @@ ul.horz-subnav, .horz-subnav ul {
     top: 50%;
     margin: -25px 0 0 -22px;
   }
+}
+
+
+.ribbon-container {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.ribbon {
+  display: block;
+  width: 50px;
+  position: relative;
+  color: #fff;
+  padding: 20px 0 10px;
+  line-height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+
+  background-color: $mcb-purp-dark;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from($mcb-purp), to($mcb-purp-dark));
+  background-image: -moz-linear-gradient(top, $mcb-purp, $mcb-purp-dark);
+  background-image: -ms-linear-gradient(top, $mcb-purp, $mcb-purp-dark);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $mcb-purp), color-stop(100%, $mcb-purp-dark));
+  background-image: -webkit-linear-gradient(top, $mcb-purp, $mcb-purp-dark);
+  background-image: -o-linear-gradient(top, $mcb-purp, $mcb-purp-dark);
+  background-image: linear-gradient(top, $mcb-purp, $mcb-purp-dark);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$mcb-purp', endColorstr='$mcb-purp-dark', GradientType=0);
+  .day {
+    font-size: 1.4em;
+  }
+}
+
+
+/*
+  Sweet CSS3 Ribbons http://jsfiddle.net/kirkov/FT8hV/
+*/
+.ribbon:after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  position: relative;
+  bottom: -34px;
+  z-index: 100;
+  border-width: 0 25px 24px 25px;
+  border-style: solid;
+  border-color: $mcb-purp-dark $mcb-purp-dark transparent $mcb-purp-dark;
+}
+
+.ribbon-lg {
+  /* line-height: 1.5em; */
+  width: 70px;
+  .day {
+    font-size: 1.4em;
+  }
+}
+
+.ribbon-lg:after {
+  bottom: -46px;
+  border-width: 0 35px 36px 35px;
 }

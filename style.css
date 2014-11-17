@@ -8672,6 +8672,67 @@ ul.horz-subnav li.curr a, .horz-subnav ul li.curr a {
   margin: -25px 0 0 -22px;
 }
 
+.ribbon-container {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.ribbon {
+  display: block;
+  width: 50px;
+  position: relative;
+  color: #fff;
+  padding: 20px 0 10px;
+  line-height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  background-color: #671b67;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#8e108e), to(#671b67));
+  background-image: -moz-linear-gradient(top, #8e108e, #671b67);
+  background-image: -ms-linear-gradient(top, #8e108e, #671b67);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8e108e), color-stop(100%, #671b67));
+  background-image: -webkit-linear-gradient(top, #8e108e, #671b67);
+  background-image: -o-linear-gradient(top, #8e108e, #671b67);
+  background-image: linear-gradient(top, #8e108e, #671b67);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$mcb-purp', endColorstr='$mcb-purp-dark', GradientType=0);
+}
+.ribbon .day {
+  font-size: 1.4em;
+}
+
+/*
+  Sweet CSS3 Ribbons http://jsfiddle.net/kirkov/FT8hV/
+*/
+.ribbon:after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  position: relative;
+  bottom: -34px;
+  z-index: 100;
+  border-width: 0 25px 24px 25px;
+  border-style: solid;
+  border-color: #671b67 #671b67 transparent #671b67;
+}
+
+.ribbon-lg {
+  /* line-height: 1.5em; */
+  width: 70px;
+}
+.ribbon-lg .day {
+  font-size: 1.4em;
+}
+
+.ribbon-lg:after {
+  bottom: -46px;
+  border-width: 0 35px 36px 35px;
+}
+
 @media only screen and (min-width: 767px) {
   a {
     -webkit-transition: color 0.2s;
