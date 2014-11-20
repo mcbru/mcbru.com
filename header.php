@@ -46,8 +46,8 @@
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
   <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-touch-icon.png">
-  <!-- <link href='http://fonts.googleapis.com/css?family=Metrophobic' rel='stylesheet' type='text/css'> -->
   <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <?php echo '<script> var $loca = "'.URL.'"; </script>'; ?>
   <?php wp_head(); ?>
