@@ -5669,11 +5669,14 @@ code {
 }
 
 p, ul.re-list, ul {
-  font-size: 12px;
-  line-height: 1.4;
+  /* font-size: 12px; */
+  font-size: 16px;
+  /* line-height: 1.4; */
+  line-height: 28px;
 }
 p.gran, ul.re-list.gran, ul.gran {
-  font-size: 13px;
+  /* font-size: 13px; */
+  font-size: 18px;
 }
 p.purp, ul.re-list.purp, ul.purp {
   color: #8e108e;
@@ -5985,6 +5988,11 @@ ul.horz-subnav li a, .horz-subnav ul li a {
 }
 ul.horz-subnav li.curr a, .horz-subnav ul li.curr a {
   color: #ef8e2d;
+}
+
+a.tile p {
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .rac {
@@ -6767,14 +6775,16 @@ ul.horz-subnav li.curr a, .horz-subnav ul li.curr a {
   }
 
   p, ul.re-list, ul {
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 16px;
   }
   p.gran, ul.re-list.gran, ul.gran {
-    font-size: 13px;
+    /* font-size: 13px; */
+    font-size: 18px;
   }
 
   .header {
-    /*height:104px;	*/
+    /*height:104px; */
   }
   .header .toggle {
     font-size: 40px;
@@ -6803,7 +6813,7 @@ ul.horz-subnav li.curr a, .horz-subnav ul li.curr a {
     margin-top: 24px;
   }
 
-  /*.home .header 	{	height:84px;	}*/
+  /*.home .header   { height:84px;  }*/
   .rac.serv > a {
     height: 298px;
     -webkit-transition: all 0.2s;

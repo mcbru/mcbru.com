@@ -57,10 +57,13 @@ ol, ul {
 code { font: inherit; }
 
 p, ul.re-list, ul {
-  font-size: 12px;
-  line-height: 1.4;
+  /* font-size: 12px; */
+  font-size: 16px;
+  /* line-height: 1.4; */
+  line-height: 28px;
   &.gran  {
-    font-size: 13px;
+    /* font-size: 13px; */
+    font-size: 18px;
   }
   &.purp {
     color: $mcb-purp;
@@ -84,7 +87,7 @@ ul.re-list {
 
 .content {
   p {
-    margin-bottom:18px;
+    margin-bottom: 18px;
   }
 }
 
@@ -329,7 +332,7 @@ input[type=submit].cta, #comments input#submit  {
 .single-post, .search-results, .search-no-results {
   .menu-item-157, .menu-item-56 {
      a {
-       color:$mcb-oran;
+       color: $mcb-oran;
      }
   }
 }
@@ -352,9 +355,9 @@ $fut_colr: darken($mcb-gray-sub1,15%);
   font-size: 0.85em;
   padding-bottom: 40px;
   a {
-    color:$fut_colr;
+    color: $fut_colr;
     &:hover {
-      color:$mcb-purp;
+      color: $mcb-purp;
     }
   }
 }
@@ -398,6 +401,10 @@ ul.horz-subnav, .horz-subnav ul {
   }
 }
 
+a.tile p {
+  font-size: 14px;
+  line-height: 1.4;
+}
 
 .rac {
   padding-left: 0;
