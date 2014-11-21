@@ -89,6 +89,9 @@ ul.re-list {
   p {
     margin-bottom: 18px;
   }
+  p:first-child {
+    margin-top: 0;
+  }
 }
 
 .container > .row {
@@ -688,12 +691,16 @@ a.tile p {
     margin-top: 20px;
   }
   .cta, .address {
-    margin-bottom: 28px;
+    /* margin-bottom: 28px; */
+  }
+  .phone, .email {
+    @include float(left);
+    margin-right: 30px;
   }
 }
 
 .social-rack {
-  font-size:28px;
+  font-size: 28px;
 }
 
 .instagram  {

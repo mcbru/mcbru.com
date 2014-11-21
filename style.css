@@ -5700,6 +5700,9 @@ ul.re-list li:first-child {
 .content p {
   margin-bottom: 18px;
 }
+.content p:first-child {
+  margin-top: 0;
+}
 
 .container > .row {
   padding-left: 0;
@@ -6327,7 +6330,12 @@ a.tile p {
   margin-top: 20px;
 }
 .page-connect .cta, .page-connect .address {
-  margin-bottom: 28px;
+  /* margin-bottom: 28px; */
+}
+.page-connect .phone, .page-connect .email {
+  display: inline;
+  float: left;
+  margin-right: 30px;
 }
 
 .social-rack {
@@ -7111,7 +7119,8 @@ DESKTOP
   }
   .page-connect .content .social-rack {
     position: absolute;
-    bottom: 18px;
+    /* bottom: 18px; */
+    bottom: 0;
     left: 0;
     right: 0;
   }

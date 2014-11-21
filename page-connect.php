@@ -34,9 +34,10 @@
         <?php echo $o_address; ?>
       </p>
 
-      <div><a class="cta trans" href="mailto:<?php echo $o_email; ?>"><i class="fa fa-envelope-o"></i> <?php echo $o_email; ?></a></div>
-
-      <div><a class="cta trans" href="tel:<?php echo $call; ?>"><i class="fa fa-phone"></i> <?php echo $o_phone; ?></a></div>
+      <div class="clearfix">
+        <div class="email"><a class="cta trans" href="mailto:<?php echo $o_email; ?>"><i class="fa fa-envelope-o"></i> <?php echo $o_email; ?></a></div>
+        <div class="phone"><a class="cta trans" href="tel:<?php echo $call; ?>"><i class="fa fa-phone"></i> <?php echo $o_phone; ?></a></div>
+      </div>
 
       <ul class="social-rack tiles five_up">
         <li><a href="<?php echo $url_twitter; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
