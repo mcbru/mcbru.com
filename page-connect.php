@@ -162,7 +162,7 @@
 
 
 
-      <h3 class="head-it clearfix bump28"><a href="#">@MCBRU</a> on Instagram<i class="fa fa-instagram"></i></h3>
+      <h3 class="head-it clearfix bump28"><a href="http://instagram.com/mcbrugram/">@mcbrugram</a> on Instagram<i class="fa fa-instagram"></i></h3>
 
       <div class="row rac"><div id="iggy" class="instagram">
       </div></div>
