@@ -9,4 +9,5 @@ Gemfile
 Gemfile.lock
 dandelion.yml
 lib/cache
+assets/css/temp.css
 

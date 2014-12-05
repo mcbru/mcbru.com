@@ -8,20 +8,28 @@
   </div> <!-- /.container -->
 
   <?php if(is_page('connect')) : ?>
+    <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
   <div class="cloak">
     <div class="container">
       <div class="form-pop">
-        <h3 class="head-it no-base">Connect Today</h3>
+        <h3>Connect With Us</h3>
+        <script>
+          hbspt.forms.create({
+            portalId: '448074',
+            formId: '87b1eea4-e974-4901-bedb-dc3b553cd65e'
+          });
+        </script>
+      <!--   <h3 class="head&#45;it no&#45;base">Connect Today</h3> -->
 
-        <?php echo do_shortcode('[contact-form-7 id="4"]'); ?>
+      <!--   <?php echo do_shortcode('[contact&#45;form&#45;7 id="4"]'); ?> -->
 
 
         <a href="#" class="close">×</a>
-      </div>
-      <div class="form-confirmation">
-        <img src="<?php echo THEME; ?>/assets/img/mcb-thank-you.png" alt="" />
-        <p>Glad you dropped us a line!<br>Hang tight, we will be in touch shortly.</p>
-        <a href="#" class="close">×</a>
+      <!-- </div> -->
+      <!-- <div class="form&#45;confirmation"> -->
+      <!--   <img src="<?php echo THEME; ?>/assets/img/mcb&#45;thank&#45;you.png" alt="" /> -->
+      <!--   <p>Glad you dropped us a line!<br>Hang tight, we will be in touch shortly.</p> -->
+      <!--   <a href="#" class="close">×</a> -->
       </div>
     </div>
   </div>

@@ -5778,7 +5778,7 @@ a:hover {
   color: #ef8e2d;
 }
 
-input[type=submit].cta, #comments input#submit {
+input[type=submit].cta, input[type=submit].hs-button, #comments input#submit {
   border: none;
   outline: none;
 }
