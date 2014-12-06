@@ -268,12 +268,12 @@ function word_limit($string, $word_limit)
 /**
  * Only limit posts on the main blog page
  */
-function no_post_limit( $query ) {
-    if (!is_admin() && !is_home() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', '-1' );
-    }
-}
-add_action( 'pre_get_posts', 'no_post_limit' );
+// function no_post_limit( $query ) {
+//     if (!is_admin() && !is_home() && $query->is_main_query() ) {
+//         $query->set( 'posts_per_page', '-1' );
+//     }
+// }
+// add_action( 'pre_get_posts', 'no_post_limit' );
 
 
 /**

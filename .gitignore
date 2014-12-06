@@ -9,10 +9,9 @@ Gemfile
 Gemfile.lock
 dandelion.yml
 lib/cache
+assets/css/temp.css
 
 # HubSpot COS Uploader
 .sync-history.json
 .cos-sync-config.yaml
 upload_to_cos
-assets/css/temp.css
-
