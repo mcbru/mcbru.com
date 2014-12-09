@@ -118,9 +118,8 @@
     <?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
 
     <div class="container">
-      <a class="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-      <?php /*<div class="description">bloginfo( 'description' );</div>*/ ?>
-        <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
+      <a class="logo" href="<?php echo home_url( '/' ); ?>" title="Return to the homepage"><img src="<?php echo THEME; ?>/assets/img/mcbru-logo-horizontal-warm-gray-transparency.png" alt="McClenahan Bruer logo" /></a>
+      <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
       <nav class="desktop">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
       </nav>
@@ -132,7 +131,6 @@
     <?php if(is_page('home') || is_page('about') || is_page('services')) : ?>
       <div class="hero">
         <div class="container">
-          <?php //<div class="bg" style="background-image:url(<?php echo THEME; ? >/assets/img/slide-standin.jpg);"></div> ?>
           <div class="content">
             <?php echo apply_filters('the_content', $hero_cont); ?>
 

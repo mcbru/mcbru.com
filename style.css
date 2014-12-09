@@ -5719,9 +5719,6 @@ ul.re-list li:first-child {
   display: block;
   width: 160px;
   height: 41px;
-  background: url(assets/img/mcbru-logo-horizontal-warm-gray-transparency.png) 50% 50% no-repeat;
-  background-size: contain;
-  text-indent: -9999px;
 }
 
 /* Buttons and Links */
@@ -5778,7 +5775,7 @@ a:hover {
   color: #ef8e2d;
 }
 
-input[type=submit].cta, input[type=submit].hs-button, #comments input#submit {
+input[type=submit].cta, #comments input#submit {
   border: none;
   outline: none;
 }
