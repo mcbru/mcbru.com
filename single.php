@@ -43,8 +43,8 @@
 
           <div class="row rac content">
             <div class="<?php echo $cl; ?>">
-              <?php if(has_post_thumbnail()) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
-                <img src="<?php echo TIM . $img[0] . $t_s; ?>" alt="" />
+              <?php if(has_post_thumbnail()) :
+                echo wp_get_attachment_image( get_post_thumbnail_id($post->ID), 'full' ); ?>
               <?php else : ?>
                 <img src="http://placehold.it/488x232" alt="" />
               <?php endif; ?>

@@ -6,9 +6,9 @@
       <div class="columns twelve">
         <a href="<?php echo $dest; ?>" class="blog-hero">
 
-          <?php if(has_post_thumbnail()) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
-            <img src="<?php echo TIM . $img[0] . BL_LIST; ?>" alt="" />
-          <?php else : ?>
+          <?php if(has_post_thumbnail()) :
+            the_post_thumbnail('bl-list');
+          else : ?>
             <img src="http://placehold.it/488x232" alt="" />
           <?php endif; ?>
 

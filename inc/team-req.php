@@ -36,8 +36,8 @@
 
       <?php if(!empty($alt_image)): ?>
         <img src="<?php echo $alt_image['url']; ?>" alt="<?php echo $alt_image['alt']; ?>" />
-      <?php elseif(has_post_thumbnail($z)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($z), 'full' ); ?>
-        <img src="<?php echo TIM . $img[0] . BL_PORT;  ?>" alt="" />
+      <?php elseif(has_post_thumbnail($z)) :
+        echo wp_get_attachment_image( get_post_thumbnail_id($z), 'bl-port' ); ?>
       <?php else : ?>
         <img src="http://placehold.it/488x540" alt="" />
       <?php endif; ?>
@@ -80,9 +80,6 @@
         <li>
           <a href="<?php echo $dest; ?>"<?php if($frama) : echo $frama; endif; ?>><i class="fa <?php echo $ico; ?>"></i> <span class="labbz"><?php echo $labl; ?></a>
         </li>
-        <!-- <li><a href="javascript:alert('social links')"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="javascript:alert('social links')"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="javascript:alert('social links')"><i class="fa fa-pinterest"></i></a></li> -->
         <?php endforeach; ?>
       </ul>
     </div>
@@ -94,10 +91,10 @@
       <?php if($auth) : //print_r($auth['ID']);
 
         $corr = get_posts(array(
-          'author'        =>  $auth['ID'],
-          'orderby'       =>  'post_date',
-          'order'         =>  'ASC',
-          'posts_per_page' => 4,
+          'author'           => $auth['ID'],
+          'orderby'          => 'post_date',
+          'order'            => 'ASC',
+          'posts_per_page'   => 4,
           'post_type'        => 'post',
           'post_status'      => 'publish',
           'suppress_filters' => true

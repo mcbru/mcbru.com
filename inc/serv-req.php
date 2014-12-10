@@ -22,8 +22,8 @@
     <h2><?php echo $it->post_title; ?></h2>
     <!-- <h3> --><?php /* echo $it->post_excerpt; */ ?><!-- </h3> -->
 
-    <?php if(has_post_thumbnail($it->ID)) : $img = wp_get_attachment_image_src( get_post_thumbnail_id($it->ID), 'full' ); ?>
-      <img src="<?php echo TIM . $img[0] . BL_PORT; ?>" alt="" class="work-logo" />
+    <?php if(has_post_thumbnail($ee)) :
+      echo wp_get_attachment_image( get_post_thumbnail_id($ee), 'bl-port', false, array('class' => "service-icon")); ?>
     <?php endif; ?>
 
     <?php echo apply_filters('the_content',$it->post_content); ?>
