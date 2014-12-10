@@ -135,7 +135,7 @@
             <?php echo apply_filters('the_content', $hero_cont); ?>
 
             <?php if(is_page('home')) : ?>
-              <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?> ></a>
+              <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?></a>
             <?php endif; ?>
           </div>
         </div>
