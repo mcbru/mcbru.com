@@ -56,6 +56,14 @@ ul, ol {
   padding: 0;
 }
 
+.float-left {
+  @include float-left;
+}
+
+.float-right {
+  @include float-right;
+}
+
 code { font: inherit; }
 
 // TODO: Re-examine re-list usage. Do we really need this?
@@ -359,7 +367,7 @@ $fut_colr: darken($mcb-gray-sub1,15%);
   background-color: $fut_colr;
   color: $white;
   font-size: 0.85em;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   a {
     color: $white;
     &:hover {

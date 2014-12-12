@@ -11,7 +11,8 @@
   </div>
 
 
-  <div class="row stacs"><div class="content">
+  <!-- <div class="row stacs"> -->
+  <!--   <div class="content"> -->
 
 
-<?php get_footer(); ?>
+  <?php get_footer(); ?>

@@ -3,9 +3,8 @@
   </div> <!-- /.container -->
 
   <footer class='footer'>
-    <div class="container">
-      <?php dynamic_sidebar( 'Footer' ); ?>
-      <p>&copy; <?php echo date( "Y" ); echo " "; //bloginfo( 'name' ); ?><a href="<?php echo site_url(); ?>">mcbru.com</a></p>
+    <div class="container  clearfix">
+      <p>&copy; <?php echo date( "Y" ); echo " "; //bloginfo( 'name' ); ?><a href="<?php echo site_url(); ?>">McClenahan Bruer</a></p>
     </div>
   </footer>
 

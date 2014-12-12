@@ -5662,6 +5662,16 @@ ul, ol {
   padding: 0;
 }
 
+.float-left {
+  display: inline;
+  float: left;
+}
+
+.float-right {
+  display: inline;
+  float: right;
+}
+
 code {
   font: inherit;
 }
@@ -5951,7 +5961,7 @@ input[type=submit].cta, #comments input#submit {
   background-color: #8a7d6e;
   color: white;
   font-size: 0.85em;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 .footer a {
   color: white;

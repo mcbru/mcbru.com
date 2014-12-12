@@ -14,8 +14,7 @@
     // $strip = wp_get_attachment_image_src($hero_img, 'full-bleed');
     $strip = wp_get_attachment_image_src($hero_img, 'full');
     $hero_cont    = get_field('hero_content',$ee);
-    $hero_link    = get_field('hero_link',$ee);
-    $hero_link_lbl  = get_field('hero_link_label',$ee);
+    $hs_cta_button = get_field('hubspot_cta_button');
     //$sub_left     = get_field('sub_hero_left',$ee);
     //$sub_right    = get_field('sub_hero_right',$ee);
   endif;
@@ -135,9 +134,9 @@
             <div class="content">
               <?php echo apply_filters('the_content', $hero_cont); ?>
 
-              <?php if(is_page('home')) : ?>
-                <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?></a>
-              <?php endif; ?>
+              <?php if(is_page('home')) :
+                echo $hs_cta_button;
+              endif; ?>
             </div>
           </div>
         </div>
