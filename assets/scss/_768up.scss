@@ -10,7 +10,7 @@ h3, h2, h1 {
   font-size: 18px;
 }
 
-p, ul.re-list, ul {
+p, ul.re-list, ul, ol {
   /* font-size: 14px; */
   font-size: 16px;
   &.gran {
@@ -120,24 +120,33 @@ ul.horz-subnav, .horz-subnav ul
   &.binocs      {   background-position:30px 30px;background-size:100px 48px;   }
 }
 
-.bx-wrapper .bx-controls-direction a {
-  margin-top: -46px;
-  width: 50px;
-  height: 92px;
+/* .bx-wrapper .bx-controls-direction a { */
+/*   margin-top: -46px; */
+/*   width: 50px; */
+/*   height: 92px; */
+/* } */
+
+.link-list .cta {
+  font-size: 18px;
 }
 
-.link-list .cta   { font-size:18px; }
-  .link-list  {
-    li    {
-      .titulo   { font-size:18px; }
-      .meta { font-size:14px; }
-    &.non   {   font-size:18px; }
+.link-list  {
+  li {
+    .titulo {
+      font-size: 18px;
+    }
+    .meta {
+      font-size: 14px;
+    }
+    &.non {
+    font-size: 18px;
+    }
   }
 }
 
-.rac    {
-  margin-top:22px;
-  .tile   {
+.rac {
+  margin-top: 22px;
+  .tile {
     /* border:1px solid transparent; */
   }
 }

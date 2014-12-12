@@ -681,7 +681,6 @@ textarea {
 /*@import "../gumby/var/lists";*/
 /**/
 /**/
-/* @import "compass/reset"; */
 .pull_right {
   float: right;
 }
@@ -5619,7 +5618,6 @@ img {
 /*
 MOBILE & BASE STYLES
 */
-/* @import "slideshow"; */
 .bump28 {
   margin-top: 28px;
 }
@@ -5658,8 +5656,8 @@ h3, h2, h1 {
   font-size: 14px;
 }
 
-ol, ul {
-  list-style: none;
+ul, ol {
+  list-style-position: inside;
   margin: 0;
   padding: 0;
 }
@@ -5668,32 +5666,32 @@ code {
   font: inherit;
 }
 
-p, ul.re-list, ul {
+p, ul.re-list, ul, ol {
   /* font-size: 12px; */
   font-size: 16px;
   /* line-height: 1.4; */
   line-height: 28px;
 }
-p.gran, ul.re-list.gran, ul.gran {
+p.gran, ul.re-list.gran, ul.gran, ol.gran {
   /* font-size: 13px; */
   font-size: 18px;
 }
-p.purp, ul.re-list.purp, ul.purp {
+p.purp, ul.re-list.purp, ul.purp, ol.purp {
   color: #8e108e;
 }
-p em, ul.re-list em, ul em {
+p em, ul.re-list em, ul em, ol em {
   font-style: oblique;
 }
 
-ul.re-list {
+ul.re-list, ol.re-list {
   margin-bottom: 24px;
   list-style: disc;
   padding-left: 18px;
 }
-ul.re-list li {
+ul.re-list li, ol.re-list li {
   padding-top: 6px;
 }
-ul.re-list li:first-child {
+ul.re-list li:first-child, ol.re-list li:first-child {
   padding-top: 0;
 }
 
@@ -5809,6 +5807,7 @@ input[type=submit].cta, #comments input#submit {
 /* Lists */
 .link-list {
   margin-bottom: 12px;
+  list-style: none;
 }
 .link-list li {
   padding: 14px 0;
@@ -5863,7 +5862,7 @@ input[type=submit].cta, #comments input#submit {
 .hero .content p {
   color: #a2968a;
   background: rgba(0, 0, 0, 0);
-  text-shadow: 0 2px 6px #000;
+  text-shadow: 0 2px 6px black;
 }
 .hero .content a.cta {
   margin-top: 12px;
@@ -5877,7 +5876,7 @@ input[type=submit].cta, #comments input#submit {
 
 /* Header Items */
 .header {
-  background-color: #000;
+  background-color: black;
   border-bottom: 0px solid red;
   position: relative;
   margin-bottom: 32px;
@@ -5902,6 +5901,7 @@ input[type=submit].cta, #comments input#submit {
 .header nav ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .header nav .menu > li {
   line-height: 1;
@@ -5945,15 +5945,16 @@ input[type=submit].cta, #comments input#submit {
 
 /* Footer Items */
 .footer {
-  border-top: 1px solid #a0968a;
+  /* border-top: 1px solid #a0968a; */
   padding-top: 10px;
   margin-top: 80px;
-  color: #8a7d6e;
+  background-color: #8a7d6e;
+  color: white;
   font-size: 0.85em;
   padding-bottom: 40px;
 }
 .footer a {
-  color: #8a7d6e;
+  color: white;
 }
 .footer a:hover {
   color: #8e108e;
@@ -6403,7 +6404,7 @@ a.tile p {
   background: #fff;
   padding: 12px 18px;
   margin-top: 62px;
-  box-shadow: 0 0 12px #000;
+  box-shadow: 0 0 12px black;
   position: relative;
 }
 .form-pop .head-it {
@@ -6749,11 +6750,11 @@ a.tile p {
     font-size: 18px;
   }
 
-  p, ul.re-list, ul {
+  p, ul.re-list, ul, ol {
     /* font-size: 14px; */
     font-size: 16px;
   }
-  p.gran, ul.re-list.gran, ul.gran {
+  p.gran, ul.re-list.gran, ul.gran, ol.gran {
     /* font-size: 13px; */
     font-size: 18px;
   }
@@ -6904,12 +6905,11 @@ a.tile p {
     background-size: 100px 48px;
   }
 
-  .bx-wrapper .bx-controls-direction a {
-    margin-top: -46px;
-    width: 50px;
-    height: 92px;
-  }
-
+  /* .bx-wrapper .bx-controls-direction a { */
+  /*   margin-top: -46px; */
+  /*   width: 50px; */
+  /*   height: 92px; */
+  /* } */
   .link-list .cta {
     font-size: 18px;
   }

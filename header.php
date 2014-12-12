@@ -94,67 +94,68 @@
     if(is_page('connect')) : $head_ico = 'fa-link'; endif;
     if(is_page('services')) : $head_ico = 'fa-gear'; endif;
     if(is_post_type_archive('work')||is_post_type_archive('case-studies')||is_page('cs-proof')||is_page('clients')) : $head_ico = 'fa-folder'; endif;
-    ?>
-<div class="full-wrap">
+  ?>
+  <div class="full-wrap">
 
-<header class="header clearfix"
-  <?php if($bee_gee && is_page('home')) : ?>
-    style="
-      background: #000 url(<?php echo $bee_gee; ?>) 50% 0% no-repeat;
-      min-height:550px;
-    "
-  <?php elseif($bee_gee && is_page('services')) : ?>
-    style="
-      background: #000 url(<?php echo $bee_gee; ?>) 50% 150px repeat-x;
-      min-height:550px;
-    "
-  <?php elseif($bee_gee) : ?>
-    style="
-      background: #000 url(<?php echo $bee_gee; ?>) 50% 150px no-repeat;
-      min-height:550px;
-    "
-  <?php endif; ?>>
+    <header class="header clearfix"
+      <?php if($bee_gee && is_page('home')) : ?>
+        style="
+          background: #000 url(<?php echo $bee_gee; ?>) 50% 0% no-repeat;
+          min-height:550px;
+        "
+      <?php elseif($bee_gee && is_page('services')) : ?>
+        style="
+          background: #000 url(<?php echo $bee_gee; ?>) 50% 150px repeat-x;
+          min-height:550px;
+        "
+      <?php elseif($bee_gee) : ?>
+        style="
+          background: #000 url(<?php echo $bee_gee; ?>) 50% 150px no-repeat;
+          min-height:550px;
+        "
+      <?php endif; ?>
+    >
 
-    <?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
+      <?php if(!is_page('home')) : ?><?php endif; //<div class="screne"></div><img src="< ? php ? >" /> ?>
 
-    <div class="container">
-      <a class="logo" href="<?php echo home_url( '/' ); ?>" title="Return to the homepage"><img src="<?php echo THEME; ?>/assets/img/mcbru-logo-horizontal-warm-gray-transparency.png" alt="McClenahan Bruer logo" /></a>
-      <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
-      <nav class="desktop">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-      </nav>
-      <nav class="mobile">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-      </nav>
-    </div>
+      <div class="container">
+        <a class="logo" href="<?php echo home_url( '/' ); ?>" title="Return to the homepage"><img src="<?php echo THEME; ?>/assets/img/mcbru-logo-horizontal-warm-gray-transparency.png" alt="McClenahan Bruer logo" /></a>
+        <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
+        <nav class="desktop">
+          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </nav>
+        <nav class="mobile">
+          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </nav>
+      </div>
 
-    <?php if(is_page('home') || is_page('about') || is_page('services')) : ?>
-      <div class="hero">
-        <div class="container">
-          <div class="content">
-            <?php echo apply_filters('the_content', $hero_cont); ?>
+      <?php if(is_page('home') || is_page('about') || is_page('services')) : ?>
+        <div class="hero">
+          <div class="container">
+            <div class="content">
+              <?php echo apply_filters('the_content', $hero_cont); ?>
 
-            <?php if(is_page('home')) : ?>
-              <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?></a>
-            <?php endif; ?>
+              <?php if(is_page('home')) : ?>
+                <a href="<?php echo $hero_link; ?>" class="cta"><?php echo $hero_link_lbl; ?></a>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
-      </div>
-    <?php endif; ?>
-  </header>
+      <?php endif; ?>
+    </header>
 
-  <div class="container">
+    <div class="container">
 
-    <?php if((  is_page()  &&  !is_page('home')  &&  !is_page('services')  &&  !is_page('about')  && !is_page('blog-single-proof'))||is_archive()) : ?>
-      <div class="row">
-        <div class="twenty-four columns">
-          <h1 class="head-it clearfix"><?php
-            if(is_page()) :
-              echo $post->post_title;
-            elseif(is_post_type_archive('work')||is_post_type_archive('case-studies')) :
-              echo 'Work';
-            endif; ?><i class="fa <?php echo $head_ico; ?>"></i><!--  --></h1>
+      <?php if((  is_page()  &&  !is_page('home')  &&  !is_page('services')  &&  !is_page('about')  && !is_page('blog-single-proof'))||is_archive()) : ?>
+        <div class="row">
+          <div class="twenty-four columns">
+            <h1 class="head-it clearfix"><?php
+              if(is_page()) :
+                echo $post->post_title;
+              elseif(is_post_type_archive('work')||is_post_type_archive('case-studies')) :
+                echo 'Work';
+              endif; ?><i class="fa <?php echo $head_ico; ?>"></i><!--  --></h1>
+          </div>
         </div>
-      </div>
-    <?php endif; ?>
-  <?php $me = get_post_type(); ?>
+      <?php endif; ?>
+      <?php $me = get_post_type(); ?>

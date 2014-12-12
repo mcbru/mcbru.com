@@ -44,7 +44,6 @@ Version: 1.0
 /*@import "../gumby/var/lists";*/
 @import "../gumby/var/icons/entypo";/**/
 @import "compass";/**/
-/* @import "compass/reset"; */
 @import "../gumby/functions/all";/**/
 @import "../gumby/base";/**/
 @import "../gumby/grid";/**/
@@ -55,7 +54,6 @@ Version: 1.0
 /*
 MOBILE & BASE STYLES
 */
-/* @import "slideshow"; */
 @import "base";
 
 @media only screen and (min-width: 481px) {
