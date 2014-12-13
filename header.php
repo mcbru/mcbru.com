@@ -50,36 +50,38 @@
 
   <?php echo '<script> var $loca = "'.URL.'"; </script>'; ?>
   <?php wp_head(); ?>
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU7Q3reQdSCnZMvlhzmFI-6Nuqz3WFd5M">
-  </script>
-  <script>
-    function initialize() {
-      var myLatlng = new google.maps.LatLng(45.4843698,-122.6759628);
-      var mapOptions = {
-        zoom: 16,
-        center: myLatlng,
-        mapTypeControl: true,
-        mapTypeControlOptions: {
-          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-        zoomControl: true,
-        zoomControlOptions: {
-          style: google.maps.ZoomControlStyle.SMALL
+  <?php if(is_page('connect')) : ?>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU7Q3reQdSCnZMvlhzmFI-6Nuqz3WFd5M">
+    </script>
+    <script>
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(45.4843698,-122.6759628);
+        var mapOptions = {
+          zoom: 16,
+          center: myLatlng,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL
+          }
         }
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'McClenahan Bruer'
+        });
       }
-      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-      var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'McClenahan Bruer'
-      });
-    }
+      google.maps.event.addDomListener(window, 'load', initialize);
 
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-  </script>
+    </script>
+  <?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
