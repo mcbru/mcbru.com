@@ -31,28 +31,27 @@
   // TODO: use Twitter's official wrapper library instead of regex function
   // https://github.com/mzsanford/twitter-text-php
   function parseTwitterText($text) {
+    $returnText = $text;
+    $hashPattern = '/\#([A-Za-z0-9\_]+)/i';
+    $mentionPattern = '/\@([A-Za-z0-9\_]+)/i';
+    $urlPattern = '/(http[s]?\:\/\/[^\s]+)/i';
+    $robotsFollow = false;
 
-      $returnText = $text;
-      $hashPattern = '/\#([A-Za-z0-9\_]+)/i';
-      $mentionPattern = '/\@([A-Za-z0-9\_]+)/i';
-      $urlPattern = '/(http[s]?\:\/\/[^\s]+)/i';
-      $robotsFollow = false;
+    $returnText = preg_replace($urlPattern,
+        '<a href="$1" ' .
+        (($robotsFollow)? '' : 'rel="nofollow"') .
+        '>$1</a>', $returnText);
 
-      $returnText = preg_replace($urlPattern,
-          '<a href="$1" ' .
-          (($robotsFollow)? '' : 'rel="nofollow"') .
-          '>$1</a>', $returnText);
+    $returnText = preg_replace($hashPattern,
+        '<a href="http://twitter.com/#!/search?q=%23$1" ' .
+        (($robotsFollow)? '':'rel="nofollow"') .
+        '>#$1</a>', $returnText);
 
-      $returnText = preg_replace($hashPattern,
-          '<a href="http://twitter.com/#!/search?q=%23$1" ' .
-          (($robotsFollow)? '':'rel="nofollow"') .
-          '>#$1</a>', $returnText);
-
-      $returnText = preg_replace($mentionPattern,
-          '<a href="http://twitter.com/$1" ' .
-          (($robotsFollow)? '':'rel="nofollow"') .
-          '>@$1</a>', $returnText);
-      return $returnText;
+    $returnText = preg_replace($mentionPattern,
+        '<a href="http://twitter.com/$1" ' .
+        (($robotsFollow)? '':'rel="nofollow"') .
+        '>@$1</a>', $returnText);
+    return $returnText;
   }
 
 ?>
@@ -96,7 +95,18 @@
       <?php endforeach; ?>
 
     </ul>
-    <a href="<?php echo URL.'/blog'; ?>" class="cta">Our Blog</a>
+    <!--HubSpot Call-to-Action Code -->
+    <span class="hs-cta-wrapper" id="hs-cta-wrapper-82947bf7-548c-4641-a6d7-fbf1afaad3f7">
+        <span class="hs-cta-node hs-cta-82947bf7-548c-4641-a6d7-fbf1afaad3f7" id="hs-cta-82947bf7-548c-4641-a6d7-fbf1afaad3f7">
+            <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+            <a href="http://cta-redirect.hubspot.com/cta/redirect/448074/82947bf7-548c-4641-a6d7-fbf1afaad3f7"><img class="hs-cta-img" id="hs-cta-img-82947bf7-548c-4641-a6d7-fbf1afaad3f7" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/448074/82947bf7-548c-4641-a6d7-fbf1afaad3f7.png" /></a>
+        </span>
+        <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+            <script type="text/javascript">
+                hbspt.cta.load(448074, '82947bf7-548c-4641-a6d7-fbf1afaad3f7');
+            </script>
+    </span>
+    <!-- end HubSpot Call-to-Action Code -->
   </div>
   <div class="twelve columns">
     <h3 class="head-it clearfix">Follow Us<i class="fa fa-twitter"></i></h3>
