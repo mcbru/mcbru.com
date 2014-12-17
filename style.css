@@ -5672,6 +5672,16 @@ ul, ol {
   float: right;
 }
 
+.align-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.align-right {
+  position: absolute;
+  right: 0;
+}
+
 code {
   font: inherit;
 }
@@ -5721,6 +5731,7 @@ ul.re-list li:first-child, ol.re-list li:first-child {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 12px;
+  position: relative;
 }
 
 .logo {
@@ -5956,12 +5967,12 @@ input[type=submit].cta, #comments input#submit {
 /* Footer Items */
 .footer {
   /* border-top: 1px solid #a0968a; */
-  padding-top: 10px;
+  padding-top: 30px;
   margin-top: 80px;
   background-color: #8a7d6e;
   color: white;
-  font-size: 0.85em;
-  padding-bottom: 20px;
+  /* font-size: 0.85em; */
+  padding-bottom: 30px;
 }
 .footer a {
   color: white;

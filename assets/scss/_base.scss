@@ -64,6 +64,16 @@ ul, ol {
   @include float-right;
 }
 
+.align-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.align-right {
+  position: absolute;
+  right: 0;
+}
+
 code { font: inherit; }
 
 // TODO: Re-examine re-list usage. Do we really need this?
@@ -114,6 +124,7 @@ ul.re-list, ol.re-list {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 12px;
+  position: relative;
 }
 
 .logo {
@@ -362,12 +373,12 @@ input[type=submit].cta, #comments input#submit  {
 $fut_colr: darken($mcb-gray-sub1,15%);
 .footer {
   /* border-top: 1px solid #a0968a; */
-  padding-top: 10px;
+  padding-top: 30px;
   margin-top: 80px;
   background-color: $fut_colr;
   color: $white;
-  font-size: 0.85em;
-  padding-bottom: 20px;
+  /* font-size: 0.85em; */
+  padding-bottom: 30px;
   a {
     color: $white;
     &:hover {
