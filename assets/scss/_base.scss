@@ -32,7 +32,6 @@ hr.dotter {
   transition: $q $rayt;
 }
 
-
 html { height: 100%; }
 
 body {
@@ -516,7 +515,12 @@ a.tile p {
 
 // hide related projects for now
 .rac.row.rels {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.services-page h3.head-it {
+  visibility: hidden;
 }
 
 .float-wrap {
@@ -728,6 +732,7 @@ a.tile p {
 .instagram  {
   a {
     @include fancytiles(4,4,2);
+    margin-bottom: $gutter;
   img {
     opacity: 0.8;
     box-shadow: 0 0 11px #999;

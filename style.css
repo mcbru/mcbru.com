@@ -6142,7 +6142,12 @@ a.tile p {
 }
 
 .rac.row.rels {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.services-page h3.head-it {
+  visibility: hidden;
 }
 
 .float-wrap {
@@ -6367,6 +6372,7 @@ a.tile p {
   margin-left: 1.2%;
   margin-right: 1.2%;
   width: 47.6%;
+  margin-bottom: 2.4%;
 }
 @media only screen and (min-width: 0px) {
   .instagram a {

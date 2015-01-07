@@ -238,12 +238,48 @@
  * Instagram feed
  * http://instafeedjs.com/
  */
+
+/* Ability to pull using multiple tags discussed at https://github.com/stevenschobert/instafeed.js/issues/12 */
+// function getMultipleTags (tags) {
+//   var feeds = [];
+//   for (var i=0, len=tags.length; i < len; i++) {
+//     feeds.push(new Instafeed({
+//       // rest of your options
+//       get: 'tagged',
+//       tagName: tags[i],
+//       clientId: '1c32abe5e7c44e8d8f20c63dd0ed340f',
+//       // target: "instafeed-" + tags[i]
+//       target: 'iggy',
+//       limit: 4,
+//       resolution: 'low_resolution',
+//       after: function() {
+//         $('#iggy a').attr('target','_blank');
+//       },
+//       template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+//     }));
+//   }
+//   console.log(feeds);
+//   return feeds;
+// }
+
+// get multiple tags
+// var myTags = getMultipleTags(['McEyeball', 'mcbrugram', 'McBruCrew', 'McBruPDX', 'McBruGives']);
+// var myTags = getMultipleTags(['McBrugram', 'McEyeball']);
+// run each instance
+// for(var i=0, len=myTags.length; i < len; i++) {
+//     myTags[i].run();
+// }
+
+
   var userFeed = new Instafeed({
-    get: 'user',
-    userId: 276323042,
-    accessToken: '734615590.467ede5.7230bbdba9d54095897cf7bdb1d723b4',
+    // get: 'user',
+    get: 'tagged',
+    tagName: 'mcbrugram',
+    clientId: '1c32abe5e7c44e8d8f20c63dd0ed340f',
+    // userId: 276323042,
+    // accessToken: '734615590.467ede5.7230bbdba9d54095897cf7bdb1d723b4',
     target: 'iggy',
-    limit: 4,
+    limit: 12,
     resolution: 'low_resolution',
     after: function() {
       $('#iggy a').attr('target','_blank');
@@ -251,5 +287,6 @@
     template: '<a href="{{link}}"><img src="{{image}}" /></a>'
   });
   userFeed.run();
+
 
 })(jQuery);

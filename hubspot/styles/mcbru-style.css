@@ -114,7 +114,7 @@
 {% set baseColor      = "#373535" %}    /* {# Dark Gray  |  Used on 'body' in 'Base'  |  Ex. "color: {{ baseColor }};" #} */
 {% set linkColor      = "#8e108e" %}    /* {# Gray  |  Used on global anchors in 'Base'  |  Ex. "color: {{ linkColor }};" #} */
 {% set linkHover      = "#ef8e2d" %}    /* {# Black  |  Used on global anchors in 'Base'  |  Ex. "color: {{ linkHover }};" #} */
-{% set accentColor1   = "#666" %}    /* {# Medium Gray  |  Ex. "color: {{ accentColor1 }};" #} */
+{% set mcb_purp_dark  = "#671b67" %}    /* {# Medium Gray  |  Ex. "color: {{ accentColor1 }};" #} */
 {% set accentColor2   = "#ccc" %}    /* {# Light Gray  |  Ex. "color: {{ accentColor2 }};" #} */
 {% set accentColor3   = "#ddd" %}    /* {# Lightest Gray  |  Ex. "color: {{ accentColor3 }};" #} */
 
@@ -474,18 +474,22 @@ q:before, q:after, blockquote:before, blockquote:after {}
 .footer-container-wrapper {}
 .footer-container {}
 
+.custom-bottom-wrapper {
+    background: none repeat scroll 0 0 #8a7d6e;
+}
+
 .footer-container .page-center {
-    border-top: 1px solid #a0968a;
-    margin-top: 80px !important;
+    /* border-top: 1px solid #a0968a; */
+    margin-top: 30px !important;
     padding:10px 12px 40px;
 }
 .custom-copyright p,
 .custom-copyright a{
-    color:#8a7d6e;
+    color: #ffffff;
     font-size: 14px;
-    font-weight:400;
-    line-height:19.6px;
-    text-decoration:none;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-decoration: none;
 }
 .custom-copyright a:hover{
     color: #8e108e;
@@ -998,15 +1002,23 @@ body.subscription-template.one-column .main-content {}
 .blog .body-container .page-center {
     max-width: 1024px;
 }
+
 .blog h3 {
     border: medium none;
-    margin:0;
-    padding:0;
-    display:none;
+    /* margin:0; */
+    /* padding:0; */
+    /* display:none; */
 }
+
+.blog .top-module h3 {
+  margin: 0;
+  padding: 0;
+}
+
 .blog-listing-wrapper label {
     display: none;
 }
+
 .blog-listing-wrapper .hs-button.primary.large {
     display: none !important;
 }
@@ -1017,8 +1029,10 @@ body.subscription-template.one-column .main-content {}
     height: 38px;
     margin: 2px 0 0;
     box-shadow: none;
-    width: 31.7% !important;
+    width: 66.7% !important;
+    position: relative;
 }
+
 .blog .widget-type-google_search .hs-input:focus {
     border: 1px solid #ada398;
     box-shadow: none;
@@ -1034,20 +1048,91 @@ body.subscription-template.one-column .main-content {}
     position: absolute;
     top: 3px;
 }
+
 .blog .widget-type-google_search  .hs-button.primary {
     display: none;
 }
+
+.ribbon-container {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.ribbon {
+  display: block;
+  width: 50px;
+  position: relative;
+  color: #fff;
+  padding: 20px 0 10px;
+  line-height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+
+  background-color: #671b67;
+  /* background-repeat: repeat-x; */
+  /* background-image: -khtml-gradient(linear, left top, left bottom, from(#8e108e), to(#671b67)); */
+  /* background-image: -moz-linear-gradient(top, #8e108e, #671b67); */
+  /* background-image: -ms-linear-gradient(top, #8e108e, #671b67); */
+  /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8e108e, color-stop(100%, #671b67)); */
+  /* background-image: -webkit-linear-gradient(top, #8e108e, #671b67); */
+  /* background-image: -o-linear-gradient(top, #8e108e, #671b67); */
+  /* background-image: linear-gradient(top, #8e108e, #671b67); */
+  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8e108e', endColorstr='#671b67', GradientType=0); */
+}
+
+.ribbon .day {
+  font-size: 1.4em;
+}
+
+
+/*
+  Sweet CSS3 Ribbons http://jsfiddle.net/kirkov/FT8hV/
+*/
+.ribbon:after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  position: relative;
+  bottom: -34px;
+  z-index: 100;
+  border-width: 0 25px 24px 25px;
+  border-style: solid;
+  border-color: #671b67 #671b67 transparent #671b67;
+}
+
+.ribbon-lg {
+  /* line-height: 1.5em; */
+  width: 70px;
+}
+
+.ribbon-lg .day {
+  font-size: 1.4em;
+}
+
+.ribbon-lg:after {
+  bottom: -46px;
+  border-width: 0 35px 36px 35px;
+}
+
+
 .banner-and-date-section {
     display: inline-block;
+    position: relative;
     margin-bottom: 11px;
     width: 48.8%;
 }
+
 .title-and-author-section {
     display: inline-block;
     margin-left: 24px;
     width: 47.8%;
     vertical-align: top;
 }
+
 #comment-form .hs-button {
     background: none repeat scroll 0 0 #8e108e;
     border-radius: 4px;
@@ -1158,10 +1243,11 @@ body.hs-blog-listing {}
     font-size: 16px;
     font-weight: 400;
     line-height: 16px;
-    width: 275px;
+    /* width: 275px; */
     margin:0;
     padding:0;
 }
+
 #hubspot-author_data a.author-link {
     border-right: 1px solid #b3aba1;
     color: #8e108e;
@@ -1179,7 +1265,8 @@ body.hs-blog-listing {}
 
 /* Use this to set up different styling for your blog posts */
 .blog-listing-wrapper .post-listing .post-item {
-    background: url("http://cdn2.hubspot.net/hub/448074/file-2086502904-png/Images/dotter.png") repeat-x scroll center top,
+    background: 
+    /* url("http://cdn2.hubspot.net/hub/448074/file-2086502904-png/Images/dotter.png") repeat-x scroll center top, */
                 url("http://cdn2.hubspot.net/hub/448074/file-2086502904-png/Images/dotter.png") repeat-x scroll center bottom;
     margin-top: 28px;
     padding-top: 32px;
@@ -1200,8 +1287,9 @@ body.hs-blog-listing {}
   float: right;
   margin: 20px 0 20px 20px;
 }
+
 .blog-post-wrapper #hubspot-topic_data{
-      padding: 0 0 0 16px;
+  padding: 0 0 0 16px;
 }
 
 
@@ -1218,7 +1306,8 @@ a.more-link {
     display: inline-block;
     float: none;
     margin:0;
-    padding:0;
+    /* padding:0; */
+    padding: 0 0 0 16px;
 }
 #hubspot-topic_data a.topic-link {
     color: #8e108e;
@@ -1241,22 +1330,24 @@ a.more-link {
 #hubspot-topic_data a:hover.topic-link{
     color: #ef8e2d;
 }
-.blog .date {
-    background: url("http://cdn2.hubspot.net/hub/448074/file-2083324658-png/Images/ribbon.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    height: 122px;
-    left: -7px;
-    line-height: 28px;
-    margin: 0;
-    padding:8px 12px 0;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    top: 97px;
-    width: 106px;
-}
+
+/* .blog .date { */
+/*     background: url("http://cdn2.hubspot.net/hub/448074/file-2083324658-png/Images/ribbon.png") no-repeat scroll center top rgba(0, 0, 0, 0); */
+/*     color: #ffffff; */
+/*     font-size: 18px; */
+/*     font-weight: bold; */
+/*     height: 122px; */
+/*     left: -7px; */
+/*     line-height: 28px; */
+/*     margin: 0; */
+/*     padding:8px 12px 0; */
+/*     position: absolute; */
+/*     text-align: center; */
+/*     text-transform: uppercase; */
+/*     top: 97px; */
+/*     width: 106px; */
+/* } */
+
 .blog .day {
     font-size: 36px;
 }
@@ -1266,10 +1357,13 @@ a.more-link {
     padding: 10px 12px 36px;
     border-top: medium none;
 }
+
 .blog .custom-copyright {
-    border-top: 1px solid #a0968a;
+    /* border-top: 1px solid #a0968a; */
     padding: 10px 0 0;
 }
+
+
 /**
  * Blog Social Sharing icons
  *
@@ -1727,8 +1821,27 @@ body input[type="button"]:focus {
 #module-group-ID .cta_button:hover {}
 #module-group-ID .cta_button:focus {}
 
+#cta .cta_button {
+  display: inline-block !important;
+  width: auto !important;
+  line-height: 1.2 !important;
+  padding: 10px !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  background: #8e108e !important;
+  color: #fff !important;
+  /* font-size: 9px !important; */
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.05em !important;
+  width: 184px !important;
+  /* @include trans(background-color); */
+}
 
 
+#cta .cta_button:hover {
+  background-color: #ef8e2d;
+}
 
 
 
