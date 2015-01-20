@@ -287,6 +287,10 @@ input[type=submit].cta, #comments input#submit  {
   }
 }
 
+.proj-desc-hero {
+  position: relative;
+}
+
 
 /* Header Items */
 .header {
@@ -516,11 +520,11 @@ a.tile p {
 // hide related projects for now
 .rac.row.rels {
   /* display: none; */
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .services-page h3.head-it {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .float-wrap {
@@ -610,6 +614,7 @@ a.tile p {
 }
 
 .buckets {
+  display: none;
   h3 {
     margin-bottom: 12px;
     text-align: center;

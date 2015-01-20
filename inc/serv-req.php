@@ -6,7 +6,7 @@
   $it = get_post($_POST['i']);
   $ee = $it->ID;
 
-  $cs = get_field('rel_cs',$ee);
+  $cs = get_field('proj_desc',$ee);
 
   if($cs) :
 

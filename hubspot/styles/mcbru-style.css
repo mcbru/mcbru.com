@@ -1118,6 +1118,16 @@ body.subscription-template.one-column .main-content {}
   border-width: 0 35px 36px 35px;
 }
 
+.post-listing .post-banner-image {
+  width: 488px;
+  height: 232px;
+  overflow: hidden;
+}
+
+.blog-post-wrapper .post-banner-image {
+  max-height: 540px;
+  overflow: hidden;
+}
 
 .banner-and-date-section {
     display: inline-block;
@@ -1821,7 +1831,7 @@ body input[type="button"]:focus {
 #module-group-ID .cta_button:hover {}
 #module-group-ID .cta_button:focus {}
 
-#cta .cta_button {
+.cta_button {
   display: inline-block !important;
   width: auto !important;
   line-height: 1.2 !important;
@@ -1831,10 +1841,10 @@ body input[type="button"]:focus {
   background: #8e108e !important;
   color: #fff !important;
   /* font-size: 9px !important; */
-  text-transform: uppercase !important;
+  /* text-transform: uppercase !important; */
   font-weight: 700 !important;
-  letter-spacing: -0.05em !important;
-  width: 184px !important;
+  /* letter-spacing: -0.05em !important; */
+  /* width: 184px !important; */
   /* @include trans(background-color); */
 }
 
