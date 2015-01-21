@@ -26,7 +26,7 @@
 
   function load_jax($val,$temp)   {
 
-    console.log("ajax load fired");
+    // console.log("ajax load fired");
     // console.log($val);
     // console.log($temp);
     $('.load-cloak').show();
@@ -67,7 +67,7 @@
       var url_param_n = url.lastIndexOf('/');
       var url_param = url.substring(url_param_n + 1);
 
-      console.log(url_param);
+      // console.log(url_param);
       switch(url_param) {
         case "work":
           var tmpl;
@@ -191,7 +191,7 @@
 
 
   function mail_sent() {
-    console.log('mail_sent seen');
+    // console.log('mail_sent seen');
   }
 
 
