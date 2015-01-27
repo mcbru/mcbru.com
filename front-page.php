@@ -69,6 +69,62 @@
 <div class="row bump42">
   <div class="twelve columns">
     <h3 class="head-it clearfix">Recent Posts<i class="fa fa-comments"></i></h3>
+    <?php
+
+
+      // Must be tested with ===, as in if(isXML($xml) === true){}
+      // Returns the error message on improper XML
+      function isXML($xml){
+          libxml_use_internal_errors(true);
+
+          $doc = new DOMDocument('1.0', 'utf-8');
+          $doc->loadXML($xml);
+
+          $errors = libxml_get_errors();
+
+          if(empty($errors)){
+              return true;
+          }
+
+          $error = $errors[0];
+          if($error->level < 3){
+              return true;
+          }
+
+          $explodedxml = explode("r", $xml);
+          $badxml = $explodedxml[($error->line)-1];
+
+          $message = $error->message . ' at line ' . $error->line . '. Bad XML: ' . htmlentities($badxml);
+          // echo var_dump($message);
+          return $message;
+      }
+
+      function get_rss_feed($feedstring) {
+
+        $content = file_get_contents($feedstring);
+        $x = new SimpleXmlElement($content);
+
+        echo '<ul class="link-list">';
+
+        $i = 0;
+        foreach($x->channel->item as $entry) {
+          if($i == 4) break;
+          $timestamp = strtotime($entry->pubDate);
+          $format_time = date("F jS, Y", $timestamp);
+          echo "<li><a class='titulo' href='{$entry->link}' title='{$entry->title}'>" . $entry->title . "</a><span class='meta'>$format_time</span></li>";
+          $i++;
+        }
+        echo "</ul>";
+      }
+
+      $feedstring = "http://blog.mcbru.com/rss.xml";
+
+      // if(isXML($feedstring) === true) {
+        get_rss_feed($feedstring);
+      // }
+
+    ?>
+    <?php /*
     <ul class="link-list">
       <?php $core = get_posts(array(
         'posts_per_page'   => 4,
@@ -95,6 +151,8 @@
       <?php endforeach; ?>
 
     </ul>
+     */ ?>
+
     <!--HubSpot Call-to-Action Code -->
     <span class="hs-cta-wrapper" id="hs-cta-wrapper-82947bf7-548c-4641-a6d7-fbf1afaad3f7">
         <span class="hs-cta-node hs-cta-82947bf7-548c-4641-a6d7-fbf1afaad3f7" id="hs-cta-82947bf7-548c-4641-a6d7-fbf1afaad3f7">
