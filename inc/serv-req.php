@@ -17,7 +17,7 @@
 
 ?>
 
-<div class="float content">
+  <div class="float  content  post-id-<?php echo $ee; ?>">
   <div class="clearfix">
     <h2><?php echo $it->post_title; ?></h2>
     <!-- <h3> --><?php /* echo $it->post_excerpt; */ ?><!-- </h3> -->
