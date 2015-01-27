@@ -88,6 +88,7 @@
   <div class="row">
     <div class="columns twenty-four">
 
+    <?php /*
       <?php if($auth) : //print_r($auth['ID']);
 
         $corr = get_posts(array(
@@ -112,6 +113,7 @@
           </ul>
         </div>
       <?php endif; ?>
+   */ ?>
 
     </div>
 
