@@ -12,6 +12,7 @@
   $url_gplus = get_field('gplus_url','Options');
   $url_sshare = get_field('slideshare_url','Options');
   $url_youtube = get_field('youtube_url','Options');
+  $url_facebook = get_field('facebook_url','Options');
 ?>
 
 <!--  <div class="row">
@@ -38,12 +39,13 @@
           <div class="phone"><a class="cta trans" href="tel:<?php echo $call; ?>"><i class="fa fa-phone"></i> <?php echo $o_phone; ?></a></div>
         </div>
 
-        <ul class="social-rack tiles five_up">
+        <ul class="social-rack tiles six_up">
           <li><a href="<?php echo $url_twitter; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
           <li><a href="<?php echo $url_linkedin; ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
           <li><a href="<?php echo $url_gplus; ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
           <li><a href="<?php echo $url_sshare; ?>" target="_blank"><i class="fa fa-slideshare"></i></a></li>
           <li><a href="<?php echo $url_youtube; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+          <li><a href="<?php echo $url_facebook; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
         </ul>
       </div>
     </div>

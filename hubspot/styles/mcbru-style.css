@@ -1053,6 +1053,37 @@ body.subscription-template.one-column .main-content {}
     display: none;
 }
 
+/*
+.ribbon {
+  display: block;
+  width: 50px;
+  position: relative;
+  color: #fff;
+  padding: 20 px 0 10 px;
+  line - height: 1.5e m;
+  text - align: center;
+  text - transform: uppercase;
+  font - weight: bold;
+  text - shadow: 0 px - 1 px 0 px rgba(0, 0, 0, 0.3);
+  background - color: #671b67;
+  background-repeat:repeat-x;
+  background-image:-khtml-gradient(linear, left top, left bottom, from(# 8e108 e),
+  to(#671b67));
+  background-image:-moz-linear-gradient(top, # 8e108 e, #671b67);
+  background-image:-ms-linear-gradient(top, # 8e108 e, #671b67);
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, # 8e108 e),
+  color - stop(100 % , #671b67));
+  background-image:-webkit-linear-gradient(top, # 8e108 e, #671b67);
+  background-image:-o-linear-gradient(top, # 8e108 e, #671b67);
+  background-image:linear-gradient(top, # 8e108 e, #671b67);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr= '$mcb-purp', endColorstr = '$mcb-purp-dark', GradientType = 0)
+}
+
+.ribbon: after {
+display: block;width: 0;height: 0;content: "";position: relative;bottom: -34 px;z - index: 100;border - width: 0 25 px 24 px 25 px;border - style: solid;border - color: #671b67 # 671 b67 transparent #671b67}.ribbon-lg{width:70px}.ribbon-lg .day{font-size:1.4em}.ribbon-lg:after{bottom:-46px;border-width:0 35px 36px 35px}@media only screen and (min-width: 767px){a{-webkit-transition:color 0.2s;transition:color 0.2s}a.cta,.cta{font-size:14px}h3,h2,h1{font-size:18px}p,ul.re-list,ul,ol{font-size:16px}p.gran,ul.re-list.gran,ul.gran,ol.gran{font-size:18px}.header .toggle{font-size:40px;width:34px}.header nav.desktop .menu>li{float:left;border-left:1px solid # cac3bc
+}
+*/
+
 .ribbon-container {
   position: absolute;
   top: 0;
@@ -1069,24 +1100,24 @@ body.subscription-template.one-column .main-content {}
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.3);
 
   background-color: #671b67;
-  /* background-repeat: repeat-x; */
+  background-repeat: repeat-x;
   /* background-image: -khtml-gradient(linear, left top, left bottom, from(#8e108e), to(#671b67)); */
   /* background-image: -moz-linear-gradient(top, #8e108e, #671b67); */
   /* background-image: -ms-linear-gradient(top, #8e108e, #671b67); */
   /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8e108e, color-stop(100%, #671b67)); */
-  /* background-image: -webkit-linear-gradient(top, #8e108e, #671b67); */
-  /* background-image: -o-linear-gradient(top, #8e108e, #671b67); */
-  /* background-image: linear-gradient(top, #8e108e, #671b67); */
-  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8e108e', endColorstr='#671b67', GradientType=0); */
+  background-image: -webkit-linear-gradient(top, #8e108e, #671b67);
+  background-image: -o-linear-gradient(top, #8e108e, #671b67);
+  background-image: linear-gradient(top, #8e108e, #671b67);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8e108e', endColorstr='#671b67', GradientType=0);
 }
 
 .ribbon .day {
   font-size: 1.4em;
 }
-
 
 /*
   Sweet CSS3 Ribbons http://jsfiddle.net/kirkov/FT8hV/
@@ -1101,7 +1132,7 @@ body.subscription-template.one-column .main-content {}
   z-index: 100;
   border-width: 0 25px 24px 25px;
   border-style: solid;
-  border-color: #671b67 #671b67 transparent #671b67;
+  border-color: #671b67 #671b67 transparent;
 }
 
 .ribbon-lg {
@@ -1358,9 +1389,9 @@ a.more-link {
 /*     width: 106px; */
 /* } */
 
-.blog .day {
-    font-size: 36px;
-}
+/* .blog .day { */
+/*     font-size: 36px; */
+/* } */
 
 .blog .footer-container .page-center {
     max-width: 1024px;
@@ -2123,6 +2154,70 @@ body input[type="button"]:focus {
 }
 
 
+#DIV_1 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 116px;
+    position: relative;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.298039) 0px -1px 0px;
+    text-transform: uppercase;
+    width: 70px;
+    perspective-origin: 35px 58px;
+    transform-origin: 35px 58px;
+    background: rgb(103, 27, 103) -webkit-linear-gradient(top, rgb(142, 16, 142), rgb(103, 27, 103)) repeat-x scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal bold normal 16px/24px 'Titillium Web', sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 20px 0px 10px;
+}/*#DIV_1*/
+
+#DIV_1:after {
+    bottom: -46px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: block;
+    height: 36px;
+    position: relative;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.298039) 0px -1px 0px;
+    text-transform: uppercase;
+    width: 70px;
+    z-index: 100;
+    perspective-origin: 35px 18px;
+    transform-origin: 35px 18px;
+    content: '';
+    border-top: 0px solid rgb(103, 27, 103);
+    border-right: 35px solid rgb(103, 27, 103);
+    border-bottom: 36px solid rgba(0, 0, 0, 0);
+    border-left: 35px solid rgb(103, 27, 103);
+    font: normal normal bold normal 16px/24px 'Titillium Web', sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_1:after*/
+
+#SPAN_2, #BR_3 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.298039) 0px -1px 0px;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal bold normal 16px/24px 'Titillium Web', sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#SPAN_2, #BR_3*/
+
+#SPAN_4 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.298039) 0px -1px 0px;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal bold normal 22.3999996185303px/24px 'Titillium Web', sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#SPAN_4*/
+
+
 
 
 
@@ -2143,7 +2238,7 @@ body input[type="button"]:focus {
 /*
 [hubspot-metadata]
 {
-    "id": 2076763118,
+    "id": 2076763118, 
     "path": "custom/page/MCBru-theme/mcbru-style.css"
 }
 [end-hubspot-metadata]

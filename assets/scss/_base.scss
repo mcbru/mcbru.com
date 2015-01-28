@@ -1131,3 +1131,16 @@ a.tile p {
   bottom: -46px;
   border-width: 0 35px 36px 35px;
 }
+
+
+
+// append to Gumby tiles styles
+.tiles {
+  &.six_up {
+    margin-left: -1%;
+    > li, > .tile {
+      margin-left: 1%;
+      width: 15.5%;
+    }
+  }
+}
