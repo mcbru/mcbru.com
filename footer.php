@@ -4,21 +4,28 @@
 
   <footer class='footer'>
     <div class="container  clearfix">
-      <div class="align-bottom  align-right">
-        &copy; <?php echo date( "Y" ); echo " "; //bloginfo( 'name' ); ?><a href="<?php echo site_url(); ?>">McClenahan Bruer</a>
-      </div>
+
       <!--HubSpot Call-to-Action Code -->
       <span class="hs-cta-wrapper" id="hs-cta-wrapper-97bdb81f-eff9-423f-b792-9c5dbd6b688f">
-          <span class="hs-cta-node hs-cta-97bdb81f-eff9-423f-b792-9c5dbd6b688f" id="hs-cta-97bdb81f-eff9-423f-b792-9c5dbd6b688f">
-              <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
-              <a href="http://cta-redirect.hubspot.com/cta/redirect/448074/97bdb81f-eff9-423f-b792-9c5dbd6b688f"><img class="hs-cta-img" id="hs-cta-img-97bdb81f-eff9-423f-b792-9c5dbd6b688f" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/448074/97bdb81f-eff9-423f-b792-9c5dbd6b688f.png" /></a>
-          </span>
-          <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
-              <script type="text/javascript">
-                  hbspt.cta.load(448074, '97bdb81f-eff9-423f-b792-9c5dbd6b688f');
-              </script>
+        <span class="hs-cta-node hs-cta-97bdb81f-eff9-423f-b792-9c5dbd6b688f" id="hs-cta-97bdb81f-eff9-423f-b792-9c5dbd6b688f">
+          <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+          <a href="http://cta-redirect.hubspot.com/cta/redirect/448074/97bdb81f-eff9-423f-b792-9c5dbd6b688f"><img class="hs-cta-img" id="hs-cta-img-97bdb81f-eff9-423f-b792-9c5dbd6b688f" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/448074/97bdb81f-eff9-423f-b792-9c5dbd6b688f.png" /></a>
+        </span>
+        <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+          hbspt.cta.load(448074, '97bdb81f-eff9-423f-b792-9c5dbd6b688f');
+        </script>
       </span>
       <!-- end HubSpot Call-to-Action Code -->
+
+      <div class="boilerplate">
+        <ul class="menu">
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li>
+            &copy; <?php echo date( "Y" ); echo " "; //bloginfo( 'name' ); ?>McClenahan Bruer
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 

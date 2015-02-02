@@ -51,11 +51,25 @@ p, ul.re-list, ul, ol {
   }
 }
 
+.boilerplate {
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  margin: 0;
+  a {
+    padding: 0 20px;
+  }
+}
+
+
+
 /*.home .header   { height:84px;  }*/
 
-.rac.serv>a {   
-        height:298px;@include trans();
-  &:hover { background-color:#f8f7f7; }
+.rac.serv>a {
+  height:298px;@include trans();
+  &:hover {
+    background-color:#f8f7f7;
+  }
 }
 
 ul.horz-subnav, .horz-subnav ul     
