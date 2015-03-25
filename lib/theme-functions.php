@@ -281,11 +281,51 @@ function word_limit($string, $word_limit)
  * of those unsightly player controls
  */
 function remove_youtube_controls($code){
-    if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
-        $return = preg_replace("@src=(['\"])?([^'\">s]*)@", "src=$1$2&autoplay=0&showinfo=0&controls=0&rel=0", $code);
-        return $return;
-    }
-    return $code;
+  if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
+    $return = preg_replace("@src=(['\"])?([^'\">s]*)@", "src=$1$2&autoplay=0&showinfo=0&controls=0&rel=0", $code);
+    return $return;
+  }
+  return $code;
 }
 add_filter('embed_handler_html', 'remove_youtube_controls');
 add_filter('embed_oembed_html', 'remove_youtube_controls');
+
+
+/**
+ * Add Twitter tracking codes
+ */
+add_action('wp_footer', 'add_twitter_tracking_code');
+function add_twitter_tracking_code() {
+  if (is_page('connect')) { ?>
+    <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    twttr.conversion.trackPid('l5gls', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5gls&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l5gls&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" /></noscript>
+  <?php } elseif (is_page('services')) { ?>
+    <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    twttr.conversion.trackPid('l5glv', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5glv&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l5glv&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" /></noscript>
+  <?php }
+}
+
+/**
+ * Add HubSpot tracking code
+ */
+add_action('wp_footer', 'add_hubspot_tracking_code');
+function add_hubspot_tracking_code() { ?>
+  <!-- Start of Async HubSpot Analytics Code -->
+    <script type="text/javascript">
+      (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/448074.js';
+        e.parentNode.insertBefore(n, e);
+      })(document,"script","hs-analytics",300000);
+    </script>
+  <!-- End of Async HubSpot Analytics Code -->
+<?php } ?>
