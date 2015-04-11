@@ -19,7 +19,7 @@
 
           <div class="boilerplate">
             <ul class="menu">
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/privacy-policy/">Privacy Policy</a></li>
               <li>
                 &copy; <?php echo date( "Y" ); echo " "; //bloginfo( 'name' ); ?>McClenahan Bruer
               </li>

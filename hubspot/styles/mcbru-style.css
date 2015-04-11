@@ -1153,6 +1153,7 @@ display: block;width: 0;height: 0;content: "";position: relative;bottom: -34 px;
   width: 488px;
   height: 232px;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .blog-post-wrapper .post-banner-image {
@@ -1179,15 +1180,15 @@ display: block;width: 0;height: 0;content: "";position: relative;bottom: -34 px;
     border-radius: 4px;
     border:none;
     color: #ffffff;
-    font-family: MS Shell Dlg;
-    font-size: 9px;
+    // font-family: MS Shell Dlg;
+    // font-size: 9px;
     padding: 8px;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    // font-weight: 700;
+    // letter-spacing: -0.05em;
     line-height: 1.2;
     padding: 10px;
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     transition: background-color 0.2s ease 0s;
     width: 184px;
     margin:14px 0;
@@ -2228,6 +2229,7 @@ body input[type="button"]:focus {
     .blog .widget-type-google_search:after {
         left: 92%;
     }}
+
 
 
 
