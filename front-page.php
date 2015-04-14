@@ -43,12 +43,12 @@
         '>$1</a>', $returnText);
 
     $returnText = preg_replace($hashPattern,
-        '<a href="http://twitter.com/#!/search?q=%23$1" ' .
+        '<a href="https://twitter.com/#!/search?q=%23$1" ' .
         (($robotsFollow)? '':'rel="nofollow"') .
         '>#$1</a>', $returnText);
 
     $returnText = preg_replace($mentionPattern,
-        '<a href="http://twitter.com/$1" ' .
+        '<a href="https://twitter.com/$1" ' .
         (($robotsFollow)? '':'rel="nofollow"') .
         '>@$1</a>', $returnText);
     return $returnText;
