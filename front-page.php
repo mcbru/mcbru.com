@@ -74,40 +74,57 @@
 
       // Must be tested with ===, as in if(isXML($xml) === true){}
       // Returns the error message on improper XML
-      function isXML($xml){
-          libxml_use_internal_errors(true);
+      // function isXML($xml){
+      //     libxml_use_internal_errors(true);
 
-          $doc = new DOMDocument('1.0', 'utf-8');
-          $doc->loadXML($xml);
+      //     $doc = new DOMDocument('1.0', 'utf-8');
+      //     $doc->loadXML($xml);
 
-          $errors = libxml_get_errors();
+      //     $errors = libxml_get_errors();
 
-          if(empty($errors)){
-              return true;
-          }
+      //     if(empty($errors)){
+      //         return true;
+      //     }
 
-          $error = $errors[0];
-          if($error->level < 3){
-              return true;
-          }
+      //     $error = $errors[0];
+      //     if($error->level < 3){
+      //         return true;
+      //     }
 
-          $explodedxml = explode("r", $xml);
-          $badxml = $explodedxml[($error->line)-1];
+      //     $explodedxml = explode("r", $xml);
+      //     $badxml = $explodedxml[($error->line)-1];
 
-          $message = $error->message . ' at line ' . $error->line . '. Bad XML: ' . htmlentities($badxml);
-          // echo var_dump($message);
-          return $message;
-      }
+      //     $message = $error->message . ' at line ' . $error->line . '. Bad XML: ' . htmlentities($badxml);
+      //     // echo var_dump($message);
+      //     return $message;
+      // }
 
       function get_rss_feed($feedstring) {
 
-        $content = file_get_contents($feedstring);
-        $x = new SimpleXmlElement($content);
+        $curl = curl_init();
+
+        curl_setopt_array($curl, Array(
+          CURLOPT_URL => 'http://blog.mcbru.com/rss.xml',
+          CURLOPT_USERAGENT => 'spider',
+          CURLOPT_TIMEOUT => 120,
+          CURLOPT_CONNECTTIMEOUT => 30,
+          CURLOPT_RETURNTRANSFER => TRUE,
+          CURLOPT_ENCODING => 'UTF=8'
+        ));
+
+        $data = curl_exec($curl);
+        curl_close($curl);
+
+        $xml = simplexml_load_string($data, 'SimpleXmlElement', LIBXML_NOCDATA);
+        //die('<pre>' . print_r($xml], TRUE) . '</pre>');
+
+        // $content = file_get_contents($feedstring);
+        // $x = new SimpleXmlElement($content);
 
         echo '<ul class="link-list">';
 
         $i = 0;
-        foreach($x->channel->item as $entry) {
+        foreach($xml->channel->item as $entry) {
           if($i == 4) break;
           $timestamp = strtotime($entry->pubDate);
           $format_time = date("F jS, Y", $timestamp);
@@ -117,10 +134,10 @@
         echo "</ul>";
       }
 
-      $feedstring = "http://blog.mcbru.com/rss.xml";
+      // $feedstring = "http://blog.mcbru.com/rss.xml";
 
       // if(isXML($feedstring) === true) {
-        get_rss_feed($feedstring);
+        // get_rss_feed($feedstring);
       // }
 
     ?>
