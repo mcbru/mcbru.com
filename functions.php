@@ -4,12 +4,12 @@
 Theme Setup
 *****************************************/
 
-define(URL, get_site_url());
-define(THEME, get_bloginfo('template_directory'));
-define(TIM, THEME.'/lib/timthumb.php?src=');
-define(BL_LIST, '&amp;w=488&amp;h=232&amp;zco=3');
-define(BL_PORT, '&amp;w=488&amp;h=540&amp;zco=3');
-define(BL_FULL, '&amp;w=1000&amp;h=540&amp;zco=3');
+define('URL', get_site_url());
+define('THEME', get_bloginfo('template_directory'));
+define('TIM', THEME.'/lib/timthumb.php?src=');
+define('BL_LIST', '&amp;w=488&amp;h=232&amp;zco=3');
+define('BL_PORT', '&amp;w=488&amp;h=540&amp;zco=3');
+define('BL_FULL', '&amp;w=1000&amp;h=540&amp;zco=3');
 
 add_image_size( 'full-bleed', 1200, 600, true );
 add_image_size( 'full-bleed-strip', 1200, 300, true);

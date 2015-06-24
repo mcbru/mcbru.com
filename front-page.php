@@ -14,10 +14,10 @@
 
   // Set access tokens here - https://dev.twitter.com/apps/
   $settings = array(
-    'oauth_access_token' => TW_OAUTH_ACCESS_TOKEN,
-    'oauth_access_token_secret' => TW_OAUTH_ACCESS_TOKEN_SECRET,
-    'consumer_key' => TW_CONSUMER_KEY,
-    'consumer_secret' => TW_CONSUMER_SECRET
+    'oauth_access_token' => 'TW_OAUTH_ACCESS_TOKEN',
+    'oauth_access_token_secret' => 'TW_OAUTH_ACCESS_TOKEN_SECRET',
+    'consumer_key' => 'TW_CONSUMER_KEY',
+    'consumer_secret' => 'TW_CONSUMER_SECRET'
   );
   $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
   $requestMethod = "GET";
@@ -75,28 +75,28 @@
       // Must be tested with ===, as in if(isXML($xml) === true){}
       // Returns the error message on improper XML
       // function isXML($xml){
-      //     libxml_use_internal_errors(true);
+      //   libxml_use_internal_errors(true);
 
-      //     $doc = new DOMDocument('1.0', 'utf-8');
-      //     $doc->loadXML($xml);
+      //   $doc = new DOMDocument('1.0', 'utf-8');
+      //   $doc->loadXML($xml);
 
-      //     $errors = libxml_get_errors();
+      //   $errors = libxml_get_errors();
 
-      //     if(empty($errors)){
-      //         return true;
-      //     }
+      //   if(empty($errors)){
+      //       return true;
+      //   }
 
-      //     $error = $errors[0];
-      //     if($error->level < 3){
-      //         return true;
-      //     }
+      //   $error = $errors[0];
+      //   if($error->level < 3){
+      //       return true;
+      //   }
 
-      //     $explodedxml = explode("r", $xml);
-      //     $badxml = $explodedxml[($error->line)-1];
+      //   $explodedxml = explode("r", $xml);
+      //   $badxml = $explodedxml[($error->line)-1];
 
-      //     $message = $error->message . ' at line ' . $error->line . '. Bad XML: ' . htmlentities($badxml);
-      //     // echo var_dump($message);
-      //     return $message;
+      //   $message = $error->message . ' at line ' . $error->line . '. Bad XML: ' . htmlentities($badxml);
+      //   echo var_dump($message);
+      //   // return $message;
       // }
 
       function get_rss_feed($feedstring) {
@@ -104,7 +104,7 @@
         $curl = curl_init();
 
         curl_setopt_array($curl, Array(
-          CURLOPT_URL => 'http://blog.mcbru.com/rss.xml',
+          CURLOPT_URL => $feedstring,
           CURLOPT_USERAGENT => 'spider',
           CURLOPT_TIMEOUT => 120,
           CURLOPT_CONNECTTIMEOUT => 30,
@@ -121,23 +121,27 @@
         // $content = file_get_contents($feedstring);
         // $x = new SimpleXmlElement($content);
 
-        echo '<ul class="link-list">';
+        // if(isXML($xml) === TRUE) {
+          echo '<ul class="link-list">';
 
-        $i = 0;
-        foreach($xml->channel->item as $entry) {
-          if($i == 4) break;
-          $timestamp = strtotime($entry->pubDate);
-          $format_time = date("F jS, Y", $timestamp);
-          echo "<li><a class='titulo' href='{$entry->link}' title='{$entry->title}'>" . $entry->title . "</a><span class='meta'>$format_time</span></li>";
-          $i++;
-        }
-        echo "</ul>";
+          $i = 0;
+          foreach($xml->channel->item as $entry) {
+            if($i == 4) break;
+            $timestamp = strtotime($entry->pubDate);
+            $format_time = date("F jS, Y", $timestamp);
+            echo "<li><a class='titulo' href='{$entry->link}' title='{$entry->title}'>" . $entry->title . "</a><span class='meta'>$format_time</span></li>";
+            $i++;
+          }
+          echo "</ul>";
+        // } else {
+        //   echo $message;
+        // }
       }
 
-      // $feedstring = "http://blog.mcbru.com/rss.xml";
+      $feedstring = "http://blog.mcbru.com/rss.xml";
 
       // if(isXML($feedstring) === true) {
-        // get_rss_feed($feedstring);
+        get_rss_feed($feedstring);
       // }
 
     ?>
@@ -186,7 +190,7 @@
   <div class="twelve columns">
     <h3 class="head-it clearfix">Follow Us<i class="fa fa-twitter"></i></h3>
     <?php
-      if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
+      if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string['errors'][0]["message"]."</em></p>";exit();}
     ?>
     <ul class="link-list non">
       <?php

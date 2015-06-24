@@ -89,7 +89,7 @@
       <p class="whatbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://whatbrowser.org">upgrade your browser</a> or <a href="http://whatbrowser.org/">learn more</a> about your browsing options.</p>
   <![endif]-->
 
-  <?php// echo $strip[0]; ?>
+  <?php // echo $strip[0]; ?>
   <?php //print_r($me);
     if(is_page('about')) : $head_ico = 'fa-info-circle'; endif;
     if(is_page('connect')) : $head_ico = 'fa-link'; endif;
