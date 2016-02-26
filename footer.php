@@ -28,9 +28,12 @@
         </div>
       </footer>
 
-
+      <!-- HubSpot Contact Form -->
       <?php if(is_page('connect')) : ?>
-        <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
+        <!--[if lte IE 8]>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        <![endif]-->
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
         <div class="cloak">
           <div class="container">
             <div class="form-pop">
@@ -41,12 +44,12 @@
                   formId: '87b1eea4-e974-4901-bedb-dc3b553cd65e'
                 });
               </script>
-
               <a href="#" class="close">×</a>
             </div>
           </div>
         </div>
       <?php endif; ?>
+      <!-- end HubSpot Contact Form -->
 
     </div> <!-- /.full-wrap -->
 
