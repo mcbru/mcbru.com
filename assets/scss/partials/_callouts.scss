@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  #CALLOUTS
+\*------------------------------------*/
+
+.callout {
+  text-align: center;
+  font-weight: 600;
+}
+
+.callout--lede {
+  > p {
+    font-size: 33px;
+    line-height: 51px;
+    margin-top: 0;
+  }
+  font-weight: 300;
+}
+
+.callout--single {
+  font-size: 36px;
+}

@@ -1,6 +1,24 @@
 // Font Face
 // @include fontface('FONT_NAME', 'assets/fonts/', 'FONT_FAMILY');
 
+
+// Colors
+$white          : #ffffff;
+$black          : #000000;
+$mcb-gray1      : #cccccc;
+$mcb-gray-sub1  : #ada398;
+$mcb-gray-sub2  : #b3aba1;
+$mcb-gray-sub3  : #cac3bc;
+$mcb-gray-lite  : #e8e5e3;
+$mcb-gray-xlite : #f0f0f0;
+$mcb-brand-dark : #221f1f;
+$mcb-brand-gray : #a2968a;
+
+$mcb-text       : #373535;
+$mcb-purp       : #8e108e;
+$mcb-purp-dark  : #671b67;
+$mcb-oran       : #ef8e2d;
+
 // Structure
 $pageWidth: 1000px;
 
@@ -12,3 +30,6 @@ $linkColor: red;
 $linkHoverColor: blue;
 
 // Other
+$base-font-size:          16px !default;
+$base-line-height:        24px !default;
+$base-spacing-unit:       48px;

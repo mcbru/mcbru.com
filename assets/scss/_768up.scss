@@ -10,6 +10,15 @@ h3, h2, h1 {
   font-size: 18px;
 }
 
+h2 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 22px;
+}
+
 p, ul.re-list, ul, ol {
   /* font-size: 14px; */
   font-size: 16px;
@@ -231,7 +240,7 @@ ul.horz-subnav, .horz-subnav ul
       span {
         width: 30px;
         height: 50px;
-        background: url(assets/img/aros-60-100.png) no-repeat;
+        background: url(assets/images/aros-60-100.png) no-repeat;
         background-size: 60px 100px;
       }
     }

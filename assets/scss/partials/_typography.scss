@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+.mcbru-bullet {
+  li {
+    // padding: 0.15em 0 .5em 1.5em;
+    padding-left: 1em;
+    margin-bottom: 1em;
+    // text-indent: 0.4em;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2LjM3IDYuMzciPjx0aXRsZT5saXN0LXN0eWxlLW1hcms8L3RpdGxlPjxyZWN0IHdpZHRoPSI2LjM3IiBoZWlnaHQ9IjYuMzciIHN0eWxlPSJmaWxsOiM4ZTEwOGUiLz48L3N2Zz4=);
+    background-size: 6px 6px;
+    background-position: 0 0.5em;
+  }
+}

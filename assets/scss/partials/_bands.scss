@@ -1,0 +1,37 @@
+/*------------------------------------*\
+  #BANDS
+\*------------------------------------*/
+
+.band {
+  padding-top:    $base-spacing-unit;
+  padding-bottom: $base-spacing-unit;
+
+  // @include media-query(desk) {
+    //     padding-top:    $spacing-unit--large;
+    //     padding-bottom: $spacing-unit--large;
+  // }
+
+}
+
+.band--large {
+  // padding: $spacing-unit--large;
+}
+
+.band--highlight {
+  background-color: $mcb-gray-xlite;
+}
+
+.rule {
+  padding-top:    $base-spacing-unit;
+  padding-bottom: $base-spacing-unit;
+  margin: 24px 0;
+}
+
+.rule--all {
+  border-top: 1px solid $mcb-gray-sub1;
+  border-bottom: 1px solid $mcb-gray-sub1;
+}
+
+.rule--top {
+  border-top: 1px solid $mcb-gray-sub1;
+}

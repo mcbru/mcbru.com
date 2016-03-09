@@ -1,19 +1,4 @@
 
-$white          : #ffffff;
-$black          : #000000;
-$mcb-gray1      : #cccccc;
-$mcb-gray-sub1  : #ada398;
-$mcb-gray-sub2  : #b3aba1;
-$mcb-gray-sub3  : #cac3bc;
-$mcb-gray-lite  : #e8e5e3;
-$mcb-brand-dark : #221f1f;
-$mcb-brand-gray : #a2968a;
-
-$mcb-text       : #373535;
-$mcb-purp       : #8e108e;
-$mcb-purp-dark  : #671b67;
-$mcb-oran       : #ef8e2d;
-
 $rayt           : 0.2s;
 
 .bump28   { margin-top:28px;  }
@@ -22,7 +7,7 @@ $rayt           : 0.2s;
 
 hr.dotter {
   height: 4px;
-  background: url(assets/img/dotter.png) 50% 50% repeat-x;
+  background: url(assets/images/dotter.png) 50% 50% repeat-x;
   border: none;
   margin: 28px 0;
 }
@@ -47,6 +32,27 @@ body {
 
 h3, h2, h1 {
   font-size: 14px;
+}
+
+h2 {
+  color: $mcb-purp;
+  &.icon {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 0;
+  }
+  &.icon--brand-development:before {
+    content: image-url('brand-development-icon.gif');
+    margin-right: 12px;
+  }
+  &.icon--brand-narrative:before {
+    content: image-url('brand-narrative-icon.gif');
+    margin-right: 12px;
+  }
+  &.icon--brand-demand:before {
+    content: image-url('brand-demand-icon.gif');
+    margin-right: 12px;
+  }
 }
 
 ul, ol {
@@ -425,7 +431,7 @@ $fut_colr: darken($mcb-gray-sub1,15%);
 }
 
 html.svg {
-  /*.logo   { background-image:url(assets/img/logo.svg);  }*/
+  /*.logo   { background-image:url(assets/images/logo.svg);  }*/
 }
 
 
@@ -655,11 +661,11 @@ a.tile p {
       margin-bottom: 0;
     }
     &.search {
-      background-image: url(assets/img/ico-search.png);
+      background-image: url(assets/images/ico-search.png);
       background-size: 34px 36px;
     }
     &.cycle {
-      background-image: url(assets/img/ico-cycle.png);
+      background-image: url(assets/images/ico-cycle.png);
       background-size: 37px 37px;
     }
   }
@@ -674,7 +680,7 @@ a.tile p {
   margin-top: 36px;
   /*padding:30px 20px 30px 160px;*/
   &.binocs {
-    background: $mcb-brand-gray url(assets/img/ico-binocs.png) 50% 18px no-repeat;
+    background: $mcb-brand-gray url(assets/images/ico-binocs.png) 50% 18px no-repeat;
     background-size: 50px 24px;
     /*30px 30px*/
   }
@@ -686,6 +692,16 @@ a.tile p {
 
 /* Services Page */
 .page-services {
+  .text-large {
+    p {
+      font-size: 22px;
+      line-height: 40px;
+    }
+    li {
+      font-size: 22px;
+      line-height: 33px;
+    }
+  }
   .footer {
     margin-top: 20px;
   }
@@ -705,10 +721,10 @@ a.tile p {
         }
       }
     }
-    h3 {
-      font-size: 14px;
-      line-height: 1.4;
-    }
+    // h3 {
+    //   font-size: 14px;
+    //   line-height: 1.4;
+    // }
   }
 
   .mobile.service-menu {
@@ -962,7 +978,7 @@ a.tile p {
         display: block;
         width: 15px;
         height: 25px;
-        background: url(assets/img/aros-60-100.png) no-repeat;
+        background: url(assets/images/aros-60-100.png) no-repeat;
         background-size: 30px 50px;
         margin: 0 auto 8px;
       }
