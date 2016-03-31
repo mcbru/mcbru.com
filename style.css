@@ -5686,6 +5686,10 @@ MOBILE & BASE STYLES
   margin-top: 42px;
 }
 
+.bump-bottom {
+  margin-bottom: 42px;
+}
+
 hr.dotter {
   height: 4px;
   background: url(assets/images/dotter.png) 50% 50% repeat-x;
@@ -5708,10 +5712,6 @@ body {
   /*-webkit-text-stroke: 0.005em*/
 }
 
-h3, h2, h1 {
-  font-size: 14px;
-}
-
 h2 {
   color: #8e108e;
 }
@@ -5721,15 +5721,15 @@ h2.icon {
   background-position: 0 0;
 }
 h2.icon--brand-development:before {
-  content: url('assets/images/brand-development-icon.gif?1457475282');
+  content: url('assets/images/brand-development-icon.gif?1457552436');
   margin-right: 12px;
 }
 h2.icon--brand-narrative:before {
-  content: url('assets/images/brand-narrative-icon.gif?1457475332');
+  content: url('assets/images/brand-narrative-icon.gif?1457552436');
   margin-right: 12px;
 }
 h2.icon--brand-demand:before {
-  content: url('assets/images/brand-demand-icon.gif?1457475411');
+  content: url('assets/images/brand-demand-icon.gif?1457552436');
   margin-right: 12px;
 }
 
@@ -6890,7 +6890,7 @@ a.tile p {
   }
 
   h3, h2, h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   h2 {

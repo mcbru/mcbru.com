@@ -48,7 +48,7 @@ $raw_html = get_field('raw_html_content',$ee);
 </div>
   <div class="band  band--highlight">
     <div class="row  text-large">
-      <div class="twelve  columns">
+      <div class="twelve  columns  bump-bottom">
         <h2 class="icon  icon--brand-development">Brand Development</h2>
         <h3>Need to tell the brand story</h3>
         <p>For clients who need help with branding or presenting the story of their brand in a fresh way, McBru offers Brand Development programs. We believe brands resonate most strongly when they are created with customer personas in mind. Our branding, messaging, websites and content are compelling because they start by addressing the pain points and challenges our clients’ customers face in an authentic, engaging way.</p>
@@ -80,7 +80,7 @@ $raw_html = get_field('raw_html_content',$ee);
           <!-- fallback image in CSS -->
         </object>
       </div>
-      <div class="twelve  columns">
+      <div class="twelve  columns  bump-bottom">
         <h2 class="icon  icon--brand-narrative">Brand Narrative</h2>
         <h3>Need increased awareness, preference and consideration</h3>
         <p>For clients who need to drive increased brand awareness, preference and affinity, McBru offers Brand Narrative programs. Traditional PR programs are necessary but not sufficient; instead a blend of PR, social media, content and more helps our clients tell omni-channel stories that drive measureable increases in awareness.</p>
@@ -102,7 +102,7 @@ $raw_html = get_field('raw_html_content',$ee);
 
   <div class="band  band--highlight">
     <div class="row  text-large">
-      <div class="twelve  columns">
+      <div class="twelve  columns  bump-bottom">
         <h2 class="icon  icon--brand-demand">Brand Demand</h2>
         <h3>Need sales leads and to drive sales growth</h3>
         <p>For clients who need sales leads or sales enablement support, McBru offers Brand Demand programs. A mix of paid placements, nurturing, content, social media selling and more delivers marketing qualified leads that fill the funnel and drive revenue growth.</p>

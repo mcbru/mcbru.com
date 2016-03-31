@@ -5,6 +5,10 @@ $rayt           : 0.2s;
 .bump18   { margin-top:18px;  }
 .bump42   { margin-top:42px;  }
 
+.bump-bottom {
+  margin-bottom: 42px;
+}
+
 hr.dotter {
   height: 4px;
   background: url(assets/images/dotter.png) 50% 50% repeat-x;
@@ -30,9 +34,9 @@ body {
 }
 
 
-h3, h2, h1 {
-  font-size: 14px;
-}
+// h3, h2, h1 {
+//   font-size: 14px;
+// }
 
 h2 {
   color: $mcb-purp;
