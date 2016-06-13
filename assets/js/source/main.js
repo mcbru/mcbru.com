@@ -272,12 +272,12 @@
 
 
   var userFeed = new Instafeed({
-    // get: 'user',
-    get: 'tagged',
-    tagName: 'mcbrugram',
-    clientId: '1c32abe5e7c44e8d8f20c63dd0ed340f',
-    // userId: 276323042,
-    // accessToken: '734615590.467ede5.7230bbdba9d54095897cf7bdb1d723b4',
+    // get: 'tagged',
+    // tagName: 'mcbrugram',
+    // clientId: '1c32abe5e7c44e8d8f20c63dd0ed340f',
+    get: 'user',
+    userId: 276323042,
+    accessToken: 276323042.923fa95.6338e123054840eaa9edbf2b82811b4a,
     target: 'iggy',
     limit: 12,
     resolution: 'low_resolution',
