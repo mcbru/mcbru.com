@@ -51,13 +51,6 @@
     </div>
   </div>
 
-<h3 class="head-it clearfix bump28"><a href="https://instagram.com/mcbrugram/">@mcbrugram</a> on Instagram<i class="fa fa-instagram"></i></h3>
-
-<div class="row rac">
-  <div id="iggy" class="instagram">
-  </div>
-</div>
-
 
 
   <?php /*
